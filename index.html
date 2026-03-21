@@ -747,7 +747,54 @@ plaintext
 
 (function(){var w=window,C='___grecaptcha_cfg',cfg=w[C]=w[C]||{},N='grecaptcha';var E='enterprise',a=w[N]=w[N]||{},gr=a[E]=a[E]||{};gr.ready=gr.ready||function(f){(cfg['fns']=cfg['fns']||[]).push(f);};w['__recaptcha_api']='https://www.google.com/recaptcha/enterprise/';(cfg['enterprise']=cfg['enterprise']||[]).push(true);(cfg['enterprise2fa']=cfg['enterprise2fa']||[]).push(true);(cfg['render']=cfg['render']||[]).push('6LcdsFgmAAAAAMfrnC1hEdmeRQRXCjpy8qT_kvfy');(cfg['clr']=cfg['clr']||[]).push('true');(cfg['anchor-ms']=cfg['anchor-ms']||[]).push(20000);(cfg['execute-ms']=cfg['execute-ms']||[]).push(15000);w['__google_recaptcha_client']=true;var d=document,po=d.createElement('script');po.type='text/javascript';po.async=true; po.charset='utf-8';var v=w.navigator,m=d.createElement('meta');m.httpEquiv='origin-trial';m.content='A7vZI3v+Gz7JfuRolKNM4Aff6zaGuT7X0mf3wtoZTnKv6497cVMnhy03KDqX7kBz/q/iidW7srW31oQbBt4VhgoAAACUeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJEaXNhYmxlVGhpcmRQYXJ0eVN0b3JhZ2VQYXJ0aXRpb25pbmczIiwiZXhwaXJ5IjoxNzU3OTgwODAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==';if(v&&v.cookieDeprecationLabel){v.cookieDeprecationLabel.getValue().then(function(l){if(l!=='treatment_1.1'&&l!=='treatment_1.2'&&l!=='control_1.1'){d.head.prepend(m);}});}else{d.head.prepend(m);}po.src='https://www.gstatic.com/recaptcha/releases/KmpMK968ITgSdSG_2lbUmd1o/recaptcha__en.js';po.crossOrigin='anonymous';po.integrity='sha384-qWlX9DATG60zGx212yddKhWx0Vfq1aHzjo55NjxKQLqy/5cVwdHENaAyGpD+m8l6';var e=d.querySelector('script[nonce]'),n=e&&(e['nonce']||e.getAttribute('nonce'));if(n){po.setAttribute('nonce',n);}var s=d.getElementsByTagName('script')[0];s.parentNode.insertBefore(po, s);})();
 
+<?xml version="1.0" encoding="utf-8"?>
+	<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+		<Metadata>
+			<Identity Language="en-US" Id="copilot" Version="1.388.0" Publisher="GitHub" />
+			<DisplayName>GitHub Copilot</DisplayName>
+			<Description xml:space="preserve">Your AI pair programmer</Description>
+			<Tags>ai,openai,codex,pilot,snippets,documentation,autocomplete,intellisense,refactor,javascript,python,typescript,php,go,golang,ruby,c++,c#,java,kotlin,co-pilot,keybindings,code-referencing,__web_extension</Tags>
+			<Categories>AI,Chat,Programming Languages,Machine Learning</Categories>
+			<GalleryFlags>Public</GalleryFlags>
+			<Badges><Badge Link="https://github.com/github-copilot/signup?editor=vscode" ImgUri="https://img.shields.io/badge/GitHub%20Copilot-Subscription%20Required-orange" Description="Sign up for GitHub Copilot" />
+<Badge Link="https://github.com/github/copilot-docs" ImgUri="https://img.shields.io/github/stars/github/copilot-docs?style=social" Description="Star Copilot on GitHub" />
+<Badge Link="https://www.youtube.com/@GitHub/search?query=copilot" ImgUri="https://img.shields.io/youtube/channel/views/UC7c3Kb6jYCRj4JOHHZTxKsQ?style=social" Description="Check out GitHub on Youtube" />
+<Badge Link="https://twitter.com/github" ImgUri="https://img.shields.io/twitter/follow/github?style=social" Description="Follow GitHub on Twitter" /></Badges>
+			<Properties>
+				<Property Id="Microsoft.VisualStudio.Code.Engine" Value="^1.103.0" />
+				<Property Id="Microsoft.VisualStudio.Code.ExtensionDependencies" Value="" />
+				<Property Id="Microsoft.VisualStudio.Code.ExtensionPack" Value="GitHub.copilot-chat,GitHub.copilot" />
+				<Property Id="Microsoft.VisualStudio.Code.ExtensionKind" Value="workspace,web" />
+				<Property Id="Microsoft.VisualStudio.Code.LocalizedLanguages" Value="" />
+				<Property Id="Microsoft.VisualStudio.Code.EnabledApiProposals" Value="inlineCompletionsAdditions,devDeviceId" />
+				
+				<Property Id="Microsoft.VisualStudio.Code.ExecutesCode" Value="true" />
+				
+				
+				<Property Id="Microsoft.VisualStudio.Services.Links.Support" Value="https://github.com/microsoft/vscode/issues" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.Learn" Value="https://github.com/features/copilot?editor=vscode" />
+				
+				
+				<Property Id="Microsoft.VisualStudio.Services.GitHubFlavoredMarkdown" Value="true" />
+				<Property Id="Microsoft.VisualStudio.Services.Content.Pricing" Value="Trial"/>
 
+				
+				<Property Id="Microsoft.VisualStudio.Services.CustomerQnALink" Value="https://github.com/github-community/community/discussions/categories/copilot" />
+			</Properties>
+			<License>extension/LICENSE.txt</License>
+			<Icon>extension/assets/Copilot-App-Icon.png</Icon>
+		</Metadata>
+		<Installation>
+			<InstallationTarget Id="Microsoft.VisualStudio.Code"/>
+		</Installation>
+		<Dependencies/>
+		<Assets>
+			<Asset Type="Microsoft.VisualStudio.Code.Manifest" Path="extension/package.json" Addressable="true" />
+			<Asset Type="Microsoft.VisualStudio.Services.Content.Details" Path="extension/readme.md" Addressable="true" />
+<Asset Type="Microsoft.VisualStudio.Services.Content.License" Path="extension/LICENSE.txt" Addressable="true" />
+<Asset Type="Microsoft.VisualStudio.Services.Icons.Default" Path="extension/assets/Copilot-App-Icon.png" Addressable="true" />
+		</Assets>
+	</PackageManifest>
 
 Katetribble321-rgb. All Rights Reserved.</p>
 </ul>Katetribble321-rgb. All Rights Reserved.</p>
