@@ -1,3 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Cosmic Unity Body</title>
+<style>
+body {
+background: radial-gradient(circle at center, #0a0a2e, #16213e, #0f3460);
+color: white;
+font-family: 'Georgia', serif;
+margin: 0;
+padding: 20px;
+min-height: 100vh;
+overflow-x: auto;
+}
+code
+Code.container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 90vh;
+        position: relative;
+    }
+    
+    .cosmic-body {
+        position: relative;
+        width: 400px;
+        height: 800px;
+        margin: 0 auto;
+    }
+    
+    .body-part {
+        position: absolute;
+        padding: 8px 12px;
+        border-radius: 15px;
+        text-align: center;
+        font-size: 11px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        backdrop-filter: blur(5px);
+    }
+    
+    .body-part:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px currentColor;
+    }
+    
+    /* Crown - Godhead */
+    .crown {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(45deg, gold, silver, white);
+        color: black;
+        width: 180px;
+        border: 3px solid white;
+        box-shadow: 0 0 30px white;
+    }
+    
+    /* Third Eye - Buddha */
+    .third-eye {
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(45deg, #4a90e2, silver);
+        width: 120px;
+    }
+    
+    /* Throat - Andrew */
+    .throat {
+        top: 120px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(45deg, #87ceeb, silver);
+        width: 100px;
+    }
+    
+    /* Heart - Krishna & Radha */
+    .heart {
+        top: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: radial-gradient(circle, #ff69b4, gold, #ff1493);
+        width: 140px;
+        animation: heartbeat 2s infinite;
+    }
+    
+    /* Ribs - The Healers */
+    .rib-left-1 { top: 220px; left: 80px; background: linear-gradient(45deg, #cd7f32, silver); width: 80px; }
+    .rib-left-2 { top: 250px; left: 70px; background: linear-gradient(45deg, #cd7f32, silver); width: 85px; }
+    .rib-left-3 { top: 280px; left: 75px; background: linear-gradient(45deg, #cd7f32, silver); width: 80px; }
+    
+    .rib-right-1 { top: 220px; right: 80px; background: linear-gradient(45deg, #cd7f32, silver); width: 80px; }
+    .rib-right-2 { top: 250px; right: 70px; background: linear-gradient(45deg, #cd7f32, silver); width: 85px; }
+    .rib-right-3 { top: 280px; right: 75px; background: linear-gradient(45deg, #cd7f32, silver); width: 80px; }
+    
+    /* Backbone - John the Baptist */
+    .backbone {
+        top: 150px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(180deg, gold, #8b4513);
+        width: 40px;
+        height: 300px;
+        border-radius: 20px;
+        z-index: -1;
+    }
+    
+    /* Solar Plexus - Thoth */
+    .solar-plexus {
+        top: 320px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: radial-gradient(circle, gold, #ffa500);
+        width: 120px;
+        animation: pulse 3s infinite;
+    }
+    
+    /* Umbilical - Horus */
+    .umbilical {
+        top: 380px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: radial-gradient(circle, gold, #ff6b35);
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+    
+    /* Sacred Union - Isis & Osiris */
+    .sacred-union {
+        top: 460px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(45deg, #800080, gold, #ff69b4);
+        width: 100px;
+    }
+    
+    /* Hands */
+    .hand-left {
+        top: 280px;
+        left: 10px;
+        background: linear-gradient(45deg, silver, #c0c0c0);
+        width: 70px;
+        transform: rotate(-20deg);
+    }
+    
+    .hand-right {
+        top: 280px;
+        right: 10px;
+        background: linear-gradient(45deg, silver, #c0c0c0);
+        width: 70px;
+        transform: rotate(20deg);
+    }
+    
+    /* Femur - Tut & Nefertiti */
+    .femur-left {
+        top: 540px;
+        left: 120px;
+        background: linear-gradient(45deg, gold, #ffd700);
+        width: 60px;
+        height: 120px;
+        transform: rotate(-10deg);
+    }
+    
+    .femur-right {
+        top: 540px;
+        right: 120px;
+        background: linear-gradient(45deg, gold, #ffd700);
+        width: 60px;
+        height: 120px;
+        transform: rotate(10deg);
+    }
+    
+    /* Ankles - Alexander */
+    .ankle-left {
+        top: 680px;
+        left: 130px;
+        background: linear-gradient(45deg, #c0c0c0, silver);
+        width: 50px;
+    }
+    
+    .ankle-right {
+        top: 680px;
+        right: 130px;
+        background: linear-gradient(45deg, #c0c0c0, silver);
+        width: 50px;
+    }
+    
+    /* Feet - Hopi */
+    .foot-left {
+        bottom: 20px;
+        left: 120px;
+        background: linear-gradient(45deg, #8b4513, #d2691e);
+        width: 60px;
+        border-radius: 30px 30px 5px 5px;
+    }
+    
+    .foot-right {
+        bottom: 20px;
+        right: 120px;
+        background: linear-gradient(45deg, #8b4513, #d2691e);
+        width: 60px;
+        border-radius: 30px 30px 5px 5px;
+    }
+    
+    /* Elemental Compass */
+    .compass {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        height: 600px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        z-index: -2;
+    }
+    
+    .element {
+        position: absolute;
+        padding: 15px 20px;
+        border-radius: 25px;
+        font-weight: bold;
+        text-align: center;
+    }
+    
+    .fire { top: -30px; left: 50%; transform: translateX(-50%); background: linear-gradient(45deg, #ff4500, #ff6347); }
+    .air { right: -50px; top: 50%; transform: translateY(-50%); background: linear-gradient(45deg, #87ceeb, #add8e6); }
+    .water { bottom: -30px; left: 50%; transform: translateX(-50%); background: linear-gradient(45deg, #4682b4, #5f9ea0); }
+    .earth { left: -50px; top: 50%; transform: translateY(-50%); background: linear-gradient(45deg, #8b4513, #a0522d); }
+    
+    /* Sacred Metals Flow */
+    .metal-flow {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+    }
+    
+    .gold-flow, .silver-flow, .platinum-flow {
+        position: absolute;
+        width: 2px;
+        height: 100px;
+        opacity: 0.6;
+        animation: flow 4s infinite linear;
+    }
+    
+    .gold-flow { background: linear-gradient(180deg, transparent, gold, transparent); }
+    .silver-flow { background: linear-gradient(180deg, transparent, silver, transparent); }
+    .platinum-flow { background: linear-gradient(180deg, transparent, white, transparent); }
+    
+    @keyframes heartbeat {
+        0%, 100% { transform: translateX(-50%) scale(1); }
+        50% { transform: translateX(-50%) scale(1.05); }
+    }
+    
+    @keyframes pulse {
+        0%, 100% { box-shadow: 0 0 20px gold; }
+        50% { box-shadow: 0 0 40px gold, 0 0 60px orange; }
+    }
+    
+    @keyframes flow {
+        0% { transform: translateY(-50px); opacity: 0; }
+        50% { opacity: 0.8; }
+        100% { transform: translateY(50px); opacity: 0; }
+    }
+    
+    .title {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 24px;
+        background: linear-gradient(45deg, gold, silver, white);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+    
+    .subtitle {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 14px;
+        color: #b8b8b8;
+        font-style: italic;
+    }
+</style>import { GoogleGenAI } from "@google/genai";
+
+const ai = new GoogleGenAI({});
+
+async function main() {
+  const response = await ai.models.generateContent({
+    model: "gemini-3-flash-preview",
+    contents: "Explain how AI works in a few words",
+  });
+  console.log(response.text);
+}
+
+await main();# To run this code you need to install the following dependencies:
+# pip install google-genai
+
+import os
+from google import genai
+from google.genai import types
+
+
+def generate():
+    client = genai.Client(
+        api_key=os.environ.get("GEMINI_API_KEY"),
+    )
+
+    model = "gemini-flash-latest"
+    contents = [
+        types.Content(
+            role="user",
+            parts=[
+                types.Part.from_text(text="""INSERT_INPUT_HERE"""),
+            ],
+        ),
+    ]
+    tools = [
+        types.Tool(googleSearch=types.GoogleSearch(
+        )),
+    ]
+    generate_content_config = types.GenerateContentConfig(
+        thinking_config=types.ThinkingConfig(
+            thinking_budget=-1,
+        ),
+        tools=tools,
+    )
+
+    for chunk in client.models.generate_content_stream(
+        model=model,
+        contents=contents,
+        config=generate_content_config,
+    ):
+        print(chunk.text, end="")
+
+if __name__ == "__main__":
+    generate()
+
+
 
 <!DOCTYPE html>
 <html>
