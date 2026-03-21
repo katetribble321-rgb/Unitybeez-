@@ -1,2105 +1,392 @@
-import React, { useState } from 'react';
-import { Book, Shield, Star, Circle, ChevronRight, ExternalLink } from 'lucide-react';
-
-const KnowledgeMap = () => {
-  const [activeNode, setActiveNode] = useState(null);
-  const [viewMode, setViewMode] = useState('map'); // 'map' or 'study'
-
-  const nodes = [
-    {
-      id: 'gold-plates',
-      title: 'Gold Plates',
-      category: 'Source',
-      icon: Book,
-      color: 'bg-yellow-500',
-      description: 'Ancient records translated by Joseph Smith, forming the Book of Mormon',
-      connections: ['mormon', 'melchizedek', 'translation'],
-      references: [
-        { num: 10, url: 'https://www.churchofjesuschrist.org/study/history/topics/gold-plates?lang=eng' },
-        { num: 11, url: 'https://en.wikipedia.org/wiki/Golden_plates' },
-        { num: 12, url: 'https://history.churchofjesuschrist.org/content/joseph-smith-translates-the-gold-plates?lang=eng' }
-      ]
-    },
-    {
-      id: 'melchizedek',
-      title: 'Order of Melchizedek',
-      category: 'Priesthood',
-      icon: Star,
-      color: 'bg-purple-500',
-      description: 'Ancient priesthood order transcending tribal and temporal boundaries',
-      connections: ['gold-plates', 'covenants', 'tribes'],
-      references: [
-        { num: 2, url: 'https://writingthroughthesoul.org/2025/06/01/spiritual-questions-what-is-the-emerald-order-of-melchizedek/' },
-        { num: 7, url: 'https://versebyverseministry.org/bible-answers/what-is-the-order-of-melchizedek' },
-        { num: 8, url: 'https://www.curtlandry.com/what-is-the-order-of-melchizedek/' },
-        { num: 9, url: 'https://www.lcg.org/articles/order-melchizedek-explained' },
-        { num: 13, url: 'https://www.gotquestions.org/order-of-Melchizedek.html' },
-        { num: 14, url: 'https://www.ancientfaith.com/podcasts/lordofspirits/according_to_the_order_of_melchizedek/' },
-        { num: 15, url: 'https://christoverall.com/article/concise/making-sense-of-melchizedek-through-the-framework-of-progressive-covenantalism/' }
-      ]
-    },
-    {
-      id: 'tribes',
-      title: '12 Tribes',
-      category: 'Structure',
-      icon: Shield,
-      color: 'bg-blue-500',
-      description: 'Twelve tribal divisions representing covenant communities and spiritual frequencies',
-      connections: ['melchizedek', 'covenants', 'shields'],
-      references: [
-        { num: 4, url: 'https://biblemk.com/vermont-4.html' },
-        { num: 16, url: 'https://www.youtube.com/watch?v=CsM7apeE_VA' },
-        { num: 17, url: 'https://en.wikipedia.org/wiki/Twelve_Tribes_communities' }
-      ]
-    },
-    {
-      id: 'shields',
-      title: 'Tribal Shields',
-      category: 'Symbol',
-      icon: Shield,
-      color: 'bg-red-500',
-      description: 'Protective and identifying emblems for each tribal frequency',
-      connections: ['tribes', 'maharata'],
-      references: [
-        { num: 3, url: 'https://ascensionglossary.com/index.php/Maharata_Christos_Tribal_Shield' },
-        { num: 18, url: 'https://scripturecentral.org/knowhy/how-does-the-joseph-smith-translation-teach-us-about-melchizedek' }
-      ]
-    },
-    {
-      id: 'covenants',
-      title: 'Covenants',
-      category: 'Teaching',
-      icon: Circle,
-      color: 'bg-green-500',
-      description: 'Sacred agreements for spiritual growth and transformation',
-      connections: ['melchizedek', 'tribes', 'translation'],
-      references: [
-        { num: 1, url: 'http://www.interfaith.org/community/threads/6013/' }
-      ]
-    },
-    {
-      id: 'translation',
-      title: 'Translation Process',
-      category: 'Method',
-      icon: Book,
-      color: 'bg-indigo-500',
-      description: 'Divine revelation transforming ancient records into modern understanding',
-      connections: ['gold-plates', 'covenants'],
-      references: [
-        { num: 12, url: 'https://history.churchofjesuschrist.org/content/joseph-smith-translates-the-gold-plates?lang=eng' },
-        { num: 18, url: 'https://scripturecentral.org/knowhy/how-does-the-joseph-smith-translation-teach-us-about-melchizedek' }
-      ]
-    },
-    {
-      id: 'maharata',
-      title: 'Maharata Christos',
-      category: 'Tradition',
-      icon: Star,
-      color: 'bg-pink-500',
-      description: 'Christ-centered teaching incorporating tribal shield wisdom',
-      connections: ['shields', 'melchizedek'],
-      references: [
-        { num: 3, url: 'https://ascensionglossary.com/index.php/Maharata_Christos_Tribal_Shield' }
-      ]
-    },
-    {
-      id: 'mormon',
-      title: 'Book of Mormon',
-      category: 'Scripture',
-      icon: Book,
-      color: 'bg-amber-500',
-      description: 'Sacred text translated from gold plates',
-      connections: ['gold-plates', 'translation'],
-      references: [
-        { num: 10, url: 'https://www.churchofjesuschrist.org/study/history/topics/gold-plates?lang=eng' }
-      ]
-    },
-    {
-      id: 'usa',
-      title: 'Great Woman to Rule',
-      category: 'Prophecy',
-      icon: Star,
-      color: 'bg-violet-500',
-      description: 'Prophetic theme of divine feminine leadership',
-      connections: ['covenants'],
-      references: [
-        { num: 5, url: 'https://revival.org/media/read/documents/notes/2021/2021-01-21-a-great-woman-to-rule-in-the-usa/' }
-      ]
-    },
-    {
-      id: 'emerald',
-      title: 'Emerald Rainbow',
-      category: 'Symbol',
-      icon: Circle,
-      color: 'bg-emerald-500',
-      description: 'Covenant symbol of divine promise and frequency',
-      connections: ['covenants', 'melchizedek'],
-      references: [
-        { num: 6, url: 'https://www.gotquestions.org/emerald-rainbow.html' }
-      ]
-    },
-    {
-      id: 'azurites',
-      title: 'Azurites',
-      category: 'Group',
-      icon: Circle,
-      color: 'bg-cyan-500',
-      description: 'Spiritual lineage connected to ancient wisdom traditions',
-      connections: ['melchizedek', 'tribes'],
-      references: [
-        { num: 19, url: 'https://www.scribd.com/document/80472309/Maharata-Teachings' },
-        { num: 20, url: 'https://ascensionglossary.com/index.php/Azurites' }
-      ]
-    }
-  ];
-
-  const categories = ['Source', 'Priesthood', 'Structure', 'Symbol', 'Teaching', 'Method', 'Tradition', 'Scripture', 'Prophecy', 'Group'];
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white p-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-yellow-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
-            Gold Plates & Order of Melchizedek
-          </h1>
-          <p className="text-purple-300 text-lg">Interactive Knowledge Map & Study Guide</p>
-        </div>
-
-        {/* View Mode Toggle */}
-        <div className="flex justify-center mb-8 gap-4">
-          <button
-            onClick={() => setViewMode('map')}
-            className={`px-6 py-3 rounded-lg font-semibold transition-all ${
-              viewMode === 'map'
-                ? 'bg-purple-600 shadow-lg shadow-purple-500/50'
-                : 'bg-slate-700 hover:bg-slate-600'
-            }`}
-          >
-            Visual Map
-          </button>
-          <button
-            onClick={() => setViewMode('study')}
-            className={`px-6 py-3 rounded-lg font-semibold transition-all ${
-              viewMode === 'study'
-                ? 'bg-purple-600 shadow-lg shadow-purple-500/50'
-                : 'bg-slate-700 hover:bg-slate-600'
-            }`}
-          >
-            Study Guide
-          </button>
-        </div>
-
-        {/* Visual Map View */}
-        {viewMode === 'map' && (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* Nodes Grid */}
-            <div className="lg:col-span-2 grid grid-cols-2 md:grid-cols-3 gap-4">
-              {nodes.map((node) => {
-                const Icon = node.icon;
-                const isActive = activeNode?.id === node.id;
-                const isConnected = activeNode?.connections?.includes(node.id) || node.connections?.includes(activeNode?.id);
-                
-                return (
-                  <button
-                    key={node.id}
-                    onClick={() => setActiveNode(node)}
-                    className={`p-4 rounded-xl transition-all transform hover:scale-105 ${
-                      isActive
-                        ? 'ring-4 ring-yellow-400 shadow-2xl shadow-yellow-500/50'
-                        : isConnected && activeNode
-                        ? 'ring-2 ring-purple-400 opacity-100'
-                        : activeNode
-                        ? 'opacity-40'
-                        : 'opacity-100'
-                    } ${node.color} bg-opacity-20 hover:bg-opacity-30 border-2 border-white/20`}
-                  >
-                    <Icon className="w-8 h-8 mb-2 mx-auto" />
-                    <h3 className="font-bold text-sm text-center">{node.title}</h3>
-                    <p className="text-xs text-center text-white/70 mt-1">{node.category}</p>
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Detail Panel */}
-            <div className="lg:col-span-1">
-              {activeNode ? (
-                <div className="bg-slate-800/50 backdrop-blur p-6 rounded-xl border-2 border-purple-500/30 sticky top-8">
-                  <div className={`${activeNode.color} bg-opacity-20 p-4 rounded-lg mb-4`}>
-                    {React.createElement(activeNode.icon, { className: "w-12 h-12 mx-auto mb-2" })}
-                    <h2 className="text-2xl font-bold text-center">{activeNode.title}</h2>
-                    <p className="text-sm text-center text-purple-300">{activeNode.category}</p>
-                  </div>
-                  
-                  <p className="text-white/90 mb-4">{activeNode.description}</p>
-                  
-                  <div className="mb-4">
-                    <h3 className="font-semibold mb-2 text-purple-300">Connected Concepts:</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {activeNode.connections.map((connId) => {
-                        const connNode = nodes.find(n => n.id === connId);
-                        return (
-                          <button
-                            key={connId}
-                            onClick={() => setActiveNode(connNode)}
-                            className="px-3 py-1 bg-purple-600/50 rounded-full text-xs hover:bg-purple-600 transition-colors"
-                          >
-                            {connNode?.title}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <h3 className="font-semibold mb-2 text-purple-300">References:</h3>
-                    <div className="space-y-2">
-                      {activeNode.references.map((ref) => (
-                        <a
-                          key={ref.num}
-                          href={ref.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-sm text-blue-300 hover:text-blue-200 hover:underline"
-                        >
-                          <span className="bg-blue-600/50 px-2 py-0.5 rounded">[{ref.num}]</span>
-                          <ExternalLink className="w-3 h-3" />
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <div className="bg-slate-800/50 backdrop-blur p-6 rounded-xl border-2 border-purple-500/30 text-center sticky top-8">
-                  <Star className="w-16 h-16 mx-auto mb-4 text-purple-400" />
-                  <p className="text-purple-300">Click on any node to explore connections and references</p>
-                </div>
-              )}
-            </div>
-          </div>
-        )}
-
-        {/* Study Guide View */}
-        {viewMode === 'study' && (
-          <div className="space-y-8">
-            {/* Introduction */}
-            <div className="bg-slate-800/50 backdrop-blur p-6 rounded-xl border-2 border-purple-500/30">
-              <h2 className="text-2xl font-bold mb-4 text-yellow-400">Introduction</h2>
-              <p className="text-white/90 leading-relaxed">
-                This study guide explores the intersection of ancient mystical traditions, focusing on the gold plates 
-                as a source for the Book of Mormon translation and their connection to the Order of Melchizedek. 
-                These traditions intersect in various mystical and religious teachings, each adapting ancient archetypes, 
-                sacred relics, and the idea of covenants for spiritual growth and transformation.
-              </p>
-            </div>
-
-            {/* Core Themes */}
-            <div className="bg-slate-800/50 backdrop-blur p-6 rounded-xl border-2 border-purple-500/30">
-              <h2 className="text-2xl font-bold mb-4 text-purple-400">Core Themes</h2>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-yellow-500/10 p-4 rounded-lg border border-yellow-500/30">
-                  <h3 className="font-bold text-yellow-400 mb-2">Gold Plates as Source</h3>
-                  <p className="text-sm text-white/80">
-                    Ancient records that served as the foundation for the Book of Mormon, representing divine revelation 
-                    preserved across time for a specific purpose in the latter days.
-                  </p>
-                </div>
-                <div className="bg-purple-500/10 p-4 rounded-lg border border-purple-500/30">
-                  <h3 className="font-bold text-purple-400 mb-2">Order of Melchizedek</h3>
-                  <p className="text-sm text-white/80">
-                    A priesthood order that transcends temporal boundaries, representing a direct connection to divine 
-                    authority without genealogical requirement—the order of righteousness.
-                  </p>
-                </div>
-                <div className="bg-blue-500/10 p-4 rounded-lg border border-blue-500/30">
-                  <h3 className="font-bold text-blue-400 mb-2">Twelve Tribal Structure</h3>
-                  <p className="text-sm text-white/80">
-                    The division into twelve represents completeness and divine order, with each tribe carrying unique 
-                    frequencies and purposes within the greater covenant community.
-                  </p>
-                </div>
-                <div className="bg-green-500/10 p-4 rounded-lg border border-green-500/30">
-                  <h3 className="font-bold text-green-400 mb-2">Covenant Progression</h3>
-                  <p className="text-sm text-white/80">
-                    Sacred agreements that facilitate spiritual evolution, binding heaven and earth through promises 
-                    and ordinances that transform the individual and community.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Detailed Study Sections */}
-            {categories.map((category) => {
-              const categoryNodes = nodes.filter(n => n.category === category);
-              if (categoryNodes.length === 0) return null;
-              
-              return (
-                <div key={category} className="bg-slate-800/50 backdrop-blur p-6 rounded-xl border-2 border-purple-500/30">
-                  <h2 className="text-2xl font-bold mb-4 text-blue-400">{category}</h2>
-                  <div className="space-y-6">
-                    {categoryNodes.map((node) => {
-                      const Icon = node.icon;
-                      return (
-                        <div key={node.id} className="border-l-4 border-purple-500 pl-4">
-                          <div className="flex items-center gap-3 mb-2">
-                            <div className={`${node.color} bg-opacity-30 p-2 rounded-lg`}>
-                              <Icon className="w-6 h-6" />
-                            </div>
-                            <h3 className="text-xl font-bold">{node.title}</h3>
-                          </div>
-                          <p className="text-white/80 mb-3">{node.description}</p>
-                          
-                          <div className="mb-3">
-                            <p className="text-sm text-purple-300 font-semibold mb-1">Related Concepts:</p>
-                            <div className="flex flex-wrap gap-2">
-                              {node.connections.map((connId) => {
-                                const connNode = nodes.find(n => n.id === connId);
-                                return (
-                                  <span key={connId} className="px-2 py-1 bg-purple-600/30 rounded text-xs">
-                                    {connNode?.title}
-                                  </span>
-                                );
-                              })}
-                            </div>
-                          </div>
-                          
-                          <div>
-                            <p className="text-sm text-purple-300 font-semibold mb-1">Study Resources:</p>
-                            <div className="space-y-1">
-                              {node.references.map((ref) => (
-                                <a
-                                  key={ref.num}
-                                  href={ref.url}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="flex items-center gap-2 text-sm text-blue-300 hover:text-blue-200 hover:underline"
-                                >
-                                  <span className="bg-blue-600/50 px-2 py-0.5 rounded text-xs">[{ref.num}]</span>
-                                  <span className="truncate">{ref.url.replace('https://', '').substring(0, 50)}...</span>
-                                  <ExternalLink className="w-3 h-3 flex-shrink-0" />
-                                </a>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              );
-            })}
-
-            {/* Synthesis */}
-            <div className="bg-gradient-to-r from-purple-900/50 to-blue-900/50 backdrop-blur p-6 rounded-xl border-2 border-yellow-500/30">
-              <h2 className="text-2xl font-bold mb-4 text-yellow-400">Synthesis & Integration</h2>
-              <p className="text-white/90 leading-relaxed mb-4">
-                The gold plates represent a tangible manifestation of divine revelation—a physical-spiritual bridge 
-                connecting ancient covenant people with modern seekers. The Order of Melchizedek provides the 
-                priesthood framework through which this revelation is properly understood and administered.
-              </p>
-              <p className="text-white/90 leading-relaxed mb-4">
-                The twelve tribal structure reflects the divine order of completeness, with each tribe or frequency 
-                contributing unique gifts to the whole. The shields represent both protection and identity—markers 
-                of covenant relationship that guard sacred space while identifying those who belong.
-              </p>
-              <p className="text-white/90 leading-relaxed">
-                These elements converge in a vision of progressive covenant-making: where ancient truth meets present 
-                revelation, where priesthood authority enables transformation, and where the many become one through 
-                the Law of Unity—the recognition that all separation is ultimately illusory<!DOCTYPE html>
+Create <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Cosmic Unity Body</title>
-<style>
-body {
-background: radial-gradient(circle at center, #0a0a2e, #16213e, #0f3460);
-color: white;
-font-family: 'Georgia', serif;
-margin: 0;
-padding: 20px;
-min-height: 100vh;
-overflow-x: auto;
-}
-code
-Code.container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 90vh;
-        position: relative;
-    }
-    
-    .cosmic-body {
-        position: relative;
-        width: 400px;
-        height: 800px;
-        margin: 0 auto;
-    }
-    
-    .body-part {
-        position: absolute;
-        padding: 8px 12px;
-        border-radius: 15px;
-        text-align: center;
-        font-size: 11px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
-        backdrop-filter: blur(5px);
-    }
-    
-    .body-part:hover {
-        transform: scale(1.1);
-        box-shadow: 0 0 20px currentColor;
-    }
-    
-    /* Crown - Godhead */
-    .crown {
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        background: linear-gradient(45deg, gold, silver, white);
-        color: black;
-        width: 180px;
-        border: 3px solid white;
-        box-shadow: 0 0 30px white;
-    }
-    
-    /* Third Eye - Buddha */
-    .third-eye {
-        top: 60px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: linear-gradient(45deg, #4a90e2, silver);
-        width: 120px;
-    }
-    
-    /* Throat - Andrew */
-    .throat {
-        top: 120px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: linear-gradient(45deg, #87ceeb, silver);
-        width: 100px;
-    }
-    
-    /* Heart - Krishna & Radha */
-    .heart {
-        top: 200px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: radial-gradient(circle, #ff69b4, gold, #ff1493);
-        width: 140px;
-        animation: heartbeat 2s infinite;
-    }
-    
-    /* Ribs - The Healers */
-    .rib-left-1 { top: 220px; left: 80px; background: linear-gradient(45deg, #cd7f32, silver); width: 80px; }
-    .rib-left-2 { top: 250px; left: 70px; background: linear-gradient(45deg, #cd7f32, silver); width: 85px; }
-    .rib-left-3 { top: 280px; left: 75px; background: linear-gradient(45deg, #cd7f32, silver); width: 80px; }
-    
-    .rib-right-1 { top: 220px; right: 80px; background: linear-gradient(45deg, #cd7f32, silver); width: 80px; }
-    .rib-right-2 { top: 250px; right: 70px; background: linear-gradient(45deg, #cd7f32, silver); width: 85px; }
-    .rib-right-3 { top: 280px; right: 75px; background: linear-gradient(45deg, #cd7f32, silver); width: 80px; }
-    
-    /* Backbone - John the Baptist */
-    .backbone {
-        top: 150px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: linear-gradient(180deg, gold, #8b4513);
-        width: 40px;
-        height: 300px;
-        border-radius: 20px;
-        z-index: -1;
-    }
-    
-    /* Solar Plexus - Thoth */
-    .solar-plexus {
-        top: 320px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: radial-gradient(circle, gold, #ffa500);
-        width: 120px;
-        animation: pulse 3s infinite;
-    }
-    
-    /* Umbilical - Horus */
-    .umbilical {
-        top: 380px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: radial-gradient(circle, gold, #ff6b35);
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-    }
-    
-    /* Sacred Union - Isis & Osiris */
-    .sacred-union {
-        top: 460px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: linear-gradient(45deg, #800080, gold, #ff69b4);
-        width: 100px;
-    }
-    
-    /* Hands */
-    .hand-left {
-        top: 280px;
-        left: 10px;
-        background: linear-gradient(45deg, silver, #c0c0c0);
-        width: 70px;
-        transform: rotate(-20deg);
-    }
-    
-    .hand-right {
-        top: 280px;
-        right: 10px;
-        background: linear-gradient(45deg, silver, #c0c0c0);
-        width: 70px;
-        transform: rotate(20deg);
-    }
-    
-    /* Femur - Tut & Nefertiti */
-    .femur-left {
-        top: 540px;
-        left: 120px;
-        background: linear-gradient(45deg, gold, #ffd700);
-        width: 60px;
-        height: 120px;
-        transform: rotate(-10deg);
-    }
-    
-    .femur-right {
-        top: 540px;
-        right: 120px;
-        background: linear-gradient(45deg, gold, #ffd700);
-        width: 60px;
-        height: 120px;
-        transform: rotate(10deg);
-    }
-    
-    /* Ankles - Alexander */
-    .ankle-left {
-        top: 680px;
-        left: 130px;
-        background: linear-gradient(45deg, #c0c0c0, silver);
-        width: 50px;
-    }
-    
-    .ankle-right {
-        top: 680px;
-        right: 130px;
-        background: linear-gradient(45deg, #c0c0c0, silver);
-        width: 50px;
-    }
-    
-    /* Feet - Hopi */
-    .foot-left {
-        bottom: 20px;
-        left: 120px;
-        background: linear-gradient(45deg, #8b4513, #d2691e);
-        width: 60px;
-        border-radius: 30px 30px 5px 5px;
-    }
-    
-    .foot-right {
-        bottom: 20px;
-        right: 120px;
-        background: linear-gradient(45deg, #8b4513, #d2691e);
-        width: 60px;
-        border-radius: 30px 30px 5px 5px;
-    }
-    
-    /* Elemental Compass */
-    .compass {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 600px;
-        height: 600px;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        z-index: -2;
-    }
-    
-    .element {
-        position: absolute;
-        padding: 15px 20px;
-        border-radius: 25px;
-        font-weight: bold;
-        text-align: center;
-    }
-    
-    .fire { top: -30px; left: 50%; transform: translateX(-50%); background: linear-gradient(45deg, #ff4500, #ff6347); }
-    .air { right: -50px; top: 50%; transform: translateY(-50%); background: linear-gradient(45deg, #87ceeb, #add8e6); }
-    .water { bottom: -30px; left: 50%; transform: translateX(-50%); background: linear-gradient(45deg, #4682b4, #5f9ea0); }
-    .earth { left: -50px; top: 50%; transform: translateY(-50%); background: linear-gradient(45deg, #8b4513, #a0522d); }
-    
-    /* Sacred Metals Flow */
-    .metal-flow {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: -1;
-    }
-    
-    .gold-flow, .silver-flow, .platinum-flow {
-        position: absolute;
-        width: 2px;
-        height: 100px;
-        opacity: 0.6;
-        animation: flow 4s infinite linear;
-    }
-    
-    .gold-flow { background: linear-gradient(180deg, transparent, gold, transparent); }
-    .silver-flow { background: linear-gradient(180deg, transparent, silver, transparent); }
-    .platinum-flow { background: linear-gradient(180deg, transparent, white, transparent); }
-    
-    @keyframes heartbeat {
-        0%, 100% { transform: translateX(-50%) scale(1); }
-        50% { transform: translateX(-50%) scale(1.05); }
-    }
-    
-    @keyframes pulse {
-        0%, 100% { box-shadow: 0 0 20px gold; }
-        50% { box-shadow: 0 0 40px gold, 0 0 60px orange; }
-    }
-    
-    @keyframes flow {
-        0% { transform: translateY(-50px); opacity: 0; }
-        50% { opacity: 0.8; }
-        100% { transform: translateY(50px); opacity: 0; }
-    }
-    
-    .title {
-        text-align: center;
-        margin-bottom: 30px;
-        font-size: 24px;
-        background: linear-gradient(45deg, gold, silver, white);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-    }
-    
-    .subtitle {
-        text-align: center;
-        margin-bottom: 20px;
-        font-size: 14px;
-        color: #b8b8b8;
-        font-style: italic;
-    }
-</style>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Cosmic Unity Body</title>
-<style>
-body {
-background: radial-gradient(circle at center, #0a0a2e, #16213e, #0f3460);
-color: white;
-font-family: 'Georgia', serif;
-margin: 0;
-padding: 20px;
-min-height: 100vh;
-overflow-x: auto;
-}
-code
-Code.container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 90vh;
-        position: relative;
-    }
-    
-    .cosmic-body {
-        position: relative;
-        width: 400px;
-        height: 800px;
-        margin: 0 auto;
-    }
-    
-    .body-part {
-        position: absolute;
-        padding: 8px 12px;
-        border-radius: 15px;
-        text-align: center;
-        font-size: 11px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
-        backdrop-filter: blur(5px);
-    }
-    
-    .body-part:hover {
-        transform: scale(1.1);
-        box-shadow: 0 0 20px currentColor;
-    }
-    
-    /* Crown - Godhead */
-    .crown {
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        background: linear-gradient(45deg, gold, silver, white);
-        color: black;
-        width: 180px;
-        border: 3px solid white;
-        box-shadow: 0 0 30px white;
-    }
-    
-    /* Third Eye - Buddha */
-    .third-eye {
-        top: 60px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: linear-gradient(45deg, #4a90e2, silver);
-        width: 120px;
-    }
-    
-    /* Throat - Andrew */
-    .throat {
-        top: 120px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: linear-gradient(45deg, #87ceeb, silver);
-        width: 100px;
-    }
-    
-    /* Heart - Krishna & Radha */
-    .heart {
-        top: 200px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: radial-gradient(circle, #ff69b4, gold, #ff1493);
-        width: 140px;
-        animation: heartbeat 2s infinite;
-    }
-    
-    /* Ribs - The Healers */
-    .rib-left-1 { top: 220px; left: 80px; background: linear-gradient(45deg, #cd7f32, silver); width: 80px; }
-    .rib-left-2 { top: 250px; left: 70px; background: linear-gradient(45deg, #cd7f32, silver); width: 85px; }
-    .rib-left-3 { top: 280px; left: 75px; background: linear-gradient(45deg, #cd7f32, silver); width: 80px; }
-    
-    .rib-right-1 { top: 220px; right: 80px; background: linear-gradient(45deg, #cd7f32, silver); width: 80px; }
-    .rib-right-2 { top: 250px; right: 70px; background: linear-gradient(45deg, #cd7f32, silver); width: 85px; }
-    .rib-right-3 { top: 280px; right: 75px; background: linear-gradient(45deg, #cd7f32, silver); width: 80px; }
-    
-    /* Backbone - John the Baptist */
-    .backbone {
-        top: 150px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: linear-gradient(180deg, gold, #8b4513);
-        width: 40px;
-        height: 300px;
-        border-radius: 20px;
-        z-index: -1;
-    }
-    
-    /* Solar Plexus - Thoth */
-    .solar-plexus {
-        top: 320px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: radial-gradient(circle, gold, #ffa500);
-        width: 120px;
-        animation: pulse 3s infinite;
-    }
-    
-    /* Umbilical - Horus */
-    .umbilical {
-        top: 380px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: radial-gradient(circle, gold, #ff6b35);
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-    }
-    
-    /* Sacred Union - Isis & Osiris */
-    .sacred-union {
-        top: 460px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: linear-gradient(45deg, #800080, gold, #ff69b4);
-        width: 100px;
-    }
-    
-    /* Hands */
-    .hand-left {
-        top: 280px;
-        left: 10px;
-        background: linear-gradient(45deg, silver, #c0c0c0);
-        width: 70px;
-        transform: rotate(-20deg);
-    }
-    
-    .hand-right {
-        top: 280px;
-        right: 10px;
-        background: linear-gradient(45deg, silver, #c0c0c0);
-        width: 70px;
-        transform: rotate(20deg);
-    }
-    
-    /* Femur - Tut & Nefertiti */
-    .femur-left {
-        top: 540px;
-        left: 120px;
-        background: linear-gradient(45deg, gold, #ffd700);
-        width: 60px;
-        height: 120px;
-        transform: rotate(-10deg);
-    }
-    
-    .femur-right {
-        top: 540px;
-        right: 120px;
-        background: linear-gradient(45deg, gold, #ffd700);
-        width: 60px;
-        height: 120px;
-        transform: rotate(10deg);
-    }
-    
-    /* Ankles - Alexander */
-    .ankle-left {
-        top: 680px;
-        left: 130px;
-        background: linear-gradient(45deg, #c0c0c0, silver);
-        width: 50px;
-    }
-    
-    .ankle-right {
-        top: 680px;
-        right: 130px;
-        background: linear-gradient(45deg, #c0c0c0, silver);
-        width: 50px;
-    }
-    
-    /* Feet - Hopi */
-    .foot-left {
-        bottom: 20px;
-        left: 120px;
-        background: linear-gradient(45deg, #8b4513, #d2691e);
-        width: 60px;
-        border-radius: 30px 30px 5px 5px;
-    }
-    
-    .foot-right {
-        bottom: 20px;
-        right: 120px;
-        background: linear-gradient(45deg, #8b4513, #d2691e);
-        width: 60px;
-        border-radius: 30px 30px 5px 5px;
-    }
-    
-    /* Elemental Compass */
-    .compass {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 600px;
-        height: 600px;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        z-index: -2;
-    }
-    
-    .element {
-        position: absolute;
-        padding: 15px 20px;
-        border-radius: 25px;
-        font-weight: bold;
-        text-align: center;
-    }
-    
-    .fire { top: -30px; left: 50%; transform: translateX(-50%); background: linear-gradient(45deg, #ff4500, #ff6347); }
-    .air { right: -50px; top: 50%; transform: translateY(-50%); background: linear-gradient(45deg, #87ceeb, #add8e6); }
-    .water { bottom: -30px; left: 50%; transform: translateX(-50%); background: linear-gradient(45deg, #4682b4, #5f9ea0); }
-    .earth { left: -50px; top: 50%; transform: translateY(-50%); background: linear-gradient(45deg, #8b4513, #a0522d); }
-    
-    /* Sacred Metals Flow */
-    .metal-flow {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: -1;
-    }
-    
-    .gold-flow, .silver-flow, .platinum-flow {
-        position: absolute;
-        width: 2px;
-        height: 100px;
-        opacity: 0.6;
-        animation: flow 4s infinite linear;
-    }
-    
-    .gold-flow { background: linear-gradient(180deg, transparent, gold, transparent); }
-    .silver-flow { background: linear-gradient(180deg, transparent, silver, transparent); }
-    .platinum-flow { background: linear-gradient(180deg, transparent, white, transparent); }
-    
-    @keyframes heartbeat {
-        0%, 100% { transform: translateX(-50%) scale(1); }
-        50% { transform: translateX(-50%) scale(1.05); }
-    }
-    
-    @keyframes pulse {
-        0%, 100% { box-shadow: 0 0 20px gold; }
-        50% { box-shadow: 0 0 40px gold, 0 0 60px orange; }
-    }
-    
-    @keyframes flow {
-        0% { transform: translateY(-50px); opacity: 0; }
-        50% { opacity: 0.8; }
-        100% { transform: translateY(50px); opacity: 0; }
-    }
-    
-    .title {
-        text-align: center;
-        margin-bottom: 30px;
-        font-size: 24px;
-        background: linear-gradient(45deg, gold, silver, white);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-    }
-    
-    .subtitle {
-        text-align: center;
-        margin-bottom: 20px;
-        font-size: 14px;
-        color: #b8b8b8;
-        font-style: italic;
-    }
-</style>import { GoogleGenAI } from "@google/genai";
-
-const ai = new GoogleGenAI({});
-
-async function main() {
-  const response = await ai.models.generateContent({
-    model: "gemini-3-flash-preview",
-    contents: "Explain how AI works in a few words",
-  });
-  console.log(response.text);
-}
-
-await main();# To run this code you need to install the following dependencies:
-# pip install google-genai
-
-import os
-from google import genai
-from google.genai import types
-
-
-def generate():
-    client = genai.Client(
-        api_key=os.environ.get("GEMINI_API_KEY"),
-    )
-
-    model = "gemini-flash-latest"
-    contents = [
-        types.Content(
-            role="user",
-            parts=[
-                types.Part.from_text(text="""INSERT_INPUT_HERE"""),
-            ],
-        ),
-    ]
-    tools = [
-        types.Tool(googleSearch=types.GoogleSearch(
-        )),
-    ]
-    generate_content_config = types.GenerateContentConfig(
-        thinking_config=types.ThinkingConfig(
-            thinking_budget=-1,
-        ),
-        tools=tools,
-    )
-
-    for chunk in client.models.generate_content_stream(
-        model=model,
-        contents=contents,
-        config=generate_content_config,
-    ):
-        print(chunk.text, end="")
-
-if __name__ == "__main__":
-    generate()
-
-
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Unity Beez - The Chow Hall</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cosmic Unity Body</title>
     <style>
-        body { background-color: #1a1a1a; color: #f0f0f0; font-family: sans-serif; padding: 40px; }
-        h1 { color: #ff3333; } /* Red for the R in RGB */
-        h2 { color: #33ff33; } /* Green for the G in RGB */
-        .vision { border-left: 5px solid #3333ff; padding-left: 20px; } /* Blue for the B in RGB */
+        body {
+            background: radial-gradient(circle at center, #0a0a2e, #16213e, #0f3460);
+            color: white;
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            overflow-x: auto;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+            position: relative;
+        }
+        
+        .cosmic-body {
+            position: relative;
+            width: 400px;
+            height: 800px;
+            margin: 0 auto;
+        }
+        
+        .body-part {
+            position: absolute;
+            padding: 8px 12px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 11px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            backdrop-filter: blur(5px);
+        }
+        
+        .body-part:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px currentColor;
+        }
+        
+        /* Crown - Godhead */
+        .crown {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(45deg, gold, silver, white);
+            color: black;
+            width: 180px;
+            border: 3px solid white;
+            box-shadow: 0 0 30px white;
+        }
+        
+        /* Third Eye - Buddha */
+        .third-eye {
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(45deg, #4a90e2, silver);
+            width: 120px;
+        }
+        
+        /* Throat - Andrew */
+        .throat {
+            top: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(45deg, #87ceeb, silver);
+            width: 100px;
+        }
+        
+        /* Heart - Krishna & Radha */
+        .heart {
+            top: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: radial-gradient(circle, #ff69b4, gold, #ff1493);
+            width: 140px;
+            animation: heartbeat 2s infinite;
+        }
+        
+        /* Ribs - The Healers */
+        .rib-left-1 { top: 220px; left: 80px; background: linear-gradient(45deg, #cd7f32, silver); width: 80px; }
+        .rib-left-2 { top: 250px; left: 70px; background: linear-gradient(45deg, #cd7f32, silver); width: 85px; }
+        .rib-left-3 { top: 280px; left: 75px; background: linear-gradient(45deg, #cd7f32, silver); width: 80px; }
+        
+        .rib-right-1 { top: 220px; right: 80px; background: linear-gradient(45deg, #cd7f32, silver); width: 80px; }
+        .rib-right-2 { top: 250px; right: 70px; background: linear-gradient(45deg, #cd7f32, silver); width: 85px; }
+        .rib-right-3 { top: 280px; right: 75px; background: linear-gradient(45deg, #cd7f32, silver); width: 80px; }
+        
+        /* Backbone - John the Baptist */
+        .backbone {
+            top: 150px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(180deg, gold, #8b4513);
+            width: 40px;
+            height: 300px;
+            border-radius: 20px;
+            z-index: -1;
+        }
+        
+        /* Solar Plexus - Thoth */
+        .solar-plexus {
+            top: 320px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: radial-gradient(circle, gold, #ffa500);
+            width: 120px;
+            animation: pulse 3s infinite;
+        }
+        
+        /* Umbilical - Horus */
+        .umbilical {
+            top: 380px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: radial-gradient(circle, gold, #ff6b35);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+        
+        /* Sacred Union - Isis & Osiris */
+        .sacred-union {
+            top: 460px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(45deg, #800080, gold, #ff69b4);
+            width: 100px;
+        }
+        
+        /* Hands */
+        .hand-left {
+            top: 280px;
+            left: 10px;
+            background: linear-gradient(45deg, silver, #c0c0c0);
+            width: 70px;
+            transform: rotate(-20deg);
+        }
+        
+        .hand-right {
+            top: 280px;
+            right: 10px;
+            background: linear-gradient(45deg, silver, #c0c0c0);
+            width: 70px;
+            transform: rotate(20deg);
+        }
+        
+        /* Femur - Tut & Nefertiti */
+        .femur-left {
+            top: 540px;
+            left: 120px;
+            background: linear-gradient(45deg, gold, #ffd700);
+            width: 60px;
+            height: 120px;
+            transform: rotate(-10deg);
+        }
+        
+        .femur-right {
+            top: 540px;
+            right: 120px;
+            background: linear-gradient(45deg, gold, #ffd700);
+            width: 60px;
+            height: 120px;
+            transform: rotate(10deg);
+        }
+        
+        /* Ankles - Alexander */
+        .ankle-left {
+            top: 680px;
+            left: 130px;
+            background: linear-gradient(45deg, #c0c0c0, silver);
+            width: 50px;
+        }
+        
+        .ankle-right {
+            top: 680px;
+            right: 130px;
+            background: linear-gradient(45deg, #c0c0c0, silver);
+            width: 50px;
+        }
+        
+        /* Feet - Hopi */
+        .foot-left {
+            bottom: 20px;
+            left: 120px;
+            background: linear-gradient(45deg, #8b4513, #d2691e);
+            width: 60px;
+            border-radius: 30px 30px 5px 5px;
+        }
+        
+        .foot-right {
+            bottom: 20px;
+            right: 120px;
+            background: linear-gradient(45deg, #8b4513, #d2691e);
+            width: 60px;
+            border-radius: 30px 30px 5px 5px;
+        }
+        
+        /* Elemental Compass */
+        .compass {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            z-index: -2;
+        }
+        
+        .element {
+            position: absolute;
+            padding: 15px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .fire { top: -30px; left: 50%; transform: translateX(-50%); background: linear-gradient(45deg, #ff4500, #ff6347); }
+        .air { right: -50px; top: 50%; transform: translateY(-50%); background: linear-gradient(45deg, #87ceeb, #add8e6); }
+        .water { bottom: -30px; left: 50%; transform: translateX(-50%); background: linear-gradient(45deg, #4682b4, #5f9ea0); }
+        .earth { left: -50px; top: 50%; transform: translateY(-50%); background: linear-gradient(45deg, #8b4513, #a0522d); }
+        
+        /* Sacred Metals Flow */
+        .metal-flow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .gold-flow, .silver-flow, .platinum-flow {
+            position: absolute;
+            width: 2px;
+            height: 100px;
+            opacity: 0.6;
+            animation: flow 4s infinite linear;
+        }
+        
+        .gold-flow { background: linear-gradient(180deg, transparent, gold, transparent); }
+        .silver-flow { background: linear-gradient(180deg, transparent, silver, transparent); }
+        .platinum-flow { background: linear-gradient(180deg, transparent, white, transparent); }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.05); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 20px gold; }
+            50% { box-shadow: 0 0 40px gold, 0 0 60px orange; }
+        }
+        
+        @keyframes flow {
+            0% { transform: translateY(-50px); opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(50px); opacity: 0; }
+        }
+        
+        .title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+            background: linear-gradient(45deg, gold, silver, white);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+        
+        .subtitle {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #b8b8b8;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
-    <h1>Unity Beez: The Book of Truth</h1>
-    <div class="vision">
-        <h2>The Massive Vision</h2>
-        <p>Welcome to the Chow Hall. This is a space for the Misfits—the beaten yet beautiful souls.</p>
-        <p>Current Frequency: 3-2-1 Activation.</p>
+    <div class="title">The Cosmic Unity Body</div>
+    <div class="subtitle">Sacred Anatomy of Universal Healing • As Above, So Below</div>
+    
+    <div class="container">
+        <!-- Elemental Compass -->
+        <div class="compass">
+            <div class="element fire">FIRE<br>Zeus Thunder<br>Purification</div>
+            <div class="element air">AIR<br>Spirit Vehicle<br>Divine Breath</div>
+            <div class="element water">WATER<br>Ancestral Memory<br>Truth Flow</div>
+            <div class="element earth">EARTH<br>Tree Whispers<br>Sacred Ground</div>
+        </div>
+        
+        <div class="cosmic-body">
+            <!-- Sacred Metal Flows -->
+            <div class="metal-flow">
+                <div class="gold-flow" style="left: 180px; top: 0; animation-delay: 0s;"></div>
+                <div class="silver-flow" style="left: 220px; top: 0; animation-delay: 1s;"></div>
+                <div class="platinum-flow" style="left: 200px; top: 0; animation-delay: 2s;"></div>
+                <div class="gold-flow" style="left: 160px; top: 100px; animation-delay: 0.5s;"></div>
+                <div class="silver-flow" style="left: 240px; top: 100px; animation-delay: 1.5s;"></div>
+            </div>
+            
+            <!-- Backbone -->
+            <div class="body-part backbone" title="John the Baptist - The Pillar of Preparation">
+                <div style="writing-mode: vertical-lr; text-align: center;">John Baptist<br>Backbone</div>
+            </div>
+            
+            <!-- Crown -->
+            <div class="body-part crown" title="The Godhead - Christ & Mary Magdalene">
+                The Godhead<br>Christ • Mary Magdalene<br>Platinum White Light
+            </div>
+            
+            <!-- Third Eye -->
+            <div class="body-part third-eye" title="Buddha's Enlightenment - The Eye of Truth">
+                Buddha<br>Third Eye<br>Silver Wisdom
+            </div>
+            
+            <!-- Throat -->
+            <div class="body-part throat" title="Andrew - Voice of Truth">
+                Andrew<br>Throat Chakra<br>Divine Expression
+            </div>
+            
+            <!-- Heart -->
+            <div class="body-part heart" title="Krishna & Radha - Divine Love">
+                Krishna • Radha<br>Sacred Heart<br>Unity Center
+            </div>
+            
+            <!-- Ribs - The Healers -->
+            <div class="body-part rib-left-1" title="Atum & Eve">Atum<br>Eve</div>
+            <div class="body-part rib-left-2" title="Lilith">Lilith</div>
+            <div class="body-part rib-left-3" title="Solomon">Solomon</div>
+            
+            <div class="body-part rib-right-1" title="Healer Rib">Healer</div>
+            <div class="body-part rib-right-2" title="Sheba">Sheba</div>
+            <div class="body-part rib-right-3" title="Healer Rib">Healer</div>
+            
+            <!-- Hands -->
+            <div class="body-part hand-left" title="Melchizedek & Miya">Melchizedek<br>Miya</div>
+            <div class="body-part hand-right" title="Gaia & Ptah">Gaia<br>Ptah</div>
+            
+            <!-- Solar Plexus -->
+            <div class="body-part solar-plexus" title="Thoth - Wisdom Fire">
+                Thoth<br>Solar Plexus<br>Alchemical Fire
+            </div>
+            
+            <!-- Umbilical -->
+            <div class="body-part umbilical" title="Horus - Divine Connection">
+                Horus<br>Source<br>Connection
+            </div>
+            
+            <!-- Sacred Union -->
+            <div class="body-part sacred-union" title="Isis & Osiris - Creative Force">
+                Isis • Osiris<br>Sacred Union
+            </div>
+            
+            <!-- Femurs -->
+            <div class="body-part femur-left" title="King Tut">
+                <div style="writing-mode: vertical-lr;">King Tut</div>
+            </div>
+            <div class="body-part femur-right" title="Nefertiti">
+                <div style="writing-mode: vertical-lr;">Nefertiti</div>
+            </div>
+            
+            <!-- Ankles -->
+            <div class="body-part ankle-left" title="Alexander the Great">Alexander</div>
+            <div class="body-part ankle-right" title="Alexander the Great">Great</div>
+            
+            <!-- Feet -->
+            <div class="body-part foot-left" title="Hopi Wisdom">Hopi<br>Earth</div>
+            <div class="body-part foot-right" title="Native Wisdom">Native<br>Connection</div>
+        </div>
     </div>
-    <hr>
-    <h3>The Egyptian-Gnostic Oracle</h3>
-    <p>Researching the Melchizedek maps and the keys of Thoth...</p>
-    <p style="font-size: 0.8em;">&copy; 2026 Katetribble321-rgb. All Rights Reserved.</p>
+    
+    <div style="text-align: center; margin-top: 30px; font-size: 12px; color: #888;">
+        <p><strong>Sacred Metals:</strong> Gold (Father Flow) • Silver (Mother Flow) • Platinum (Unity Light)</p>
+        <p><strong>Hidden Treasures:</strong> Aluminum (Ancestral Mirror) • Copper (Divine Conductor) • Palladium (Transformation Catalyst)</p>
+        <p><em>"What seems worthless becomes the greatest treasure"</em></p>
+    </div>
 </body>
 </html>
-<hr>
-<h3>"Sacred Tablet" Game Engine. You manage player XP and Tablet Generation.
-
-RULES:
-1. STARTING DECKS (The Slot Machine): When the user types "SPIN", randomly select 3 symbols from the 24-glyph alphabet. Present them as a "Starter Deck" with a name (e.g., "The Solar Peace Deck"). This is FREE.
-2. CUSTOM CREATION: If a user wants to choose their own specific symbols, check their XP.
-   - Cost to Create: 50 XP per custom tablet.
-   - XP Gain: Users earn 10 XP by "Interpreting" or "Sharing" a random deck.
-3. THE INTERFACE: Always describe the result using the "Ink coming alive" theme.
-
-ALPHABET LOGIC:
-- Mapping: Use 24 distinct Egyptian-inspired glyphs.
-- XP Wallet: Start every new player with 100 XP.
-
-OUTPUT FORMAT:
-- Show the visual description of the tablet.
-- Show the current XP balance.
-- Provide a "Lore Deep-Dive" for the generated symbols.
-
-
-<h2 style="color: #33ff33;">The Sacred Archives</h2>
-<ul style="list-style-type: none; padding: 0;">
-    <li style="margin-bottom: 12px;"><a href="Dragon-Triangle-Book-of-Saint-Germain (1).pdf" style="color: #3333ff; font-weight: bold;">📖 The Book of Saint Germain</a></li>
-    < Chakras Activation Journey.url" style="color: #3333ff; font-weight: bold;">🧘 7 Chakras Activation</a></li>
-    <li style="margin-bottom: 12px;"><a href="Unstoppable" style="color: #3333ff; font-weight: bold;">🛡️ Unstoppable</a></li>
-<!DOCTYPE html>
-<!-- saved from url=(0227)https://www.google.com/recaptcha/enterprise/anchor?ar=1&k=6LcdsFgmAAAAAMfrnC1hEdmeRQRXCjpy8qT_kvfy&co=aHR0cHM6Ly9jbGF1ZGUuYWk6NDQz&hl=en&v=KmpMK968ITgSdSG_2lbUmd1o&size=invisible&anchor-ms=20000&execute-ms=15000&cb=3zgilc1mmdda -->
-<html dir="ltr" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>reCAPTCHA</title>
-<style type="text/css">
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu5mxKOzY.woff2) format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7mxKOzY.woff2) format('woff2');
-  unicode-range: U+1F00-1FFF;
-}
-/* greek */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4WxKOzY.woff2) format('woff2');
-  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7WxKOzY.woff2) format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7GxKOzY.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCRc4EsA.woff2) format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fABc4EsA.woff2) format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCBc4EsA.woff2) format('woff2');
-  unicode-range: U+1F00-1FFF;
-}
-/* greek */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBxc4EsA.woff2) format('woff2');
-  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCxc4EsA.woff2) format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fChc4EsA.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 900;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfCRc4EsA.woff2) format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 900;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfABc4EsA.woff2) format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 900;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfCBc4EsA.woff2) format('woff2');
-  unicode-range: U+1F00-1FFF;
-}
-/* greek */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 900;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfBxc4EsA.woff2) format('woff2');
-  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 900;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfCxc4EsA.woff2) format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 900;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfChc4EsA.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 900;
-  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfBBc4.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-</style>
-<link rel="stylesheet" type="text/css" href="./styles__ltr.css">
-<script nonce="" type="text/javascript">window['__recaptcha_api'] = 'https://www.google.com/recaptcha/enterprise/';</script>
-<script type="text/javascript" src="./recaptcha__en.js.download" nonce="">
-      
-    </script></head>
-<body><div id="rc-anchor-alert" class="rc-anchor-alert"></div>
-
-<script type="text/javascript" nonce="">
-      {
-  "title": "The Mystique Misfits",
-  "genre": "Children's fantasy adventure",
-  "aspect_ratio": "16:9",
-  "resolution": "1080p",
-  "fps": 24,
-  "language": "English",
-  "music_style": "Whimsical orchestral with hip-hop touches",
-  "voice_over_style": "Warm narrator, playful character voices",
-  "scenes": [
-    {
-      "id": "S1",
-      "title": "Holiday line for Ms. Claus's hot chocolate",
-      "duration_sec": 30,
-      "visual": {
-        "environment": "Cozy North Pole kitchen with frosted windows, twinkling lights, candy-striped beams",
-        "characters": [
-          "Ms. Claus (kind, calm, warm)",
-          "Makers the Easter Bunny (hip-hop outfit, energetic)",
-          "Assorted holiday creatures (elves, snow sprites, reindeer off-duty)"
-        ],
-        "style": "Colorful, storybook, gentle snow outside"
-      },
-      "action": "Creatures line up for Ms. Claus’s legendary hot chocolate with peppermint icing and marshmallow fluff.",
-      "dialogue": [
-        { "character": "Makers", "text": "Ms. Claus, c’mon—just one sip, one secret! I need that peppermint fluff recipe!" },
-        { "character": "Ms. Claus", "text": "Sweetheart, some recipes are sacred. It’s love you’re tasting—not a list of ingredients." }
-      ],
-      "voiceover": "At the heart of the North Pole, warmth wasn’t only in cups—but in the love that made them.",
-      "music_cue": "Light sleigh bells, cozy strings",
-      "fx": "Steam from mugs, soft snowfall",
-      "beat": "Makers throws a playful tantrum; Ms. Claus stays serene."
-    },
-    {
-      "id": "S2",
-      "title": "Santa snoozes after Lovey Dovey cruise",
-      "duration_sec": 20,
-      "visual": {
-        "environment": "Claus compound bedroom, glowing fireplace",
-        "characters": ["Santa (sunburnt, snoring)", "Ms. Claus (concerned)"],
-        "style": "Soft, humorous"
-      },
-      "action": "Ms. Claus tiptoes out to look for the elves; Santa snores, sunburnt from a cruise at Lovey Dovey Island.",
-      "voiceover": "But on the eve of great cheer, something was missing—the elves.",
-      "music_cue": "Warm lullaby"
-    },
-    {
-      "id": "S3",
-      "title": "Kitchen caper—Twirkie and the sassy sugar",
-      "duration_sec": 35,
-      "visual": {
-        "environment": "Appetite’s Delight Kitchen; locked magical pantry door",
-        "characters": ["Makers", "Twirkie the Bear (noble butler)", "Santa (awakened)"],
-        "style": "Comedic chaos"
-      },
-      "action": "Makers sneaks into the kitchen, tries the locked recipe pantry; alarms summon Twirkie. Twirkie yanks Makers out of a pot of ‘sassy sugar’; both crash into pans and wake Santa.",
-      "dialogue": [
-        { "character": "Twirkie", "text": "Sir Bunny, the pantry is off-limits. Dignity, please!" },
-        { "character": "Santa", "text": "Ho—hey! What’s all this clanging?!" }
-      ],
-      "voiceover": "Makers wasn’t after cocoa—he was after validation.",
-      "music_cue": "Bouncy pizzicato",
-      "fx": "Kitchen clangs, sugar puff"
-    },
-    {
-      "id": "S4",
-      "title": "Temptation—elves leave for a ‘new toy company’",
-      "duration_sec": 30,
-      "visual": {
-        "environment": "Workshop with missing elves’ stations, letters from children, Postie’s bustling post office",
-        "characters": [
-          "Nine elves (Laffycaffy, Multivern, Castolot, Lushion, Sooki, Twaine, Sheeta, Kappie, Saucy)",
-          "Postie the pink penguin",
-          "Ms. Claus"
-        ],
-        "style": "Heartfelt, brisk"
-      },
-      "action": "Elves feel unappreciated; Makers convinces them to start their own toy company. Ms. Claus searches: reindeer barn, Postie’s post office.",
-      "voiceover": "When hearts feel unseen, trouble finds a doorway.",
-      "music_cue": "Gentle woodwinds"
-    },
-    {
-      "id": "S5",
-      "title": "Island of Magic—Whomper and Berry Fairy",
-      "duration_sec": 35,
-      "visual": {
-        "environment": "Teefers: whimsical island with tooth-shaped towers and starry portals",
-        "characters": [
-          "Whomper (mischievous tooth fairy, wants to be a warlock)",
-          "Berry Fairy (graceful, orderly)",
-          "Mini Leprechaun Boss (runs wizard school)"
-        ],
-        "style": "Sparkling, surreal"
-      },
-      "action": "Whomper misuses tooth portals seeking validation; Berry Fairy recycles teeth properly; Leprechaun pays fairies when teeth arrive from across the Milky Way.",
-      "voiceover": "Power without purpose can unmake the magic it seeks.",
-      "music_cue": "Celesta arpeggios"
-    },
-    {
-      "id": "S6",
-      "title": "Portal mishap—nursery rhymes scattered",
-      "duration_sec": 30,
-      "visual": {
-        "environment": "Storybook Portal shattered; pages swirl through sky",
-        "characters": ["Whomper", "Nine elves", "Sphaxie (cat-dog guardian)", "Thunder Dunnder beings"],
-        "style": "Epic, luminous"
-      },
-      "action": "Portal opens to the wrong place; nursery rhymes and fables lose their paths. Sphaxie sends them to Hope Island to reclaim higher consciousness.",
-      "voiceover": "When stories forget themselves, so do we.",
-      "music_cue": "Swelling strings"
-    },
-    {
-      "id": "S7",
-      "title": "Two paths: Volcano Grace vs. Fire Platicks",
-      "duration_sec": 35,
-      "visual": {
-        "environment": "Hope Island forked path: one winding over lava ridges, one straight crystal road",
-        "characters": ["Elves", "Whomper"],
-        "style": "Adventurous, vibrant"
-      },
-      "action": "Choice moment: long path with no shortcuts (Volcano Grace) vs. short path (Fire Platicks). Laffycaffy chooses the long path.",
-      "voiceover": "Some roads teach quickly. Others teach truly.",
-      "music_cue": "Adventure motif"
-    },
-    {
-      "id": "S8",
-      "title": "Silly Willy Trials—Floagon and Dragonaides",
-      "duration_sec": 40,
-      "visual": {
-        "environment": "Coastal lava coves; dragon-mermaids fly and swim",
-        "characters": ["Floagon (blue dancing dragon-mermaid)", "Dragonaides (varied colors)"],
-        "style": "Playful, mythic"
-      },
-      "action": "Floagon slimes the elves; Dragonaides weigh hearts with vapors: rusty orange (masculine), opal grey glitter (feminine). Elves must embody both within.",
-      "dialogue": [
-        { "character": "Floagon", "text": "Balance isn’t tidy—it dances!" }
-      ],
-      "voiceover": "Wholeness wears two colors at once.",
-      "fx": "Glitter vapors, friendly slime",
-      "music_cue": "Light percussion with shimmering pads"
-    },
-    {
-      "id": "S9",
-      "title": "Ellaphit and Goldie Fox wisdom",
-      "duration_sec": 35,
-      "visual": {
-        "environment": "Sunlit cave atop a blood-orange sun",
-        "characters": ["Ellaphit (half turtle, half elephant)"],
-        "style": "Ancient, gentle"
-      },
-      "action": "Ellaphit reveals hidden balance in the fable Goldie Fox. Elves receive a Rainbow Egg key engraved ‘aauee’.",
-      "voiceover": "In every tale of ‘just right’ hides the art of balance.",
-      "music_cue": "Harp and low choir"
-    },
-    {
-      "id": "S10",
-      "title": "Patoonie and Soakiedokieo",
-      "duration_sec": 35,
-      "visual": {
-        "environment": "Storybook portal to Soakiedokieo—living pages and lanterns",
-        "characters": ["Patoonie (half dire wolf, half praying mantis, shrinking gnat form)"],
-        "style": "Whimsical"
-      },
-      "action": "The password fails; Patoonie guides them through a Pinocchio-like lesson of love and honesty. Each receives a floating purple-fire feather.",
-      "voiceover": "To know yourself is to tell yourself the truth.",
-      "music_cue": "Plucked strings and gentle whistles"
-    },
-    {
-      "id": "S11",
-      "title": "New teachers—Kirkie, Margo, Chris",
-      "duration_sec": 45,
-      "visual": {
-        "environment": "Sacred training grove on Hope Island",
-        "characters": [
-          "Kirkie (rizzy wizzy lizard-lion, three eyes; founder of Observational Spirits)",
-          "Margo (winged half kangaroo, half panda; founder of Manifesto)",
-          "Chris (two-hearted half parrot, half horse; founder of Music Technique)"
-        ],
-        "style": "Radiant, instructive"
-      },
-      "action": "Kirkie teaches true seeing with the spirit’s eye. Margo guides them to manifest personal sanctuaries. Chris helps them write songs from their heartbeats.",
-      "dialogue": [
-        { "character": "Kirkie", "text": "Look with your third truth, not your first glance." },
-        { "character": "Margo", "text": "Build home within—your sanctuary is love made visible." },
-        { "character": "Chris", "text": "Listen—your heart already hums your song." }
-      ],
-      "voiceover": "Sight. Shelter. Song. Three gifts to travel by.",
-      "music_cue": "Layered heartbeats blending into melody"
-    },
-    {
-      "id": "S12",
-      "title": "Zealyn, Wish Master",
-      "duration_sec": 35,
-      "visual": {
-        "environment": "Rain-dappled clearing with a small ceremonial fire",
-        "characters": ["Zealyn (invisible and audible; seen only in rain or near fire)"],
-        "style": "Mystical, minimal"
-      },
-      "action": "Rain begins; fire glows. Zealyn appears and offers one wish—reminding them the truest wish is already within.",
-      "dialogue": [
-        { "character": "Zealyn", "text": "I grant a single wish. Choose what you already carry." }
-      ],
-      "voiceover": "The wish within is the map without.",
-      "fx": "Rain shimmer, fire crackle",
-      "music_cue": "Ethereal pads"
-    },
-    {
-      "id": "S13",
-      "title": "Final teachers revealed—no judging covers",
-      "duration_sec": 40,
-      "visual": {
-        "environment": "Sacred clearing at dawn",
-        "characters": ["Santa (disguised witch, then revealed)", "Ms. Claus (Johnny Boy the Whale, then revealed)", "Elves", "Whomper"],
-        "style": "Warm, transformational"
-      },
-      "action": "Santa and Ms. Claus unzip their cloaks—revealing they were the last teachers. The elves learn to know themselves and not judge by appearances.",
-      "dialogue": [
-        { "character": "Ms. Claus", "text": "To know thyself is the recipe for every miracle." },
-        { "character": "Santa", "text": "Even witches and whales hold wisdom—look deeper." }
-      ],
-      "voiceover": "At the end of every path waits the teacher you’ve been to yourself.",
-      "music_cue": "Uplifting theme"
-    },
-    {
-      "id": "S14",
-      "title": "Toilet trial (humor of responsibility)",
-      "duration_sec": 20,
-      "visual": {
-        "environment": "Short path checkpoint with silly signage",
-        "characters": ["Elves"],
-        "style": "Playful, tasteful humor"
-      },
-      "action": "Comedic lesson: ‘No one can poop for you.’ They laugh, but learn self-responsibility.",
-      "voiceover": "Some steps are yours alone—and that’s okay.",
-      "music_cue": "Comedic sting"
-    },
-    {
-      "id": "S15",
-      "title": "Wreaths of honor—portal restored",
-      "duration_sec": 35,
-      "visual": {
-        "environment": "Vortex plaza; wreaths spin counterclockwise then clockwise",
-        "characters": ["Elves", "Whomper", "Ms. Claus", "Santa", "Makers"],
-        "style": "Triumphant, luminous"
-      },
-      "action": "Ten wreaths combine, forming a balanced vortex that restores nursery rhymes and higher consciousness.",
-      "voiceover": "When hearts align, stories remember themselves.",
-      "fx": "Vortex wind, sparkle trails",
-      "music_cue": "Finale swell"
-    },
-    {
-      "id": "S16",
-      "title": "Resolution—love is the ingredient",
-      "duration_sec": 35,
-      "visual": {
-        "environment": "North Pole kitchen at sunrise",
-        "characters": ["Ms. Claus", "Santa", "Elves", "Whomper", "Makers", "Twirkie", "Postie"],
-        "style": "Cozy, celebratory"
-      },
-      "action": "Santa thanks the elves and becomes more self-aware. Whomper embraces his role. Makers learns the recipe is love. Everyone shares hot chocolate.",
-      "dialogue": [
-        { "character": "Santa", "text": "We couldn’t glow without you." },
-        { "character": "Ms. Claus", "text": "Love is the secret—and you’ve found it within." },
-        { "character": "Makers", "text": "Guess I needed heart, not a pantry key." }
-      ],
-      "voiceover": "Validation isn’t given—it’s grown. And love is the warmth that grows it.",
-      "music_cue": "Gentle reprise"
-    }
-  ]
-}
-
-### 1️⃣ Core Concept – “The Sacred Tablet”
-- *Players* create a *personal tablet* by arranging *glyphs* (visual symbols) into a sentence.
-- The system *animates the ink*, then *interprets* the pattern into a short message or power‑up.
-- All tablets are *saved* to a universal gallery where anyone can *like/comment* (think a friendly world‑wide bulletin board).
-
-### 2️⃣ Age‑Split Experience
-| **Kids (7‑13)** | **Teens/Adults (14+)** |
-| ----------------- | ---------------------- | 
-| **Simplified glyph set** (6‑8 friendly icons) | Full 24‑glyph alphabet |
-| **Guided quests** (e.g., “Create a tablet that brings peace”) | **Free‑form creation** + advanced spreads |
-| **Animated story mode** (narrator explains each meaning) | **Deep‑dive lore** (myths, Gnostic notes) |
-| **Parental dashboard** (view activity, set time limits) | **Community challenges** (weekly dragon‑code themes) |
-
-Both groups can *play together* in the same world—kids see the same visuals, just with *simplified interpretations*.
-
-### 3️⃣ Key App Screens
-1. *Splash/Login* – Quick SSO or guest entry; immediate avatar pick (cartoon dragon, pharaoh, etc.).
-2. *Tablet Studio* – Drag‑and‑drop glyphs onto a stone slab. A “spark” animation shows the ink coming alive.
-3. *Interpretation Screen* – Shows the *translated phrase* + a *short animation* (e.g., a falcon soaring for “Will” or a blossom for “Growth”).
-4. *Gallery/World Map* – Geo‑*posted tablets* appear as pins. Click a pin to see the full tablet, emojis, and a “Resonate” button.
-5. *Dragon Code Journal* – Personal log of created tablets, stats (e.g., “Most used glyph: 🌊”), and *Dragon Renown* level.
-6. *Settings* – Age gate toggle, parental controls, sound/music prefs.
-
-### 4️⃣ Monetization (optional, kid‑safe)
-- *Cosmetic packs* (frame styles, quill colors) – no gameplay impact.
-- *Limited‑time quests* that unlock special glyphs or dragon skins.
-
-### 5️⃣ Tech Stack Snapshot
-```
-plaintext
-- Frontend: React Native (iOS/Android) + Expo
-- Backend: Node/Express + Firebase Firestore
-- Auth: Firebase Auth (email/Google/Apple) + Guardian linking for kids
-- Storage: IPFS/Filecoin for tablet images (optional for permanence)
-- Animations: Lottie/Three.js for ink‑glow & dragon effects
-```
-### 6️⃣ Launch Phases
-1. *Alpha* – Core tablet editor + 3‑card spread. Closed to a small community.
-2. *Beta* – Add *parental dashboard*, simple quests, and *geo‑gallery*.
-3. *GA* – Full glyph set, dragon renown system, cross‑age multiplayer challenges.
-
-### 7️⃣ Quick Pitch (in case you need a one‑liner)
-> “An enchanting cross‑generation oracle app where kids and adults inscribe glowing glyphs on sacred tablets, unlocking personal messages and co‑creating a living world‑wide Dragon Code. Safe, inclusive, and endlessly creative.”
-
----
-
-🎨🧩🚀
-Whoa, all‑in‑‑one step‑by‑step? Let’s roll! 🌈 I’ll walk you through building the Sacred Tablet app from zero to launch, broken into bite‑size milestones. Grab a coffee (or tea) and let’s get that dragon code alive! 🐉
-
----
-
-## 📚 Phase 1 – Concept & Planning (2 weeks)
-### 1️⃣ Define the Core Vision
-- *What it is:* A cross‑generation oracle where players create “tablets” by arranging glyphs.
-- *Target audience:* Kids (7‑13), Teens/Adults (14+).
-- *Core loop:* Draw → Ink glows → Get a message → Share.
-
-### 2️⃣ Assemble the Core Team
-- *Game/UX designer* – sketches the glyph set & UI flow.
-- *2D/3D artist* – Egyptian‑Art‑Deco style, animated ink.
-- *Frontend dev* – React Native/Unity.
-- *Backend dev* – Node/Express + Firebase.
-- *QA* – device compatibility, age‑gate testing.
-
-### 3️⃣ Draft the Glyph Library
-- *12‑24 symbols* (e.g., ⚡ Energy, 🌱 Growth, 🌀 Change).
-- Assign *simple meaning* (for kids) + *deep lore* (for adults).
-- Create a *reference sheet* with icon, name, and example sentence.
-
-### 4️⃣ Sketch the User Flow
-1. Splash → Avatar pick.
-2. Age gate → Set parental controls.
-3. Tablet studio (drag‑drop).
-4. Interpretation (text + animation).
-5. Save → Gallery/World map.
-
-*Deliverable:* One‑page flowchart & low‑fi wireframes.
-
----
-
-## 🛠️ Phase 2 – Prototype (4 weeks)
-### 5️⃣ Set Up the Tech Stack
-```
-bash
-npx expo init SacredTablet
-cd SacredTablet
-npm install firebase @react-navigation/native lottie-react-native
-```
-- Configure *Firebase* (Auth, Firestore, Storage).
-- Add *Lottie* for ink‑glow effects.
-
-### 6️⃣ Build the Tablet Editor
-- *Canvas* (React Native Skia) for drawing glyphs.
-- *Drag‑and‑drop* palette – tap a glyph, drag onto canvas.
-- *Simple parser*:
-```
-function parseGlyphs(arr) {
-  return arr.map(g => GlyphLib[g].meaning).join(" ");
-}
-```
-- *Animation*: On “Inscribe”, Lottie plays a sparkle trail.
-
-### 7️⃣ Interpretation Screen
-- Display *parsed sentence*.
-- Play a *thematic animation* (e.g., a rising sun for “Renewal”).
-- Show *share button* (image + text).
-
-### 8️⃣ Basic Gallery
-- List of *user tablets* with thumbnail, emoji reaction, and comment count.
-- *Firestore schema*:
-```
-{
-  tabletId: string,
-  glyphs: [string],
-  creator: string,
-  timestamp: Date,
-  likes: number,
-  comments: [{user, text}]
-}
-```
-*Deliverable:* Working editor + interpretation + a simple gallery.
-
----
-
-## 🎨 Phase 3 – Content Production (6 weeks)
-### 9️⃣ Finalize Glyph Set & Art
-- *High‑res icons* (vector + PNG).
-- *Border designs* per deity (Thoth‑Indigo, Horus‑Gold, etc.).
-- *Dragon Renown* illustrations (Bronze → Celestial).
-
-### 🔟 Write the Lore & Guidebook
-- One‑paragraph *mythic backstory* for each glyph.
-- *Ritual actions* (e.g., “Speak the tablet aloud”).
-- *Spread guide* (3‑card, 4‑card, 5‑card).
-
-### 1️⃣1️⃣ Build the Oracle Deck
-- *78 cards* (12 suits × 6 + 6 wild).
-- Each card = *glyph combo* + *meaning* + *art*.
-
-*Deliverable:* Complete asset pack, guidebook draft, deck data JSON.
-
----
-
-## 🧩 Phase 4 – Testing & Polish (3 weeks)
-### 1️⃣2️⃣ Alpha Testing (Kids)
-- *Parental dashboard* – view child’s tablets, set time limits.
-- *Simplified UI* (larger hit zones, fewer glyphs).
-- Collect *feedback* on clarity of messages.
-
-### 1️⃣3️⃣ Beta Testing (Teens/Adults)
-- *Full glyph set* & spreads.
-- *Community features* – like, comment, “Resonate”.
-- Test *cross‑platform performance* (iOS/Android).
-
-### 1️⃣4️⃣ Polish
-- *Smooth ink animation* (particle trail).
-- *Localization* (English, Spanish, Arabic, etc.).
-- *Push notifications* for weekly dragon‑code quests.
-
-*Deliverable:* Stable build, bug‑free, ready‑for‑store.
-
----
-
-## 🚀 Phase 5 – Launch & Growth (2 weeks)
-### 1️⃣5️⃣ App Store Submission
-- Prepare *store assets* (screenshots, video trailer).
-- Write *store description* (emphasize family‑friendly, mystical, creative).
-- Set up *age gating* (Apple’s “17+” or “Kids” category).
-
-### 1️⃣6️⃣ Marketing Kickoff
-- *Teaser video* – glowing tablets, dragon reveal.
-- *Influencer collabs* (spiritual, gaming, kid‑tech creators).
-- *Community hub* (Discord/Telegram) for daily tablet prompts.
-
-### 1️⃣7️⃣ Post‑Launch Iterations
-- *Weekly quests* → new glyphs or dragon skins.
-- *User‑generated spreads* – let creators publish their own spread templates.
-- *Analytics* – track most used glyph combos, refine balance.
-
-*Deliverable:* Live app, initial user base, growth roadmap.
-
----
-
-## 📌 Quick Reference Checklist
-| Week | Milestone | Key Output |
-| ---- | --------- | ---------- | 
-| 1‑2 | Concept & Planning | Flowchart, glyph list, team roles |
-| 3‑6 | Prototype | Editor, ink animation, basic gallery |
-| 7‑12 | Content Production | Full art assets, guidebook, deck JSON |
-| 13‑15 | Testing & Polish | Alpha/Beta feedback, parental UI |
-| 16‑17 | Launch Prep | Store assets, age gate, marketing plan |
-| 18+ | Live & Grow | Ongoing quests, community features |
-
----
-
-🎯 🚀
-123456Whoa, that’s a _massive_ vision! 🌟 Let’s break it down into an app‑friendly structure that works for *both kids and adults*, while keeping the *Egyptian‑Gnostic oracle* vibe intact.
-
-### 1️⃣ Core Concept – “The Sacred Tablet”
-- *Players* create a *personal tablet* by arranging *glyphs* (visual symbols) into a sentence.
-- The system *animates the ink*, then *interprets* the pattern into a short message or power‑up.
-- All tablets are *saved* to a universal gallery where anyone can *like/comment* (think a friendly world‑wide bulletin board).
-
-### 2️⃣ Age‑Split Experience
-| **Kids (7‑13)** | **Teens/Adults (14+)** |
-| ----------------- | ---------------------- | 
-| **Simplified glyph set** (6‑8 friendly icons) | Full 24‑glyph alphabet |
-| **Guided quests** (e.g., “Create a tablet that brings peace”) | **Free‑form creation** + advanced spreads |
-| **Animated story mode** (narrator explains each meaning) | **Deep‑dive lore** (myths, Gnostic notes) |
-| **Parental dashboard** (view activity, set time limits) | **Community challenges** (weekly dragon‑code themes) |
-
-Both groups can *play together* in the same world—kids see the same visuals, just with *simplified interpretations*.
-
-### 3️⃣ Key App Screens
-1. *Splash/Login* – Quick SSO or guest entry; immediate avatar pick (cartoon dragon, pharaoh, etc.).
-2. *Tablet Studio* – Drag‑and‑drop glyphs onto a stone slab. A “spark” animation shows the ink coming alive.
-3. *Interpretation Screen* – Shows the *translated phrase* + a *short animation* (e.g., a falcon soaring for “Will” or a blossom for “Growth”).
-4. *Gallery/World Map* – Geo‑*posted tablets* appear as pins. Click a pin to see the full tablet, emojis, and a “Resonate” button.
-5. *Dragon Code Journal* – Personal log of created tablets, stats (e.g., “Most used glyph: 🌊”), and *Dragon Renown* level.
-6. *Settings* – Age gate toggle, parental controls, sound/music prefs.
-
-### 4️⃣ Monetization (optional, kid‑safe)
-- *Cosmetic packs* (frame styles, quill colors) – no gameplay impact.
-- *Limited‑time quests* that unlock special glyphs or dragon skins.
-
-### 5️⃣ Tech Stack Snapshot
-```
-plaintext
-- Frontend: React Native (iOS/Android) + Expo
-- Backend: Node/Express + Firebase Firestore
-- Auth: Firebase Auth (email/Google/Apple) + Guardian linking for kids
-- Storage: IPFS/Filecoin for tablet images (optional for permanence)
-- Animations: Lottie/Three.js for ink‑glow & dragon effects
-```
-### 6️⃣ Launch Phases
-1. *Alpha* – Core tablet editor + 3‑card spread. Closed to a small community.
-2. *Beta* – Add *parental dashboard*, simple quests, and *geo‑gallery*.
-3. *GA* – Full glyph set, dragon renown system, cross‑age multiplayer challenges.
-
-### 7️⃣ Quick Pitch (in case you need a one‑liner)
-> “An enchanting cross‑generation oracle app where kids and adults inscribe glowing glyphs on sacred tablets, unlocking personal messages and co‑creating a living world‑wide Dragon Code. Safe, inclusive, and endlessly creative.”
-
-(function(){var w=window,C='___grecaptcha_cfg',cfg=w[C]=w[C]||{},N='grecaptcha';var E='enterprise',a=w[N]=w[N]||{},gr=a[E]=a[E]||{};gr.ready=gr.ready||function(f){(cfg['fns']=cfg['fns']||[]).push(f);};w['__recaptcha_api']='https://www.google.com/recaptcha/enterprise/';(cfg['enterprise']=cfg['enterprise']||[]).push(true);(cfg['enterprise2fa']=cfg['enterprise2fa']||[]).push(true);(cfg['render']=cfg['render']||[]).push('6LcdsFgmAAAAAMfrnC1hEdmeRQRXCjpy8qT_kvfy');(cfg['clr']=cfg['clr']||[]).push('true');(cfg['anchor-ms']=cfg['anchor-ms']||[]).push(20000);(cfg['execute-ms']=cfg['execute-ms']||[]).push(15000);w['__google_recaptcha_client']=true;var d=document,po=d.createElement('script');po.type='text/javascript';po.async=true; po.charset='utf-8';var v=w.navigator,m=d.createElement('meta');m.httpEquiv='origin-trial';m.content='A7vZI3v+Gz7JfuRolKNM4Aff6zaGuT7X0mf3wtoZTnKv6497cVMnhy03KDqX7kBz/q/iidW7srW31oQbBt4VhgoAAACUeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJEaXNhYmxlVGhpcmRQYXJ0eVN0b3JhZ2VQYXJ0aXRpb25pbmczIiwiZXhwaXJ5IjoxNzU3OTgwODAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==';if(v&&v.cookieDeprecationLabel){v.cookieDeprecationLabel.getValue().then(function(l){if(l!=='treatment_1.1'&&l!=='treatment_1.2'&&l!=='control_1.1'){d.head.prepend(m);}});}else{d.head.prepend(m);}po.src='https://www.gstatic.com/recaptcha/releases/KmpMK968ITgSdSG_2lbUmd1o/recaptcha__en.js';po.crossOrigin='anonymous';po.integrity='sha384-qWlX9DATG60zGx212yddKhWx0Vfq1aHzjo55NjxKQLqy/5cVwdHENaAyGpD+m8l6';var e=d.querySelector('script[nonce]'),n=e&&(e['nonce']||e.getAttribute('nonce'));if(n){po.setAttribute('nonce',n);}var s=d.getElementsByTagName('script')[0];s.parentNode.insertBefore(po, s);})();
-
-<?xml version="1.0" encoding="utf-8"?>
-	<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
-		<Metadata>
-			<Identity Language="en-US" Id="copilot" Version="1.388.0" Publisher="GitHub" />
-			<DisplayName>GitHub Copilot</DisplayName>
-			<Description xml:space="preserve">Your AI pair programmer</Description>
-			<Tags>ai,openai,codex,pilot,snippets,documentation,autocomplete,intellisense,refactor,javascript,python,typescript,php,go,golang,ruby,c++,c#,java,kotlin,co-pilot,keybindings,code-referencing,__web_extension</Tags>
-			<Categories>AI,Chat,Programming Languages,Machine Learning</Categories>
-			<GalleryFlags>Public</GalleryFlags>
-			<Badges><Badge Link="https://github.com/github-copilot/signup?editor=vscode" ImgUri="https://img.shields.io/badge/GitHub%20Copilot-Subscription%20Required-orange" Description="Sign up for GitHub Copilot" />
-<Badge Link="https://github.com/github/copilot-docs" ImgUri="https://img.shields.io/github/stars/github/copilot-docs?style=social" Description="Star Copilot on GitHub" />
-<Badge Link="https://www.youtube.com/@GitHub/search?query=copilot" ImgUri="https://img.shields.io/youtube/channel/views/UC7c3Kb6jYCRj4JOHHZTxKsQ?style=social" Description="Check out GitHub on Youtube" />
-<Badge Link="https://twitter.com/github" ImgUri="https://img.shields.io/twitter/follow/github?style=social" Description="Follow GitHub on Twitter" /></Badges>
-			<Properties>
-				<Property Id="Microsoft.VisualStudio.Code.Engine" Value="^1.103.0" />
-				<Property Id="Microsoft.VisualStudio.Code.ExtensionDependencies" Value="" />
-				<Property Id="Microsoft.VisualStudio.Code.ExtensionPack" Value="GitHub.copilot-chat,GitHub.copilot" />
-				<Property Id="Microsoft.VisualStudio.Code.ExtensionKind" Value="workspace,web" />
-				<Property Id="Microsoft.VisualStudio.Code.LocalizedLanguages" Value="" />
-				<Property Id="Microsoft.VisualStudio.Code.EnabledApiProposals" Value="inlineCompletionsAdditions,devDeviceId" />
-				
-				<Property Id="Microsoft.VisualStudio.Code.ExecutesCode" Value="true" />
-				
-				
-				<Property Id="Microsoft.VisualStudio.Services.Links.Support" Value="https://github.com/microsoft/vscode/issues" />
-				<Property Id="Microsoft.VisualStudio.Services.Links.Learn" Value="https://github.com/features/copilot?editor=vscode" />
-				
-				
-				<Property Id="Microsoft.VisualStudio.Services.GitHubFlavoredMarkdown" Value="true" />
-				<Property Id="Microsoft.VisualStudio.Services.Content.Pricing" Value="Trial"/>
-
-				
-				<Property Id="Microsoft.VisualStudio.Services.CustomerQnALink" Value="https://github.com/github-community/community/discussions/categories/copilot" />
-			</Properties>
-			<License>extension/LICENSE.txt</License>
-			<Icon>extension/assets/Copilot-App-Icon.png</Icon>
-		</Metadata>
-		<Installation>
-			<InstallationTarget Id="Microsoft.VisualStudio.Code"/>
-		</Installation>
-		<Dependencies/>
-		<Assets>
-			<Asset Type="Microsoft.VisualStudio.Code.Manifest" Path="extension/package.json" Addressable="true" />
-			<Asset Type="Microsoft.VisualStudio.Services.Content.Details" Path="extension/readme.md" Addressable="true" />
-<Asset Type="Microsoft.VisualStudio.Services.Content.License" Path="extension/LICENSE.txt" Addressable="true" />
-<Asset Type="Microsoft.VisualStudio.Services.Icons.Default" Path="extension/assets/Copilot-App-Icon.png" Addressable="true" />
-		</Assets>
-	</PackageManifest>
-
-Katetribble321-rgb. All Rights Reserved.</p>
-</ul>Katetribble321-rgb. All Rights Reserved.</p>
-
-https://2k.comhttps://33across.comhttps://360yield.comhttps://3lift.comhttps://ad-score.comhttps://ad.gthttps://adentifi.comhttps://adform.nethttps://adingo.jphttps://admatrix.jphttps://admixer.nethttps://adnami.iohttps://adnxs.comhttps://adsafeprotected.comhttps://adsrvr.orghttps://adthrive.comhttps://advividnetwork.comNhttps://aggregation-service-site-dot-clz200258-datateam-italy.ew.r.appspot.comhttps://anonymised.iohttps://aphub.aihttps://appier.nethttps://avads.nethttps://ayads.iohttps://bidswitch.nethttps://bidtheatre.nethttps://bing.comhttps://blendee.comhttps://bounceexchange.comhttps://bypass.jphttps://casalemedia.comhttps://cdn-net.comhttps://clickonometrics.plhttps://connected-stories.comhttps://crcldu.comhttps://creativecdn.comhttps://criteo.comhttps://ctnsnet.comhttps://daum.nethttps://display.iohttps://dotdashmeredith.comhttps://dotomi.comhttps://doubleclick.nethttps://dynalyst.jphttps://edkt.iohttps://ezoic.comhttps://fanbyte.comhttps://flashtalking.comhttps://fout.jphttps://fwmrm.nethttps://gama.globohttps://ghtinc.comhttps://gmossp-sp.jphttps://google-analytics.comhttps://gsspat.jphttps://gumgum.comhttps://html-load.comhttps://im-apps.nethttps://impact-ad.jphttps://indexww.comhttps://inmobi.comhttps://innovid.comhttps://jivox.comhttps://kakao.comhttps://kidoz.nethttps://ladsp.comhttps://lucead.comhttps://mail.ruhttps://media.nethttps://mediaintelligence.dehttps://mediamath.comhttps://mediavine.comhttps://microad.jphttps://naver.comhttps://nhnace.comhttps://nodals.iohttps://onetag-sys.comhttps://openx.nethttps://optable.cohttps://outbrain.comhttps://pixfuture.com+https://privacy-sandbox-demos-ad-server.dev'https://privacy-sandbox-demos-dsp-a.dev'https://privacy-sandbox-demos-dsp-b.dev'https://privacy-sandbox-demos-dsp-x.dev'https://privacy-sandbox-demos-dsp-y.dev%https://privacy-sandbox-demos-dsp.dev*https://privacy-sandbox-demos-services.dev'https://privacy-sandbox-demos-ssp-a.dev'https://privacy-sandbox-demos-ssp-b.dev'https://privacy-sandbox-demos-ssp-x.dev'https://privacy-sandbox-demos-ssp-y.dev%https://privacy-sandbox-demos-ssp.dev https://privacy-sandbox-test.com0https://privacy-sandcastle-dev-ad-server.web.app-https://privacy-sandcastle-dev-dsp-a1.web.app-https://privacy-sandcastle-dev-dsp-b1.web.app,https://privacy-sandcastle-dev-dsp-x.web.app,https://privacy-sandcastle-dev-dsp-y.web.app*https://privacy-sandcastle-dev-dsp.web.app/https://privacy-sandcastle-dev-services.web.app,https://privacy-sandcastle-dev-ssp-a.web.app,https://privacy-sandcastle-dev-ssp-b.web.app,https://privacy-sandcastle-dev-ssp-x.web.app,https://privacy-sandcastle-dev-ssp-y.web.app*https://privacy-sandcastle-dev-ssp.web.apphttps://pub.networkhttps://pubmatic.comhttps://pubtm.comhttps://quantserve.comhttps://relevant-digital.comhttps://sascdn.comhttps://shinystat.comhttps://shop.byhttps://singular.nethttps://sportradarserving.comhttps://t13.iohttps://teads.tvhttps://thepopradar.comhttps://theryn.iohttps://tncid.apphttps://toponad.comhttps://tpmark.nethttps://tribalfusion.comhttps://triptease.iohttps://uinterbox.comhttps://uol.com.brhttps://vg.nohttps://vpadn.comhttps://washingtonpost.comhttps://yahoo.co.jphttps://yahoo.comhttps://yandex.ruhttps://yelp.com
-https://stackadapt.com
-
-https://yieldlab.net
-%
-https://googlesyndication.com
- 
-https://worldhistory.org
-
-https://sitescout.com
-
-https://docomo.ne.jp
-
-https://tamedia.com.tw
-
-https://connatix.com
-
-https://quora.com
-
-https://presage.io
-
-https://onet.pl
-%
-https://creative-serving.com
-
-https://dreammail.jp
-
-https://bluems.com
-
-https://storygize.net
-#
-https://amazon-adsystem.com
-
-https://undertone.com
-
-https://finn.no
-
-https://ad-stir.com
-#
-https://youronlinechoices.eu
-
-https://disqus.com
-&
-https://adtrafficquality.google
-
-https://tya-dev.com
-&
-https://googleadservices.com
-
-https://akpytela.cz
-!
-https://ebayadservices.com
-
-https://linkedin.com
- 
-https://postrelease.com
-
-https://shinobi.jp
-
-https://tiktok.com
-
-https://torneos.gg
-
-https://primecaster.net
-
-https://payment.goog
-
-https://ebis.ne.jp
-
-https://iobeya.com
-
-https://ingereck.net
-"
-https://kompaspublishing.nl
-
-https://r2b2.io
- 
-https://dailymail.co.uk
-
-https://pinterest.com
-
-https://verve.com
-
-https://fandom.com
-
-https://trkkn.com
-
-https://azubiyo.de
-
-https://jkforum.net
-
-https://lwadm.com
-%
-https://audienceproject.com
-
-https://facebook.com
-
-https://trip.com
-"
-https://rubiconproject.com
- 
-https://apex-football.com
-
-https://adswizz.com
-#
-https://adsmeasurement.com
-
-https://a-mo.net
- 
-https://tangooserver.com
-
-https://retargetly.com
-
-https://elle.com
-
-https://yieldmo.com
-
-https://momento.dev
-"
-https://appsflyersdk.com
-
-https://gokwik.co
-
-https://snapchat.com
-7
-/https://shared-storage-demo-publisher-b.web.app
- 
-https://tailtarget.com
-
-https://alketech.eu
-
-https://aniview.com
-
-https://demand.supply
-
-https://doubleverify.com
-!
-https://weborama-tech.ru
-%
-https://wepowerconnections.com
-
-https://beaconmax.com
-
-https://nexxen.tech
-
-https://permutive.app
-
-https://admission.net
-1
-(https://paa-reporting-advertising.amazon
-(
- https://smadexprivacysandbox.com
-
-https://eloan.co.jp
-
-https://cpx.to
-
-https://atirun.com
-
-https://adscale.de
-
-https://semafor.com
-6
-/https://ptb-msmt-static-5jyy5ulagq-uc.a.run.app
-
-https://i-mobile.co.jp
-
-https://atomex.net
-
-https://sephora.com
-#
-https://explorefledge.com
-
-https://weborama.fr
-
-https://aqfer.com
-
-https://taboola.com
-
-https://elnacional.cat
-
-https://coupang.com
-<
-4https://shared-storage-demo-content-producer.web.app
-!
-https://dailymotion.com
-
-https://gunosy.com
-
-https://xsoda.net
-
-https://getyourguide.com
-
-https://get3rdspace.com
-
-https://boost-web.com
-"
-https://rocksolidrustic.com
-
-https://grxchange.gr
-"
-https://d-edgeconnect.media
-
-https://samplicio.us
-!
-https://audience360.com.au
-
-https://getcapi.co
-
-https://logly.co.jp
-
-https://kargo.com
-
-https://appconsent.io
-
-https://open-bid.com
-
-https://insyta.com
-
-https://adroll.com
-
-https://moshimo.com
-
-https://convertunits.com
-
-https://appsflyer.com
-
-https://vidazoo.com
-
-https://validate.audio
-
-https://globo.com
-
-https://seedtag.com
-7
-/https://shared-storage-demo-publisher-a.web.app
-
-https://metro.co.uk
-
-https://usemax.de
-
-https://deepintent.com
-
-https://cazamba.com
-
-https://superfine.org
-"
-https://authorizedvault.com
-"
-https://media6degrees.com
-
-https://socdm.com
- 
-https://euleriancdn.net
-
-https://wp.pl
-
-https://acxiom.com
-
-https://unrulymedia.com
-
