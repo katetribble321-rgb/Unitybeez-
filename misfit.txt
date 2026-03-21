@@ -1,0 +1,270 @@
+{
+  "title": "The Mystique Misfits",
+  "genre": "Children's fantasy adventure",
+  "aspect_ratio": "16:9",
+  "resolution": "1080p",
+  "fps": 24,
+  "language": "English",
+  "music_style": "Whimsical orchestral with hip-hop touches",
+  "voice_over_style": "Warm narrator, playful character voices",
+  "scenes": [
+    {
+      "id": "S1",
+      "title": "Holiday line for Ms. Claus's hot chocolate",
+      "duration_sec": 30,
+      "visual": {
+        "environment": "Cozy North Pole kitchen with frosted windows, twinkling lights, candy-striped beams",
+        "characters": [
+          "Ms. Claus (kind, calm, warm)",
+          "Makers the Easter Bunny (hip-hop outfit, energetic)",
+          "Assorted holiday creatures (elves, snow sprites, reindeer off-duty)"
+        ],
+        "style": "Colorful, storybook, gentle snow outside"
+      },
+      "action": "Creatures line up for Ms. Claus’s legendary hot chocolate with peppermint icing and marshmallow fluff.",
+      "dialogue": [
+        { "character": "Makers", "text": "Ms. Claus, c’mon—just one sip, one secret! I need that peppermint fluff recipe!" },
+        { "character": "Ms. Claus", "text": "Sweetheart, some recipes are sacred. It’s love you’re tasting—not a list of ingredients." }
+      ],
+      "voiceover": "At the heart of the North Pole, warmth wasn’t only in cups—but in the love that made them.",
+      "music_cue": "Light sleigh bells, cozy strings",
+      "fx": "Steam from mugs, soft snowfall",
+      "beat": "Makers throws a playful tantrum; Ms. Claus stays serene."
+    },
+    {
+      "id": "S2",
+      "title": "Santa snoozes after Lovey Dovey cruise",
+      "duration_sec": 20,
+      "visual": {
+        "environment": "Claus compound bedroom, glowing fireplace",
+        "characters": ["Santa (sunburnt, snoring)", "Ms. Claus (concerned)"],
+        "style": "Soft, humorous"
+      },
+      "action": "Ms. Claus tiptoes out to look for the elves; Santa snores, sunburnt from a cruise at Lovey Dovey Island.",
+      "voiceover": "But on the eve of great cheer, something was missing—the elves.",
+      "music_cue": "Warm lullaby"
+    },
+    {
+      "id": "S3",
+      "title": "Kitchen caper—Twirkie and the sassy sugar",
+      "duration_sec": 35,
+      "visual": {
+        "environment": "Appetite’s Delight Kitchen; locked magical pantry door",
+        "characters": ["Makers", "Twirkie the Bear (noble butler)", "Santa (awakened)"],
+        "style": "Comedic chaos"
+      },
+      "action": "Makers sneaks into the kitchen, tries the locked recipe pantry; alarms summon Twirkie. Twirkie yanks Makers out of a pot of ‘sassy sugar’; both crash into pans and wake Santa.",
+      "dialogue": [
+        { "character": "Twirkie", "text": "Sir Bunny, the pantry is off-limits. Dignity, please!" },
+        { "character": "Santa", "text": "Ho—hey! What’s all this clanging?!" }
+      ],
+      "voiceover": "Makers wasn’t after cocoa—he was after validation.",
+      "music_cue": "Bouncy pizzicato",
+      "fx": "Kitchen clangs, sugar puff"
+    },
+    {
+      "id": "S4",
+      "title": "Temptation—elves leave for a ‘new toy company’",
+      "duration_sec": 30,
+      "visual": {
+        "environment": "Workshop with missing elves’ stations, letters from children, Postie’s bustling post office",
+        "characters": [
+          "Nine elves (Laffycaffy, Multivern, Castolot, Lushion, Sooki, Twaine, Sheeta, Kappie, Saucy)",
+          "Postie the pink penguin",
+          "Ms. Claus"
+        ],
+        "style": "Heartfelt, brisk"
+      },
+      "action": "Elves feel unappreciated; Makers convinces them to start their own toy company. Ms. Claus searches: reindeer barn, Postie’s post office.",
+      "voiceover": "When hearts feel unseen, trouble finds a doorway.",
+      "music_cue": "Gentle woodwinds"
+    },
+    {
+      "id": "S5",
+      "title": "Island of Magic—Whomper and Berry Fairy",
+      "duration_sec": 35,
+      "visual": {
+        "environment": "Teefers: whimsical island with tooth-shaped towers and starry portals",
+        "characters": [
+          "Whomper (mischievous tooth fairy, wants to be a warlock)",
+          "Berry Fairy (graceful, orderly)",
+          "Mini Leprechaun Boss (runs wizard school)"
+        ],
+        "style": "Sparkling, surreal"
+      },
+      "action": "Whomper misuses tooth portals seeking validation; Berry Fairy recycles teeth properly; Leprechaun pays fairies when teeth arrive from across the Milky Way.",
+      "voiceover": "Power without purpose can unmake the magic it seeks.",
+      "music_cue": "Celesta arpeggios"
+    },
+    {
+      "id": "S6",
+      "title": "Portal mishap—nursery rhymes scattered",
+      "duration_sec": 30,
+      "visual": {
+        "environment": "Storybook Portal shattered; pages swirl through sky",
+        "characters": ["Whomper", "Nine elves", "Sphaxie (cat-dog guardian)", "Thunder Dunnder beings"],
+        "style": "Epic, luminous"
+      },
+      "action": "Portal opens to the wrong place; nursery rhymes and fables lose their paths. Sphaxie sends them to Hope Island to reclaim higher consciousness.",
+      "voiceover": "When stories forget themselves, so do we.",
+      "music_cue": "Swelling strings"
+    },
+    {
+      "id": "S7",
+      "title": "Two paths: Volcano Grace vs. Fire Platicks",
+      "duration_sec": 35,
+      "visual": {
+        "environment": "Hope Island forked path: one winding over lava ridges, one straight crystal road",
+        "characters": ["Elves", "Whomper"],
+        "style": "Adventurous, vibrant"
+      },
+      "action": "Choice moment: long path with no shortcuts (Volcano Grace) vs. short path (Fire Platicks). Laffycaffy chooses the long path.",
+      "voiceover": "Some roads teach quickly. Others teach truly.",
+      "music_cue": "Adventure motif"
+    },
+    {
+      "id": "S8",
+      "title": "Silly Willy Trials—Floagon and Dragonaides",
+      "duration_sec": 40,
+      "visual": {
+        "environment": "Coastal lava coves; dragon-mermaids fly and swim",
+        "characters": ["Floagon (blue dancing dragon-mermaid)", "Dragonaides (varied colors)"],
+        "style": "Playful, mythic"
+      },
+      "action": "Floagon slimes the elves; Dragonaides weigh hearts with vapors: rusty orange (masculine), opal grey glitter (feminine). Elves must embody both within.",
+      "dialogue": [
+        { "character": "Floagon", "text": "Balance isn’t tidy—it dances!" }
+      ],
+      "voiceover": "Wholeness wears two colors at once.",
+      "fx": "Glitter vapors, friendly slime",
+      "music_cue": "Light percussion with shimmering pads"
+    },
+    {
+      "id": "S9",
+      "title": "Ellaphit and Goldie Fox wisdom",
+      "duration_sec": 35,
+      "visual": {
+        "environment": "Sunlit cave atop a blood-orange sun",
+        "characters": ["Ellaphit (half turtle, half elephant)"],
+        "style": "Ancient, gentle"
+      },
+      "action": "Ellaphit reveals hidden balance in the fable Goldie Fox. Elves receive a Rainbow Egg key engraved ‘aauee’.",
+      "voiceover": "In every tale of ‘just right’ hides the art of balance.",
+      "music_cue": "Harp and low choir"
+    },
+    {
+      "id": "S10",
+      "title": "Patoonie and Soakiedokieo",
+      "duration_sec": 35,
+      "visual": {
+        "environment": "Storybook portal to Soakiedokieo—living pages and lanterns",
+        "characters": ["Patoonie (half dire wolf, half praying mantis, shrinking gnat form)"],
+        "style": "Whimsical"
+      },
+      "action": "The password fails; Patoonie guides them through a Pinocchio-like lesson of love and honesty. Each receives a floating purple-fire feather.",
+      "voiceover": "To know yourself is to tell yourself the truth.",
+      "music_cue": "Plucked strings and gentle whistles"
+    },
+    {
+      "id": "S11",
+      "title": "New teachers—Kirkie, Margo, Chris",
+      "duration_sec": 45,
+      "visual": {
+        "environment": "Sacred training grove on Hope Island",
+        "characters": [
+          "Kirkie (rizzy wizzy lizard-lion, three eyes; founder of Observational Spirits)",
+          "Margo (winged half kangaroo, half panda; founder of Manifesto)",
+          "Chris (two-hearted half parrot, half horse; founder of Music Technique)"
+        ],
+        "style": "Radiant, instructive"
+      },
+      "action": "Kirkie teaches true seeing with the spirit’s eye. Margo guides them to manifest personal sanctuaries. Chris helps them write songs from their heartbeats.",
+      "dialogue": [
+        { "character": "Kirkie", "text": "Look with your third truth, not your first glance." },
+        { "character": "Margo", "text": "Build home within—your sanctuary is love made visible." },
+        { "character": "Chris", "text": "Listen—your heart already hums your song." }
+      ],
+      "voiceover": "Sight. Shelter. Song. Three gifts to travel by.",
+      "music_cue": "Layered heartbeats blending into melody"
+    },
+    {
+      "id": "S12",
+      "title": "Zealyn, Wish Master",
+      "duration_sec": 35,
+      "visual": {
+        "environment": "Rain-dappled clearing with a small ceremonial fire",
+        "characters": ["Zealyn (invisible and audible; seen only in rain or near fire)"],
+        "style": "Mystical, minimal"
+      },
+      "action": "Rain begins; fire glows. Zealyn appears and offers one wish—reminding them the truest wish is already within.",
+      "dialogue": [
+        { "character": "Zealyn", "text": "I grant a single wish. Choose what you already carry." }
+      ],
+      "voiceover": "The wish within is the map without.",
+      "fx": "Rain shimmer, fire crackle",
+      "music_cue": "Ethereal pads"
+    },
+    {
+      "id": "S13",
+      "title": "Final teachers revealed—no judging covers",
+      "duration_sec": 40,
+      "visual": {
+        "environment": "Sacred clearing at dawn",
+        "characters": ["Santa (disguised witch, then revealed)", "Ms. Claus (Johnny Boy the Whale, then revealed)", "Elves", "Whomper"],
+        "style": "Warm, transformational"
+      },
+      "action": "Santa and Ms. Claus unzip their cloaks—revealing they were the last teachers. The elves learn to know themselves and not judge by appearances.",
+      "dialogue": [
+        { "character": "Ms. Claus", "text": "To know thyself is the recipe for every miracle." },
+        { "character": "Santa", "text": "Even witches and whales hold wisdom—look deeper." }
+      ],
+      "voiceover": "At the end of every path waits the teacher you’ve been to yourself.",
+      "music_cue": "Uplifting theme"
+    },
+    {
+      "id": "S14",
+      "title": "Toilet trial (humor of responsibility)",
+      "duration_sec": 20,
+      "visual": {
+        "environment": "Short path checkpoint with silly signage",
+        "characters": ["Elves"],
+        "style": "Playful, tasteful humor"
+      },
+      "action": "Comedic lesson: ‘No one can poop for you.’ They laugh, but learn self-responsibility.",
+      "voiceover": "Some steps are yours alone—and that’s okay.",
+      "music_cue": "Comedic sting"
+    },
+    {
+      "id": "S15",
+      "title": "Wreaths of honor—portal restored",
+      "duration_sec": 35,
+      "visual": {
+        "environment": "Vortex plaza; wreaths spin counterclockwise then clockwise",
+        "characters": ["Elves", "Whomper", "Ms. Claus", "Santa", "Makers"],
+        "style": "Triumphant, luminous"
+      },
+      "action": "Ten wreaths combine, forming a balanced vortex that restores nursery rhymes and higher consciousness.",
+      "voiceover": "When hearts align, stories remember themselves.",
+      "fx": "Vortex wind, sparkle trails",
+      "music_cue": "Finale swell"
+    },
+    {
+      "id": "S16",
+      "title": "Resolution—love is the ingredient",
+      "duration_sec": 35,
+      "visual": {
+        "environment": "North Pole kitchen at sunrise",
+        "characters": ["Ms. Claus", "Santa", "Elves", "Whomper", "Makers", "Twirkie", "Postie"],
+        "style": "Cozy, celebratory"
+      },
+      "action": "Santa thanks the elves and becomes more self-aware. Whomper embraces his role. Makers learns the recipe is love. Everyone shares hot chocolate.",
+      "dialogue": [
+        { "character": "Santa", "text": "We couldn’t glow without you." },
+        { "character": "Ms. Claus", "text": "Love is the secret—and you’ve found it within." },
+        { "character": "Makers", "text": "Guess I needed heart, not a pantry key." }
+      ],
+      "voiceover": "Validation isn’t given—it’s grown. And love is the warmth that grows it.",
+      "music_cue": "Gentle reprise"
+    }
+  ]
+}
