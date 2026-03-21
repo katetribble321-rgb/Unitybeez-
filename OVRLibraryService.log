@@ -1,0 +1,869 @@
+
+
+[Debug] [10/6/2025 6:28:12 PM] Starting up OVRLibraryService v1.16.0.0.
+[Debug] [10/6/2025 6:28:12 PM] Starting up.
+[Debug] [10/6/2025 6:28:12 PM] IPC connection opened.
+[Debug] [10/6/2025 6:28:12 PM] IPC thread running; waiting for Oaf to connect.
+[Debug] [10/6/2025 6:28:12 PM] IPC connection established!
+[Debug] [10/6/2025 6:28:12 PM] App libraries for this user: [CORE_DATA]
+[Debug] [10/6/2025 6:28:12 PM] OVRLibraryService starting in service mode.  Arguments: [migrate, enable-uwp]
+[Debug] [10/6/2025 6:28:12 PM] Creating NTFS transaction.
+[Debug] [10/6/2025 6:28:12 PM] Adding UWP permissions to Oculus directory.
+[Debug] [10/6/2025 6:28:13 PM] Committing changes.
+[Debug] [10/6/2025 6:28:13 PM] IPC connection destroyed.
+[Debug] [10/6/2025 6:28:13 PM] Exiting with code 0 (Success).
+
+
+[Debug] [10/6/2025 6:28:14 PM] Starting up OVRLibraryService v1.16.0.0.
+[Debug] [10/6/2025 6:28:14 PM] Starting up.
+[Debug] [10/6/2025 6:28:14 PM] IPC connection opened.
+[Debug] [10/6/2025 6:28:14 PM] IPC thread running; waiting for Oaf to connect.
+[Debug] [10/6/2025 6:28:14 PM] App libraries for this user: [CORE_DATA]
+[Debug] [10/6/2025 6:28:14 PM] OVRLibraryService starting in service mode.  Arguments: [migrate, create-coredata]
+[Debug] [10/6/2025 6:28:14 PM] IPC connection established!
+[Debug] [10/6/2025 6:28:14 PM] Creating NTFS transaction.
+[Debug] [10/6/2025 6:28:14 PM] Committing changes.
+[Debug] [10/6/2025 6:28:14 PM] IPC connection destroyed.
+[Debug] [10/6/2025 6:28:14 PM] Exiting with code 0 (Success).
+
+
+[Debug] [10/18/2025 8:48:01 PM] Starting up OVRLibraryService v1.16.0.0.
+[Debug] [10/18/2025 8:48:01 PM] Starting up.
+[Debug] [10/18/2025 8:48:01 PM] IPC connection opened.
+[Debug] [10/18/2025 8:48:01 PM] IPC thread running; waiting for Oaf to connect.
+[Debug] [10/18/2025 8:48:01 PM] IPC connection established!
+[Debug] [10/18/2025 8:48:01 PM] App libraries for this user: [CORE_DATA]
+[Debug] [10/18/2025 8:48:01 PM] OVRLibraryService starting in service mode.  Arguments: [migrate, enable-uwp]
+[Debug] [10/18/2025 8:48:01 PM] Creating NTFS transaction.
+[Debug] [10/18/2025 8:48:01 PM] Adding UWP permissions to Oculus directory.
+[Debug] [10/18/2025 8:48:01 PM] Committing changes.
+[Debug] [10/18/2025 8:48:02 PM] IPC connection destroyed.
+[Debug] [10/18/2025 8:48:02 PM] Exiting with code 0 (Success).
+
+
+[Debug] [10/18/2025 8:48:03 PM] Starting up OVRLibraryService v1.16.0.0.
+[Debug] [10/18/2025 8:48:03 PM] Starting up.
+[Debug] [10/18/2025 8:48:03 PM] IPC connection opened.
+[Debug] [10/18/2025 8:48:03 PM] IPC thread running; waiting for Oaf to connect.
+[Debug] [10/18/2025 8:48:03 PM] App libraries for this user: [CORE_DATA]
+[Debug] [10/18/2025 8:48:03 PM] OVRLibraryService starting in service mode.  Arguments: [migrate, create-coredata]
+[Debug] [10/18/2025 8:48:03 PM] IPC connection established!
+[Debug] [10/18/2025 8:48:03 PM] Creating NTFS transaction.
+[Debug] [10/18/2025 8:48:03 PM] Committing changes.
+[Debug] [10/18/2025 8:48:03 PM] IPC connection destroyed.
+[Debug] [10/18/2025 8:48:03 PM] Exiting with code 0 (Success).
+
+
+[Debug] [10/21/2025 8:13:35 PM] Starting up OVRLibraryService v1.16.0.0.
+[Debug] [10/21/2025 8:13:35 PM] Starting up.
+[Debug] [10/21/2025 8:13:36 PM] IPC connection opened.
+[Debug] [10/21/2025 8:13:36 PM] IPC thread running; waiting for Oaf to connect.
+[Debug] [10/21/2025 8:13:36 PM] IPC connection established!
+[Debug] [10/21/2025 8:13:36 PM] App libraries for this user: [CORE_DATA]
+[Debug] [10/21/2025 8:13:36 PM] OVRLibraryService starting in service mode.  Arguments: [core-upgrade-chunked-start-background, C:\Program Files\Oculus\\Downloads\oculus-remote-desktop\1760701063\oculus-remote-desktop.zip, C:\Program Files\Oculus\\Downloads\oculus-remote-desktop\1760701063\oculus-remote-desktop.sig]
+[Debug] [10/21/2025 8:13:36 PM] Creating NTFS transaction.
+[Debug] [10/21/2025 8:13:36 PM] Enabling background mode
+[Debug] [10/21/2025 8:13:36 PM] Creating NTFS transaction.
+[Debug] [10/21/2025 8:13:36 PM] Validating 'C:\Program Files\Oculus\tmp\2845439d-bacc-435d-88da-0fdb1b07acd3\package.zip' against signature 'C:\Program Files\Oculus\tmp\2845439d-bacc-435d-88da-0fdb1b07acd3\package.sig.
+[Debug] [10/21/2025 8:13:37 PM] File hash for C:\Program Files\Oculus\tmp\2845439d-bacc-435d-88da-0fdb1b07acd3\package.zip: 7345abf24142113d768e4cbe77c919bb162868a80bb75356b8c60465b144c4c4
+[Debug] [10/21/2025 8:13:37 PM] Decrypting ciphertext signature 'o4NvIJuElgx77t3tgX8gUkO5e9djPE4T7hXo2WKvQlQLiC6wGxXEorG6PjsPXJwAP7gMoRLawuOyzR3WUfln4X7O7O6xtLQ2bV59J3lQIpRnGJplEgHDo/V02/4S45vtJhqOB9vlhVJsNFqUHdpG+cMgoBlQDIXFZguHzBJir0msBZVt3vXnIYupr3EuEMzDLp1hLCAgebvIaX7ldQtOtC+r0RaWr9oH2HM8Zp1LJQ7lXDFAl7CVvWWOmo8wavrSTYkOu2uLR2JvX0ffnEX39aflJwOXCsCGsLw6Sc13w3V54ZWJGSnq+cHe7qev8p0UO9hF86fOw+T29t+P8AaKfB0RfM6xkEIvMVGyzot7LF5X+razEtWo9fkzfGz0b7nf+tg2HtQfknQMCnbnqg5lQ49pjShN3cP5hCVct5m3ENoqTbiE74BkofDHMEGBpJRZLA6/noiclZXcTG938lDidwddajfM89c2hLp8A/Aps2Z7sI4D9G9xgOduwbP/db9Kiuq9SzQqOYoXY8QxKSAY5xJYFkt9FMlhTY4j0UkWIAcCjyjjcM16wPytVibo9Fuewrm8LILSItNE7eAuaEg49v4I0CbVO8ztLaF3/Fp39IBLzLD6YjM/H+2ki2uh0P4P6fu7t/FTRsCuxkyB961sMUi76sYPmZ3btMmMAXqKPKk=' with primary key.
+[Debug] [10/21/2025 8:13:37 PM] Decrypted plaintext signature '7345abf24142113d768e4cbe77c919bb162868a80bb75356b8c60465b144c4c4'.
+[Debug] [10/21/2025 8:13:37 PM] Ding!
+[Debug] [10/21/2025 8:13:39 PM] Loaded manifest for 'oculus-remote-desktop' version code 1760701063
+[Debug] [10/21/2025 8:13:39 PM] Committing changes.
+[Debug] [10/21/2025 8:13:39 PM] Found existing manifest for 'oculus-remote-desktop' version code 1758879000
+[Debug] [10/21/2025 8:13:39 PM] Creating NTFS transaction.
+[Debug] [10/21/2025 8:13:39 PM] Computing hash map
+[Debug] [10/21/2025 8:13:40 PM] Committing changes.
+[Debug] [10/21/2025 8:13:40 PM] Number of chunks that need to be downloaded: 8.
+[Warning] [10/21/2025 8:13:40 PM] Oaf requested cancellation: 'Core package download cancelled.'.
+[Debug] [10/21/2025 8:13:41 PM] Operation failed.  Rolling back changes.
+[Error] [10/21/2025 8:13:41 PM] Exception in PerformBlockInTransaction():
+System.Exception: Block returned ErrorCancelRequested.
+   at Daybreak.OVRLibraryService.Libraries.LibraryController.<>c__DisplayClass22_0.<PerformBlockInTransactionDeprecated>b__0(IntPtr transaction)
+   at Daybreak.Core.TxF.PerformBlockInTransaction[T](Func`2 block, Nullable`1 existingTransaction)
+   at Daybreak.OVRLibraryService.Libraries.LibraryController.PerformBlockInTransactionDeprecated(Func`2 block)
+[Warning] [10/21/2025 8:13:41 PM] Oaf IPC connection lost!
+[Debug] [10/21/2025 8:13:41 PM] IPC connection destroyed.
+[Debug] [10/21/2025 8:13:41 PM] Exiting with code 42 (ErrorCancelRequested).
+
+
+[Debug] [10/21/2025 9:13:34 PM] Starting up OVRLibraryService v1.16.0.0.
+[Debug] [10/21/2025 9:13:34 PM] Starting up.
+[Debug] [10/21/2025 9:13:35 PM] IPC connection opened.
+[Debug] [10/21/2025 9:13:35 PM] App libraries for this user: [CORE_DATA]
+[Debug] [10/21/2025 9:13:35 PM] OVRLibraryService starting in service mode.  Arguments: [core-upgrade-chunked-start-background, C:\Program Files\Oculus\\Downloads\oculus-remote-desktop\1760701063\oculus-remote-desktop.zip, C:\Program Files\Oculus\\Downloads\oculus-remote-desktop\1760701063\oculus-remote-desktop.sig]
+[Debug] [10/21/2025 9:13:35 PM] IPC thread running; waiting for Oaf to connect.
+[Debug] [10/21/2025 9:13:35 PM] IPC connection established!
+[Debug] [10/21/2025 9:13:35 PM] Creating NTFS transaction.
+[Debug] [10/21/2025 9:13:35 PM] Enabling background mode
+[Debug] [10/21/2025 9:13:35 PM] Creating NTFS transaction.
+[Debug] [10/21/2025 9:13:35 PM] Deleting directory 'C:\Program Files\Oculus\tmp'.
+[Debug] [10/21/2025 9:13:35 PM] Deleting directory 'C:\Program Files\Oculus\tmp\2845439d-bacc-435d-88da-0fdb1b07acd3'.
+[Debug] [10/21/2025 9:13:35 PM] Validating 'C:\Program Files\Oculus\tmp\e3ee1471-1cbf-4c39-a450-6a05471bb7ba\package.zip' against signature 'C:\Program Files\Oculus\tmp\e3ee1471-1cbf-4c39-a450-6a05471bb7ba\package.sig.
+[Debug] [10/21/2025 9:13:35 PM] File hash for C:\Program Files\Oculus\tmp\e3ee1471-1cbf-4c39-a450-6a05471bb7ba\package.zip: 7345abf24142113d768e4cbe77c919bb162868a80bb75356b8c60465b144c4c4
+[Debug] [10/21/2025 9:13:35 PM] Decrypting ciphertext signature 'o4NvIJuElgx77t3tgX8gUkO5e9djPE4T7hXo2WKvQlQLiC6wGxXEorG6PjsPXJwAP7gMoRLawuOyzR3WUfln4X7O7O6xtLQ2bV59J3lQIpRnGJplEgHDo/V02/4S45vtJhqOB9vlhVJsNFqUHdpG+cMgoBlQDIXFZguHzBJir0msBZVt3vXnIYupr3EuEMzDLp1hLCAgebvIaX7ldQtOtC+r0RaWr9oH2HM8Zp1LJQ7lXDFAl7CVvWWOmo8wavrSTYkOu2uLR2JvX0ffnEX39aflJwOXCsCGsLw6Sc13w3V54ZWJGSnq+cHe7qev8p0UO9hF86fOw+T29t+P8AaKfB0RfM6xkEIvMVGyzot7LF5X+razEtWo9fkzfGz0b7nf+tg2HtQfknQMCnbnqg5lQ49pjShN3cP5hCVct5m3ENoqTbiE74BkofDHMEGBpJRZLA6/noiclZXcTG938lDidwddajfM89c2hLp8A/Aps2Z7sI4D9G9xgOduwbP/db9Kiuq9SzQqOYoXY8QxKSAY5xJYFkt9FMlhTY4j0UkWIAcCjyjjcM16wPytVibo9Fuewrm8LILSItNE7eAuaEg49v4I0CbVO8ztLaF3/Fp39IBLzLD6YjM/H+2ki2uh0P4P6fu7t/FTRsCuxkyB961sMUi76sYPmZ3btMmMAXqKPKk=' with primary key.
+[Debug] [10/21/2025 9:13:35 PM] Decrypted plaintext signature '7345abf24142113d768e4cbe77c919bb162868a80bb75356b8c60465b144c4c4'.
+[Debug] [10/21/2025 9:13:35 PM] Ding!
+[Debug] [10/21/2025 9:13:36 PM] Loaded manifest for 'oculus-remote-desktop' version code 1760701063
+[Debug] [10/21/2025 9:13:36 PM] Committing changes.
+[Debug] [10/21/2025 9:13:36 PM] Found existing manifest for 'oculus-remote-desktop' version code 1758879000
+[Debug] [10/21/2025 9:13:36 PM] Creating NTFS transaction.
+[Debug] [10/21/2025 9:13:36 PM] Reusing existing staging directory
+[Debug] [10/21/2025 9:13:36 PM] Checking stale files
+[Debug] [10/21/2025 9:13:36 PM] Done checking stale files
+[Debug] [10/21/2025 9:13:36 PM] Computing hash map
+[Debug] [10/21/2025 9:13:37 PM] Committing changes.
+[Debug] [10/21/2025 9:13:37 PM] Number of chunks that need to be downloaded: 8.
+[Debug] [10/21/2025 9:13:39 PM] Finished waiting for all the segments
+[Debug] [10/21/2025 9:13:39 PM] Creating NTFS transaction.
+[Debug] [10/21/2025 9:13:39 PM] Committing changes.
+[Debug] [10/21/2025 9:13:39 PM] Committing changes.
+[Warning] [10/21/2025 9:13:39 PM] Oaf IPC connection lost!
+[Debug] [10/21/2025 9:13:39 PM] IPC connection destroyed.
+[Debug] [10/21/2025 9:13:39 PM] Exiting with code 0 (Success).
+
+
+[Debug] [10/21/2025 9:13:40 PM] Starting up OVRLibraryService v1.16.0.0.
+[Debug] [10/21/2025 9:13:40 PM] Starting up.
+[Debug] [10/21/2025 9:13:40 PM] IPC connection opened.
+[Debug] [10/21/2025 9:13:40 PM] IPC thread running; waiting for Oaf to connect.
+[Debug] [10/21/2025 9:13:40 PM] IPC connection established!
+[Debug] [10/21/2025 9:13:40 PM] App libraries for this user: [CORE_DATA]
+[Debug] [10/21/2025 9:13:40 PM] OVRLibraryService starting in service mode.  Arguments: [core-upgrade-chunked-finish, oculus-remote-desktop]
+[Debug] [10/21/2025 9:13:40 PM] core-upgrade precommand:  stopping Runtime service.
+[Debug] [10/21/2025 9:13:40 PM] Waiting for service 'OVRService' to stop.
+[Debug] [10/21/2025 9:13:43 PM] Service 'OVRService' is now Stopped.
+[Debug] [10/21/2025 9:13:43 PM] Creating NTFS transaction.
+[Debug] [10/21/2025 9:13:43 PM] Enabling background mode
+[Debug] [10/21/2025 9:13:43 PM] Found existing manifest for 'oculus-remote-desktop' version code 1758879000
+[Debug] [10/21/2025 9:13:43 PM] Reusing existing staging directory
+[Debug] [10/21/2025 9:13:43 PM] Checking stale files
+[Debug] [10/21/2025 9:13:43 PM] Done checking stale files
+[Debug] [10/21/2025 9:13:43 PM] Computing hash map
+[Debug] [10/21/2025 9:13:44 PM] Number of chunks that need to be downloaded: 0.
+[Debug] [10/21/2025 9:13:44 PM] Hot-swapping 'oculus-remote-desktop'. 
+[Debug] [10/21/2025 9:13:44 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-remote-desktop'.
+[Debug] [10/21/2025 9:13:44 PM] Deleting directory 'C:\Program Files\Oculus\tmp'.
+[Debug] [10/21/2025 9:13:44 PM] Deleting directory 'C:\Program Files\Oculus\tmp\e3ee1471-1cbf-4c39-a450-6a05471bb7ba'.
+[Debug] [10/21/2025 9:13:44 PM] Deleting directory 'C:\Program Files\Oculus\swap'.
+[Debug] [10/21/2025 9:13:44 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-remote-desktop-2529e4ef-55a7-4dcd-8c20-1069895c5250'.
+[Debug] [10/21/2025 9:13:44 PM] Committing changes.
+[Debug] [10/21/2025 9:13:44 PM] core-upgrade postcommand:  resuming Runtime service.
+[Debug] [10/21/2025 9:13:44 PM] Attempting to start service 'OVRService'.
+[Debug] [10/21/2025 9:13:45 PM] Service 'OVRService' is now Running.
+[Debug] [10/21/2025 9:13:45 PM] IPC connection destroyed.
+[Debug] [10/21/2025 9:13:45 PM] Exiting with code 0 (Success).
+
+
+[Debug] [10/22/2025 8:48:12 PM] Starting up OVRLibraryService v1.16.0.0.
+[Debug] [10/22/2025 8:48:12 PM] Starting up.
+[Debug] [10/22/2025 8:48:13 PM] IPC connection opened.
+[Debug] [10/22/2025 8:48:13 PM] IPC thread running; waiting for Oaf to connect.
+[Debug] [10/22/2025 8:48:13 PM] IPC connection established!
+[Debug] [10/22/2025 8:48:13 PM] App libraries for this user: [CORE_DATA]
+[Debug] [10/22/2025 8:48:13 PM] OVRLibraryService starting in service mode.  Arguments: [core-upgrade-chunked-start-background, C:\Program Files\Oculus\\Downloads\oculus-client\1754948834\oculus-client.zip, C:\Program Files\Oculus\\Downloads\oculus-client\1754948834\oculus-client.sig, C:\Program Files\Oculus\\Downloads\oculus-librarian\1754948707\oculus-librarian.zip, C:\Program Files\Oculus\\Downloads\oculus-librarian\1754948707\oculus-librarian.sig, C:\Program Files\Oculus\\Downloads\oculus-diagnostics\1754948734\oculus-diagnostics.zip, C:\Program Files\Oculus\\Downloads\oculus-diagnostics\1754948734\oculus-diagnostics.sig, C:\Program Files\Oculus\\Downloads\oculus-dash\1754948812\oculus-dash.zip, C:\Program Files\Oculus\\Downloads\oculus-dash\1754948812\oculus-dash.sig, C:\Program Files\Oculus\\Downloads\oculus-drivers\1754948780\oculus-drivers.zip, C:\Program Files\Oculus\\Downloads\oculus-drivers\1754948780\oculus-drivers.sig, C:\Program Files\Oculus\\Downloads\oculus-platform-runtime\1754948745\oculus-platform-runtime.zip, C:\Program Files\Oculus\\Downloads\oculus-platform-runtime\1754948745\oculus-platform-runtime.sig, C:\Program Files\Oculus\\Downloads\oculus-redistributable-installer\1754948701\oculus-redistributable-installer.zip, C:\Program Files\Oculus\\Downloads\oculus-redistributable-installer\1754948701\oculus-redistributable-installer.sig, C:\Program Files\Oculus\\Downloads\oculus-runtime\1754949335\oculus-runtime.zip, C:\Program Files\Oculus\\Downloads\oculus-runtime\1754949335\oculus-runtime.sig]
+[Debug] [10/22/2025 8:48:13 PM] Creating NTFS transaction.
+[Debug] [10/22/2025 8:48:13 PM] Enabling background mode
+[Debug] [10/22/2025 8:48:13 PM] Creating NTFS transaction.
+[Debug] [10/22/2025 8:48:13 PM] Validating 'C:\Program Files\Oculus\tmp\479bdc4d-c370-4771-9878-9d941e3df613\package.zip' against signature 'C:\Program Files\Oculus\tmp\479bdc4d-c370-4771-9878-9d941e3df613\package.sig.
+[Debug] [10/22/2025 8:48:13 PM] File hash for C:\Program Files\Oculus\tmp\479bdc4d-c370-4771-9878-9d941e3df613\package.zip: cf1e99601358cd01c776760c6f2a974d6e1e9092eb82ded2ba42da567fc0974f
+[Debug] [10/22/2025 8:48:13 PM] Decrypting ciphertext signature 'qHhVGASOyBZZryt1y44q3+Mh5fwvPh6N/VSfwBDOmAIATeRb2L7joQQRVgRL9svEugl4rOxAb5HjLj7PipXRY5n+iXoQxttG9HDYd2zUPYtnGKJM5Ic3Fshd1CCMwX697mBKCCZa3Jzv2xEM7MfwVkjszidHeMAyHXWhar2thgHqytekkOigz6Q6qgf3lqLBk+Z41h3MVXKcZXlHq2Rg0N7Iq3Jue1spNy3TEwX5qsGf+oP2a+IWR1EHEI+84m0YzWuTSzcXhJOZx/lDwmh+imD7hZE0bQJqUZHEhyRLp7MPReRU4dRkvd37LIUr3Qg7he+uCAuDNHSV5bKQ4hDbmZMqueTmWhvQZV7len0gc61M8dUl6UlCT4k3/DvHATIvJV8L7MMpJvnh9dTYIt8/tnpmcnh80Lmi6E19nGYNSS+wDF/o21fh1zKDMreoD300WT6rw2AmQ4AKzrhSmDvIZQuNmh/UZLer9Ld/s0Dua1WAC0AID09+7v0jUumC0hWbLWH3tDz9CK71xA7j97xEuZRenwzp6ca8xkU8VlCMusOaszrqCH3ny9AdBHAhH/6p6ImGx1EFpVnPrgMkZQJjeQbNJ0XsdJd6yXXHOLfXlaBE0meNsZMZAbZ9u1sW+ssM0Oqy10A7hJzyPVaouy21d9rUY5FDWfIMz9w+h92wCeo=' with primary key.
+[Debug] [10/22/2025 8:48:14 PM] Decrypted plaintext signature 'cf1e99601358cd01c776760c6f2a974d6e1e9092eb82ded2ba42da567fc0974f'.
+[Debug] [10/22/2025 8:48:14 PM] Ding!
+[Debug] [10/22/2025 8:48:18 PM] Loaded manifest for 'oculus-client' version code 1754948834
+[Debug] [10/22/2025 8:48:18 PM] Validating 'C:\Program Files\Oculus\tmp\b6531d24-2bdb-405f-8ac5-325becd348df\package.zip' against signature 'C:\Program Files\Oculus\tmp\b6531d24-2bdb-405f-8ac5-325becd348df\package.sig.
+[Debug] [10/22/2025 8:48:18 PM] File hash for C:\Program Files\Oculus\tmp\b6531d24-2bdb-405f-8ac5-325becd348df\package.zip: 7971bdb2c24d3fa2be30c2270bedfdffb9d592ebe03fc575ef62a45078669ab4
+[Debug] [10/22/2025 8:48:18 PM] Decrypting ciphertext signature 'IzeCmnawgAjozrTtkE3tepIweEebh41cPTyPKanotKcoCL5eWz2uv4UyFIXri7Cw+9ech3xP50Wlv91mVQkuzf4ZExvlNA8P+P7tYF1kpgUfgMwKC3mU8fhQZ0OXQY9kUa/98yAElJuZ/xvgZdunIh7y1Jk/+6vSXZqK1II+ylqX3gUQ0A83xbPixnb0lG4rF/BSwv09rwX51U2IA0V1hXGfl+HlJIqm038BohpfYqAZzavYQ/xpW3yzThG3sIiI11VDiRd8WXOCnRR/BmsKHiHDJTqKA7P6Ou2K/j+4tkpOY2WhC6AaLty8s8O2d5y0smiU3exojsHUPVYJO50EVyTBaDMVtLf/cx9HMpO3S4MQDQo3e17AbYGi7PyqMfNGVjrxjxfHOWcE/0dBk8ldr5/TnKcDoTPnz/A84LXC8DGi6BSL/vim0xIclP9/V3p0wPq/+eot/ZcKSTlQHQthFKmVCEPxxH8pFGEsh/0l0lcQFgjWlObUB9h5LmdyBb8KGDTMJrVRalxWKQg4kGEz4EjIu6yfmadQ75xoZK6Ess7W/llLyxj5rhvA95mJNxKojQHnlrbIslZ39jw5EnAHXgIE04026sNZOeFlBKFyuQTmuhYIU18M1+uT5te/BtTO6KotfeOq7a7rlaOVRbaWmhU5G1H60ibfxqvYcBB+wUc=' with primary key.
+[Debug] [10/22/2025 8:48:18 PM] Decrypted plaintext signature '7971bdb2c24d3fa2be30c2270bedfdffb9d592ebe03fc575ef62a45078669ab4'.
+[Debug] [10/22/2025 8:48:18 PM] Ding!
+[Debug] [10/22/2025 8:48:18 PM] Loaded manifest for 'oculus-librarian' version code 1754948707
+[Debug] [10/22/2025 8:48:18 PM] Validating 'C:\Program Files\Oculus\tmp\39f30f9a-d43e-4af2-9c24-d2167a4eaf5d\package.zip' against signature 'C:\Program Files\Oculus\tmp\39f30f9a-d43e-4af2-9c24-d2167a4eaf5d\package.sig.
+[Debug] [10/22/2025 8:48:18 PM] File hash for C:\Program Files\Oculus\tmp\39f30f9a-d43e-4af2-9c24-d2167a4eaf5d\package.zip: 94972cc37f83395cd6a941fb611b5586322dc4dc16099bdfb97dc413afd90fcc
+[Debug] [10/22/2025 8:48:18 PM] Decrypting ciphertext signature 'tRSjgLf/CfTBwcP8BGyA0DiUmtooLwjrR3beNlbprPTCWxx4AY1tLuSTz10/kQG2ue/zZT3oZGUN6S7tYgpizqR9sHXXJE5EEdu8xl4g4x6LLQlyk2ibQUjDuwhGpeAMCd+xNdH+yl250TTceYfhRFVVquZ+e22dEmi9NCYDMrQJL+XGPtc2g5ybnP7xWHiAXrJipF3v+TPRO9VnvYJX+HRKnzksCaMeHyMe+9kobsvDvfTxS40fLgKVatgDG9DhfHQiiWeq+39aoLN8yoDqs184uR1FJnJCX6qXWhQHa0EBnhTolS4Yh8d8j7zzLDOqcVG2gpg6w/4Txb4u/KGnlcSXvKuiTjyTQhE76tj0VdA7QA6+s4ZwLNruf9/UfUoq8gKgfmiL2B0zHQb1lhyb8IOtg3UsNN8PLC49nczZ8ORNR4iHaBAwbz0fs9BQxt+mMD5vgKYDKyX40K2QlrfLVpQDI11v5tE9qbLUR+nIx8K7F7H/L+I8AKEaRmWFeIrGKUqYonVwVa21VSjgoO1CvtvFdfvQABdezV/Na5YVTjAI182oowE4kFmZMl4OV+mNMCudaqnHuG+D9fiu1GKhzYZZf1x8bmolwEXSyaI00Dq8DGcd5jL47F1/+ZqvfONFYR82hTRuh5mG+/VfDxXtFHFY2yqg4yMT1Dk5FZk/nEQ=' with primary key.
+[Debug] [10/22/2025 8:48:18 PM] Decrypted plaintext signature '94972cc37f83395cd6a941fb611b5586322dc4dc16099bdfb97dc413afd90fcc'.
+[Debug] [10/22/2025 8:48:18 PM] Ding!
+[Debug] [10/22/2025 8:48:18 PM] Loaded manifest for 'oculus-diagnostics' version code 1754948734
+[Debug] [10/22/2025 8:48:18 PM] Validating 'C:\Program Files\Oculus\tmp\07c6fcf0-7031-4cca-9d59-f9007a5ee1ce\package.zip' against signature 'C:\Program Files\Oculus\tmp\07c6fcf0-7031-4cca-9d59-f9007a5ee1ce\package.sig.
+[Debug] [10/22/2025 8:48:18 PM] File hash for C:\Program Files\Oculus\tmp\07c6fcf0-7031-4cca-9d59-f9007a5ee1ce\package.zip: 6bf9faa7fa7184d75a0e9aa9d1050b0de6dfbdcbdeaa31384751c60253b95b49
+[Debug] [10/22/2025 8:48:18 PM] Decrypting ciphertext signature 'OS7daLhgRzo/k9yR3hDtG/mP72PRlI4WbbzKVwSX1LqAbIe0Rmhj75Fv0zB56aYrpjZtFWQE3Pbl3kePK0+bc9elOnfwz92B6ih3dHruDUkiQBfmmo6zSDwf2Tu3rWHg0DHbGqIpDErWGVd1Ti7fbIGxjlvOGui7M0UJkfeRvLcfpyhHet8/unYzLvXB3n1HmQaj3By/eBWxgfx++pCKOiI31j2fPt1RtGeogQAUZD2uSU7e/3HyDrFIf5PkNSGhrdSDkNVKUuPIQosQEpmyu/xUaLwDAEvm3TnJdS63LFQU/L5/Nf1wmKvahRWfzeyhZl6ibdpIy8yGyzL+iG6JhFQQaMwwuHDoB0sjUEd84hjYzzMhua9JkZNcEpJvZ5ZUlI3VC3LiTGeXTjeZBZvAHQN/Ctn3Z/kzW3rXYW1c7S6uPJITkfPsc7FUVV+We67/jla/WphNqwA64E3qC9DznL/yl/65uu8xMSrSoA4FTfuHJibIzSWUJ/I8R2mB9grtwSxLf6K2LUGu1vdjM+VbfSe6T/m2uRCZhYogHyKjUS62gK9Ztu4vMeSiEHQnLfd0Mi/KFETjZqGnLCJi20CH0BwbYPQ8y7BUJRnXuHt9w6dyhaC097gyvg8L1ns6UQdLEp4F0uzNeldj7VjzKaWyJsSUQmTKoEAAgP90oONMBys=' with primary key.
+[Debug] [10/22/2025 8:48:18 PM] Decrypted plaintext signature '6bf9faa7fa7184d75a0e9aa9d1050b0de6dfbdcbdeaa31384751c60253b95b49'.
+[Debug] [10/22/2025 8:48:18 PM] Ding!
+[Debug] [10/22/2025 8:48:18 PM] Loaded manifest for 'oculus-dash' version code 1754948812
+[Debug] [10/22/2025 8:48:18 PM] Validating 'C:\Program Files\Oculus\tmp\cc17d882-388e-40f6-9acb-8d0ac02bae28\package.zip' against signature 'C:\Program Files\Oculus\tmp\cc17d882-388e-40f6-9acb-8d0ac02bae28\package.sig.
+[Debug] [10/22/2025 8:48:18 PM] File hash for C:\Program Files\Oculus\tmp\cc17d882-388e-40f6-9acb-8d0ac02bae28\package.zip: 339e18bbe38c02bc1232a87acb3441f5a6c294dbdda778a863bc8953f00fc70b
+[Debug] [10/22/2025 8:48:18 PM] Decrypting ciphertext signature 'Z0O2cxu+p3DmyhShnPZz5L668wULU9odW6ODRO3UsFASrqBxCirchAvlih1rdOCnybKWpdwfZ/p6fQtKq5G7IJ6XMDy+fMOIK5vhB3fv5TEDHz5RnEtuf6spSHXfxVOArsUZVT+rG9ALhuP6XuKMzj2ciW+/TUpc5+iHjU62Ttd6JIZGVuzfDW7dnok8QIC2yvH2GtAQXJK4x+UQFrpGbHiTEJw2E2RdilxoMaCnOHrv6ZpebRoO3nTtUKWGPlxQiIeXgI5/CJg08uEwO/a5JeTFsanNUnjC9ztMsAs4lp/l6yfnmlRuP+Wy1kNwKs/0hQ+CzhWoaugir0dUUQh3T28b2D5spBm8UqSdgbZ05tt/UgDYsAficVdpAGXFHQE+TIpoD90/ZaimqSEWmWt3PaIbjqxH51rI5e8o8SG6VOZg2cAowiPTSQQM5THFC3ITtWs+6rpQL6vnk+/qO7Ji2BFizpfGoDlPW4XpWhKphp6TjKhTlm15rgxGFzSRXo6TeuVmkzgD0V7Cj4obYsopbpJF5SLf3VRQ+opDyTa8HV9FWoOEqgARucY/zrzPUtSQK4yB63F2i7h0nij8hflyp+TIG58gqBNQL+tLUKysRtFmBrh3jSsEIP7EEatzQapA6ckdALxgS5TQh4HCB9CodhJeBNx7hf7le54Yll5LpR8=' with primary key.
+[Debug] [10/22/2025 8:48:18 PM] Decrypted plaintext signature '339e18bbe38c02bc1232a87acb3441f5a6c294dbdda778a863bc8953f00fc70b'.
+[Debug] [10/22/2025 8:48:18 PM] Ding!
+[Debug] [10/22/2025 8:48:18 PM] Loaded manifest for 'oculus-drivers' version code 1754948780
+[Debug] [10/22/2025 8:48:18 PM] Validating 'C:\Program Files\Oculus\tmp\45803496-d3b9-4c16-ad1e-ad154994b8af\package.zip' against signature 'C:\Program Files\Oculus\tmp\45803496-d3b9-4c16-ad1e-ad154994b8af\package.sig.
+[Debug] [10/22/2025 8:48:18 PM] File hash for C:\Program Files\Oculus\tmp\45803496-d3b9-4c16-ad1e-ad154994b8af\package.zip: a5e8445627f3af07f56e6aafc424c6620da3de85d7e59dae6f145dbe5d2843d5
+[Debug] [10/22/2025 8:48:18 PM] Decrypting ciphertext signature 'QP0XnGZk4mLP4aoPRITk2M6zpvLwKgniBSIKwjGTzKk+82DytKezuR16bH5tf6h1XO9Jj1zU7ByfBz3F9SpGIyeSq47kFmmUmJoZEaZlLDh4GOxFDNxEXVFf9vQk7S4MMX52+QQ5BK4/nlZOxXoyJB3M1ftz8LY6tplyprIEH9Ui6JtM51kzaVzkPwhC29FploBBTwWbvRiKgYyUQ1lnszPxTkakYrjJoN0Xr86+aguvdjHQezIy81dn1TX60VBcUHZCjow67lm+xFuDy2k3goiMGq4JxbtVR/6w1146ELrSaSR2HPJPnOkX4CZwVZBRT6nmXQAHrPcSf2WWg24i51itOmZPx+652mOIKmzJY1/mDl8iEbN2Uf8I2mTQcWb9PrlrKc6rAPV4rjnONgwkpTitTncdJTzL64Sp/u+mE5ceAbp+ZAaiHzgBl+dhX4R4j8QueS2LbAH2rAgc0G9m6d56wVzz2r7eMLdwrEEX9GnzY+mDuONKkIBR0P4Z4vyQ/3Jj4/T7YiCe3f2S0fqQWtc4RnDr0OAi1wIcngucP9uL40P12MaOVXL1CQGuB8UJOy+f5sJh3XFGpJaTABxzCtEyJYEJbuAWvBFIj4gGIhwgzY57mwB0oulw3dj2wgaIu1IrquAQfDSwrKuMy7g2M70UcXJqwwynWSjdmC8PWtA=' with primary key.
+[Debug] [10/22/2025 8:48:18 PM] Decrypted plaintext signature 'a5e8445627f3af07f56e6aafc424c6620da3de85d7e59dae6f145dbe5d2843d5'.
+[Debug] [10/22/2025 8:48:18 PM] Ding!
+[Debug] [10/22/2025 8:48:18 PM] Loaded manifest for 'oculus-platform-runtime' version code 1754948745
+[Debug] [10/22/2025 8:48:18 PM] Validating 'C:\Program Files\Oculus\tmp\8c282744-d6c8-45d7-856a-3fccecde919d\package.zip' against signature 'C:\Program Files\Oculus\tmp\8c282744-d6c8-45d7-856a-3fccecde919d\package.sig.
+[Debug] [10/22/2025 8:48:18 PM] File hash for C:\Program Files\Oculus\tmp\8c282744-d6c8-45d7-856a-3fccecde919d\package.zip: 9b7224d59710fac900ab269c89849771eeb6bd5bcfba0a8c3582637a65d0d68c
+[Debug] [10/22/2025 8:48:18 PM] Decrypting ciphertext signature 'RQt5e4tQApMaUx30jM5UO/9Ne2t/8iqEzJZIk9mfQjfTFvU7yncbbSM7b/lN8Da+i+rebt69dJiWVG+5dPasoARsgGa2iqALv+mNzTINbIKLRmjdfwURMpC/NcI4ZPB4i9muPW1GZ7vrFLso+fvG+JKsFS70+AOBtrsShlLAdQfKfJm4Pyi7m/bTWP3lJ34iCkSghQF7LiVyQ7xEn7x1NIG6QRNuXC5Pl2oc60r9llNfKFtU81nQSWzCvD0AiW/XQNhelF1KUUzdrsIB45c31PJlb+hJOGL0BbwNkt3ol1+ZBNZrBMXuuK9V52G44gfhtB2CFfJh898uKLnBM6n6NbR7m7+8Eqnj+A5V795R1buvOl7DsmfDDaPy1veuDsk2Lo07vzcQkzmLR1ixurqoD7DLtGg5oTSrEAfgxI/k6Js9QTs0Bf055SvVe/JY11gCXRMevK9REWHc9jnm1HPugVK1UDBmJ8keDeIVgpNemD3Zpw4xm1HUkPgO4zYG+c+1PFlyyDUImOJzpjNdeRNmLOFSSfV76zXOex0a/6c5h/Dfix6i+6twCtbyDHcNRErHzPL0YRqK15dvVgyNTgofEosXlwWxk09h88sGUunariM4LvKGjRV+BheE3wDEtpBaiUc414DwueK4QTqd4NwjVVPhXT52S0alccnha+1asU8=' with primary key.
+[Debug] [10/22/2025 8:48:18 PM] Decrypted plaintext signature '9b7224d59710fac900ab269c89849771eeb6bd5bcfba0a8c3582637a65d0d68c'.
+[Debug] [10/22/2025 8:48:19 PM] Ding!
+[Debug] [10/22/2025 8:48:19 PM] Loaded manifest for 'oculus-redistributable-installer' version code 1754948701
+[Debug] [10/22/2025 8:48:19 PM] Validating 'C:\Program Files\Oculus\tmp\0a6b8908-2b33-4af5-918c-b9e65d40d14f\package.zip' against signature 'C:\Program Files\Oculus\tmp\0a6b8908-2b33-4af5-918c-b9e65d40d14f\package.sig.
+[Debug] [10/22/2025 8:48:19 PM] File hash for C:\Program Files\Oculus\tmp\0a6b8908-2b33-4af5-918c-b9e65d40d14f\package.zip: 31dab915eb6cb6d7e1d5b025e0c06ff8428581e2beae4fa5e97f55511b0f73c9
+[Debug] [10/22/2025 8:48:19 PM] Decrypting ciphertext signature 'qhoRCg4Ly+636P19W6MwefKQCtP5hrOZqcl1BVL0wbMExGCbAyBlWvc/3YsNmr+29qYGOdhVzkEYm/4Pe92ntWv0y9AT4bcCmgm00fCvN/JqtZFC77+ZCAfXjtQYIPM0PqTyj99lzAgLwTv/1BebkYZC+tmqND8vKQcOr6nHLRUT/UOm91QNFNxzCcsAjBQaa3+8EpbwUmKkunSgCA7z/8yTp1B5mHJLXmK0dAiXORbKO9HRLuRLKUWoJ8/YMZ/xOK4ljS9KaP9lXkGj46SdbRQqM1XQtji+BFuM4sNQPYZYTpEYSs/xhDI8kZe5x7oLgrHzexLxIGxqOS/DWkFxVPFXjreNTGLGbyWL93gIjZprWws2tHX1+eQWCoLEmdiCxBfYHeB9cdX1oF7duA4SiU1vkaz27xiwkCsk0Ctf9oFwvT0h6pWnFjG7dhLAds+m/esqFsVM+CbVKUUL/4QN4nCMDVhcyJCJfKFBOXZQP/jViLrvJzzycmjBQSCpJ3a3SrCPVAGUmx1pmPqEWdRSomUQEe1dTMIc/T16yW5C70skQwzcDP04lwAiEwuVO/YPHgvKv53chmy/AHsl/gLdxM1/WWuJSMKaN4tT9nKKIjLGbr2M4E/Lvz6a9Mhp/fFeP9miMAqWx6gtLdlc/IIxZgNqaVjZ5601A0VeoTsKm5w=' with primary key.
+[Debug] [10/22/2025 8:48:19 PM] Decrypted plaintext signature '31dab915eb6cb6d7e1d5b025e0c06ff8428581e2beae4fa5e97f55511b0f73c9'.
+[Debug] [10/22/2025 8:48:19 PM] Ding!
+[Debug] [10/22/2025 8:48:19 PM] Loaded manifest for 'oculus-runtime' version code 1754949335
+[Debug] [10/22/2025 8:48:19 PM] Committing changes.
+[Debug] [10/22/2025 8:48:19 PM] Found existing manifest for 'oculus-client' version code 1756949487
+[Debug] [10/22/2025 8:48:19 PM] Creating NTFS transaction.
+[Debug] [10/22/2025 8:48:19 PM] Computing hash map
+[Debug] [10/22/2025 8:48:35 PM] Committing changes.
+[Debug] [10/22/2025 8:48:35 PM] Number of chunks that need to be downloaded: 38.
+[Debug] [10/22/2025 8:48:47 PM] Finished waiting for all the segments
+[Debug] [10/22/2025 8:48:47 PM] Creating NTFS transaction.
+[Debug] [10/22/2025 8:48:47 PM] Committing changes.
+[Debug] [10/22/2025 8:48:47 PM] Found existing manifest for 'oculus-librarian' version code 1756949460
+[Debug] [10/22/2025 8:48:47 PM] Creating NTFS transaction.
+[Debug] [10/22/2025 8:48:47 PM] Computing hash map
+[Debug] [10/22/2025 8:48:47 PM] Committing changes.
+[Debug] [10/22/2025 8:48:47 PM] Number of chunks that need to be downloaded: 10.
+[Debug] [10/22/2025 8:48:48 PM] Finished waiting for all the segments
+[Debug] [10/22/2025 8:48:48 PM] Creating NTFS transaction.
+[Debug] [10/22/2025 8:48:48 PM] Committing changes.
+[Debug] [10/22/2025 8:48:48 PM] Found existing manifest for 'oculus-diagnostics' version code 1756949563
+[Debug] [10/22/2025 8:48:48 PM] Creating NTFS transaction.
+[Debug] [10/22/2025 8:48:48 PM] Computing hash map
+[Debug] [10/22/2025 8:48:54 PM] Committing changes.
+[Debug] [10/22/2025 8:48:54 PM] Number of chunks that need to be downloaded: 14.
+[Debug] [10/22/2025 8:48:56 PM] Finished waiting for all the segments
+[Debug] [10/22/2025 8:48:56 PM] Creating NTFS transaction.
+[Debug] [10/22/2025 8:48:56 PM] Committing changes.
+[Debug] [10/22/2025 8:48:56 PM] Found existing manifest for 'oculus-dash' version code 1756949520
+[Debug] [10/22/2025 8:48:56 PM] Creating NTFS transaction.
+[Debug] [10/22/2025 8:48:58 PM] Computing hash map
+[Debug] [10/22/2025 8:50:44 PM] Committing changes.
+[Debug] [10/22/2025 8:50:44 PM] Number of chunks that need to be downloaded: 10.
+[Debug] [10/22/2025 8:50:52 PM] Finished waiting for all the segments
+[Debug] [10/22/2025 8:50:52 PM] Creating NTFS transaction.
+[Debug] [10/22/2025 8:50:53 PM] Committing changes.
+[Debug] [10/22/2025 8:50:53 PM] Found existing manifest for 'oculus-drivers' version code 1756949397
+[Debug] [10/22/2025 8:50:53 PM] Creating NTFS transaction.
+[Debug] [10/22/2025 8:50:53 PM] Computing hash map
+[Debug] [10/22/2025 8:51:01 PM] Committing changes.
+[Debug] [10/22/2025 8:51:01 PM] Number of chunks that need to be downloaded: 4.
+[Debug] [10/22/2025 8:51:02 PM] Finished waiting for all the segments
+[Debug] [10/22/2025 8:51:02 PM] Creating NTFS transaction.
+[Debug] [10/22/2025 8:51:02 PM] Committing changes.
+[Debug] [10/22/2025 8:51:02 PM] Found existing manifest for 'oculus-platform-runtime' version code 1756949566
+[Debug] [10/22/2025 8:51:02 PM] Creating NTFS transaction.
+[Debug] [10/22/2025 8:51:02 PM] Computing hash map
+[Debug] [10/22/2025 8:51:04 PM] Committing changes.
+[Debug] [10/22/2025 8:51:04 PM] Number of chunks that need to be downloaded: 3.
+[Debug] [10/22/2025 8:51:06 PM] Finished waiting for all the segments
+[Debug] [10/22/2025 8:51:06 PM] Creating NTFS transaction.
+[Debug] [10/22/2025 8:51:06 PM] Committing changes.
+[Debug] [10/22/2025 8:51:06 PM] Found existing manifest for 'oculus-redistributable-installer' version code 1756949556
+[Debug] [10/22/2025 8:51:06 PM] Creating NTFS transaction.
+[Debug] [10/22/2025 8:51:06 PM] Computing hash map
+[Debug] [10/22/2025 8:51:09 PM] Committing changes.
+[Debug] [10/22/2025 8:51:09 PM] Number of chunks that need to be downloaded: 7.
+[Debug] [10/22/2025 8:51:11 PM] Finished waiting for all the segments
+[Debug] [10/22/2025 8:51:11 PM] Creating NTFS transaction.
+[Debug] [10/22/2025 8:51:11 PM] Committing changes.
+[Debug] [10/22/2025 8:51:12 PM] Found existing manifest for 'oculus-runtime' version code 1756949973
+[Debug] [10/22/2025 8:51:12 PM] Creating NTFS transaction.
+[Debug] [10/22/2025 8:51:12 PM] Computing hash map
+[Debug] [10/22/2025 8:51:34 PM] Committing changes.
+[Debug] [10/22/2025 8:51:34 PM] Number of chunks that need to be downloaded: 62.
+[Debug] [10/22/2025 8:51:51 PM] Finished waiting for all the segments
+[Debug] [10/22/2025 8:51:51 PM] Creating NTFS transaction.
+[Debug] [10/22/2025 8:51:51 PM] Committing changes.
+[Debug] [10/22/2025 8:51:51 PM] Committing changes.
+[Warning] [10/22/2025 8:51:51 PM] Oaf IPC connection lost!
+[Debug] [10/22/2025 8:51:51 PM] IPC connection destroyed.
+[Debug] [10/22/2025 8:51:51 PM] Exiting with code 0 (Success).
+
+
+[Debug] [10/22/2025 8:51:52 PM] Starting up OVRLibraryService v1.16.0.0.
+[Debug] [10/22/2025 8:51:52 PM] Starting up.
+[Debug] [10/22/2025 8:51:52 PM] IPC connection opened.
+[Debug] [10/22/2025 8:51:52 PM] IPC thread running; waiting for Oaf to connect.
+[Debug] [10/22/2025 8:51:52 PM] IPC connection established!
+[Debug] [10/22/2025 8:51:52 PM] App libraries for this user: [CORE_DATA]
+[Debug] [10/22/2025 8:51:52 PM] OVRLibraryService starting in service mode.  Arguments: [core-upgrade-chunked-finish, oculus-client, oculus-librarian, oculus-diagnostics, oculus-dash, oculus-drivers, oculus-platform-runtime, oculus-redistributable-installer, oculus-runtime]
+[Debug] [10/22/2025 8:51:52 PM] core-upgrade precommand:  stopping Runtime service.
+[Debug] [10/22/2025 8:51:52 PM] Waiting for service 'OVRService' to stop.
+[Debug] [10/22/2025 8:51:56 PM] Service 'OVRService' is now Stopped.
+[Debug] [10/22/2025 8:51:56 PM] Creating NTFS transaction.
+[Debug] [10/22/2025 8:51:56 PM] Enabling background mode
+[Debug] [10/22/2025 8:51:57 PM] Found existing manifest for 'oculus-client' version code 1756949487
+[Debug] [10/22/2025 8:51:57 PM] Reusing existing staging directory
+[Debug] [10/22/2025 8:51:57 PM] Checking stale files
+[Debug] [10/22/2025 8:51:57 PM] Done checking stale files
+[Debug] [10/22/2025 8:51:57 PM] Computing hash map
+[Debug] [10/22/2025 8:52:06 PM] Number of chunks that need to be downloaded: 0.
+[Debug] [10/22/2025 8:52:06 PM] Hot-swapping 'oculus-client'. 
+[Debug] [10/22/2025 8:52:06 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-client'.
+[Debug] [10/22/2025 8:52:06 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-client\resources'.
+[Debug] [10/22/2025 8:52:06 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-client\resources\app.asar.unpacked'.
+[Debug] [10/22/2025 8:52:06 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-client\resources\app.asar.unpacked\output'.
+[Debug] [10/22/2025 8:52:06 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-client\resources\bin'.
+[Debug] [10/22/2025 8:52:06 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-client\resources\bin\Casting'.
+[Debug] [10/22/2025 8:52:07 PM] Deleting directory 'C:\Program Files\Oculus\tmp'.
+[Debug] [10/22/2025 8:52:07 PM] Deleting directory 'C:\Program Files\Oculus\tmp\07c6fcf0-7031-4cca-9d59-f9007a5ee1ce'.
+[Debug] [10/22/2025 8:52:07 PM] Deleting directory 'C:\Program Files\Oculus\tmp\0a6b8908-2b33-4af5-918c-b9e65d40d14f'.
+[Debug] [10/22/2025 8:52:07 PM] Deleting directory 'C:\Program Files\Oculus\tmp\39f30f9a-d43e-4af2-9c24-d2167a4eaf5d'.
+[Debug] [10/22/2025 8:52:07 PM] Deleting directory 'C:\Program Files\Oculus\tmp\45803496-d3b9-4c16-ad1e-ad154994b8af'.
+[Debug] [10/22/2025 8:52:07 PM] Deleting directory 'C:\Program Files\Oculus\tmp\479bdc4d-c370-4771-9878-9d941e3df613'.
+[Debug] [10/22/2025 8:52:07 PM] Deleting directory 'C:\Program Files\Oculus\tmp\8c282744-d6c8-45d7-856a-3fccecde919d'.
+[Debug] [10/22/2025 8:52:07 PM] Deleting directory 'C:\Program Files\Oculus\tmp\b6531d24-2bdb-405f-8ac5-325becd348df'.
+[Debug] [10/22/2025 8:52:07 PM] Deleting directory 'C:\Program Files\Oculus\tmp\cc17d882-388e-40f6-9acb-8d0ac02bae28'.
+[Debug] [10/22/2025 8:52:07 PM] Found existing manifest for 'oculus-librarian' version code 1756949460
+[Debug] [10/22/2025 8:52:07 PM] Reusing existing staging directory
+[Debug] [10/22/2025 8:52:07 PM] Checking stale files
+[Debug] [10/22/2025 8:52:08 PM] Done checking stale files
+[Debug] [10/22/2025 8:52:08 PM] Computing hash map
+[Debug] [10/22/2025 8:52:08 PM] Number of chunks that need to be downloaded: 0.
+[Debug] [10/22/2025 8:52:08 PM] Hot-swapping 'oculus-librarian'. 
+[Debug] [10/22/2025 8:52:08 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-librarian'.
+[Debug] [10/22/2025 8:52:08 PM] Directory 'C:\Program Files\Oculus\tmp' does not exist.
+[Debug] [10/22/2025 8:52:08 PM] Found existing manifest for 'oculus-diagnostics' version code 1756949563
+[Debug] [10/22/2025 8:52:08 PM] Reusing existing staging directory
+[Debug] [10/22/2025 8:52:08 PM] Checking stale files
+[Debug] [10/22/2025 8:52:10 PM] Done checking stale files
+[Debug] [10/22/2025 8:52:10 PM] Computing hash map
+[Debug] [10/22/2025 8:52:11 PM] Number of chunks that need to be downloaded: 0.
+[Debug] [10/22/2025 8:52:11 PM] Hot-swapping 'oculus-diagnostics'. 
+[Debug] [10/22/2025 8:52:11 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-diagnostics'.
+[Debug] [10/22/2025 8:52:11 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-diagnostics\CameraCalibrationTool'.
+[Debug] [10/22/2025 8:52:11 PM] Directory 'C:\Program Files\Oculus\tmp' does not exist.
+[Debug] [10/22/2025 8:52:11 PM] Found existing manifest for 'oculus-dash' version code 1756949520
+[Debug] [10/22/2025 8:52:12 PM] Reusing existing staging directory
+[Debug] [10/22/2025 8:52:12 PM] Checking stale files
+[Debug] [10/22/2025 8:52:16 PM] Done checking stale files
+[Debug] [10/22/2025 8:52:16 PM] Computing hash map
+[Debug] [10/22/2025 8:52:39 PM] Number of chunks that need to be downloaded: 0.
+[Debug] [10/22/2025 8:52:39 PM] Hot-swapping 'oculus-dash'. 
+[Debug] [10/22/2025 8:52:39 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-dash'.
+[Debug] [10/22/2025 8:52:39 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-dash\dash'.
+[Debug] [10/22/2025 8:52:39 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-dash\dash\bin'.
+[Debug] [10/22/2025 8:52:39 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-dash\dash\data'.
+[Debug] [10/22/2025 8:52:39 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-dash\dash\data\js'.
+[Debug] [10/22/2025 8:52:39 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-dash\dash\data\js\assets'.
+[Debug] [10/22/2025 8:52:39 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-dash\dash\data\js\assets\src'.
+[Debug] [10/22/2025 8:52:39 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-dash\dash\data\js\assets\src\apps'.
+[Debug] [10/22/2025 8:52:39 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-dash\dash\data\js\assets\src\apps\dash-social'.
+[Debug] [10/22/2025 8:52:39 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-dash\dash\data\js\assets\src\apps\dash-store'.
+[Debug] [10/22/2025 8:52:39 PM] Directory 'C:\Program Files\Oculus\tmp' does not exist.
+[Debug] [10/22/2025 8:52:39 PM] Found existing manifest for 'oculus-drivers' version code 1756949397
+[Debug] [10/22/2025 8:52:39 PM] Reusing existing staging directory
+[Debug] [10/22/2025 8:52:39 PM] Checking stale files
+[Debug] [10/22/2025 8:52:40 PM] Done checking stale files
+[Debug] [10/22/2025 8:52:40 PM] Computing hash map
+[Debug] [10/22/2025 8:52:40 PM] Number of chunks that need to be downloaded: 0.
+[Debug] [10/22/2025 8:52:40 PM] Hot-swapping 'oculus-drivers'. 
+[Debug] [10/22/2025 8:52:40 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-drivers'.
+[Debug] [10/22/2025 8:52:40 PM] Directory 'C:\Program Files\Oculus\tmp' does not exist.
+[Debug] [10/22/2025 8:52:40 PM] Found existing manifest for 'oculus-platform-runtime' version code 1756949566
+[Debug] [10/22/2025 8:52:40 PM] Reusing existing staging directory
+[Debug] [10/22/2025 8:52:40 PM] Checking stale files
+[Debug] [10/22/2025 8:52:41 PM] Done checking stale files
+[Debug] [10/22/2025 8:52:41 PM] Computing hash map
+[Debug] [10/22/2025 8:52:41 PM] Number of chunks that need to be downloaded: 0.
+[Debug] [10/22/2025 8:52:41 PM] Hot-swapping 'oculus-platform-runtime'. 
+[Debug] [10/22/2025 8:52:41 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-platform-runtime'.
+[Debug] [10/22/2025 8:52:41 PM] Directory 'C:\Program Files\Oculus\tmp' does not exist.
+[Debug] [10/22/2025 8:52:41 PM] Found existing manifest for 'oculus-redistributable-installer' version code 1756949556
+[Debug] [10/22/2025 8:52:41 PM] Reusing existing staging directory
+[Debug] [10/22/2025 8:52:41 PM] Checking stale files
+[Debug] [10/22/2025 8:52:42 PM] Done checking stale files
+[Debug] [10/22/2025 8:52:42 PM] Computing hash map
+[Debug] [10/22/2025 8:52:42 PM] Number of chunks that need to be downloaded: 0.
+[Debug] [10/22/2025 8:52:42 PM] Hot-swapping 'oculus-redistributable-installer'. 
+[Debug] [10/22/2025 8:52:42 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-redistributable-installer'.
+[Debug] [10/22/2025 8:52:42 PM] Directory 'C:\Program Files\Oculus\tmp' does not exist.
+[Debug] [10/22/2025 8:52:42 PM] Found existing manifest for 'oculus-runtime' version code 1756949973
+[Debug] [10/22/2025 8:52:42 PM] Reusing existing staging directory
+[Debug] [10/22/2025 8:52:42 PM] Checking stale files
+[Debug] [10/22/2025 8:52:49 PM] Done checking stale files
+[Debug] [10/22/2025 8:52:49 PM] Computing hash map
+[Debug] [10/22/2025 8:52:53 PM] Number of chunks that need to be downloaded: 0.
+[Debug] [10/22/2025 8:52:53 PM] Hot-swapping 'oculus-runtime'. 
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-runtime'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-runtime\client-plugins'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-runtime\client-plugins\x64'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-runtime\client-plugins\x86'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-runtime\server-plugins'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-runtime\server-plugins\RiftS'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-runtime\translations'.
+[Debug] [10/22/2025 8:52:53 PM] Directory 'C:\Program Files\Oculus\tmp' does not exist.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-client-1e2a4f42-8a25-400f-9377-edc272cc8fdc'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-client-1e2a4f42-8a25-400f-9377-edc272cc8fdc\resources'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-client-1e2a4f42-8a25-400f-9377-edc272cc8fdc\resources\app.asar.unpacked'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-client-1e2a4f42-8a25-400f-9377-edc272cc8fdc\resources\app.asar.unpacked\output'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-client-1e2a4f42-8a25-400f-9377-edc272cc8fdc\resources\bin'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-client-1e2a4f42-8a25-400f-9377-edc272cc8fdc\resources\bin\Casting'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-dash-f8799824-aa11-4808-abac-74ac93eb5519'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-dash-f8799824-aa11-4808-abac-74ac93eb5519\dash'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-dash-f8799824-aa11-4808-abac-74ac93eb5519\dash\bin'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-dash-f8799824-aa11-4808-abac-74ac93eb5519\dash\data'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-dash-f8799824-aa11-4808-abac-74ac93eb5519\dash\data\js'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-dash-f8799824-aa11-4808-abac-74ac93eb5519\dash\data\js\assets'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-dash-f8799824-aa11-4808-abac-74ac93eb5519\dash\data\js\assets\src'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-dash-f8799824-aa11-4808-abac-74ac93eb5519\dash\data\js\assets\src\apps'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-dash-f8799824-aa11-4808-abac-74ac93eb5519\dash\data\js\assets\src\apps\dash-social'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-dash-f8799824-aa11-4808-abac-74ac93eb5519\dash\data\js\assets\src\apps\dash-store'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-diagnostics-9cb7ef9d-ae16-4373-aedc-e7ece3847303'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-diagnostics-9cb7ef9d-ae16-4373-aedc-e7ece3847303\CameraCalibrationTool'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-drivers-99059f21-5916-455f-89b1-5de9d51c589a'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-librarian-00348c73-13c9-4212-a97c-f7bd9ed8cfe7'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-platform-runtime-3b5841a5-ea54-4dc8-b734-347df077aa5d'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-redistributable-installer-55802a4c-7e23-494d-970b-a165f81cc1f7'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-runtime-eea95b25-c18b-4d82-b7fc-1934b8c66515'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-runtime-eea95b25-c18b-4d82-b7fc-1934b8c66515\client-plugins'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-runtime-eea95b25-c18b-4d82-b7fc-1934b8c66515\client-plugins\x64'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-runtime-eea95b25-c18b-4d82-b7fc-1934b8c66515\client-plugins\x86'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-runtime-eea95b25-c18b-4d82-b7fc-1934b8c66515\server-plugins'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-runtime-eea95b25-c18b-4d82-b7fc-1934b8c66515\server-plugins\RiftS'.
+[Debug] [10/22/2025 8:52:53 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-runtime-eea95b25-c18b-4d82-b7fc-1934b8c66515\translations'.
+[Debug] [10/22/2025 8:52:53 PM] Committing changes.
+[Debug] [10/22/2025 8:52:53 PM] core-upgrade postcommand:  resuming Runtime service.
+[Debug] [10/22/2025 8:52:53 PM] Attempting to start service 'OVRService'.
+[Debug] [10/22/2025 8:52:54 PM] Service 'OVRService' is now Running.
+[Debug] [10/22/2025 8:52:54 PM] IPC connection destroyed.
+[Debug] [10/22/2025 8:52:54 PM] Exiting with code 0 (Success).
+
+
+[Debug] [10/28/2025 8:00:50 AM] Starting up OVRLibraryService v1.16.0.0.
+[Debug] [10/28/2025 8:00:50 AM] Starting up.
+[Debug] [10/28/2025 8:00:51 AM] IPC connection opened.
+[Debug] [10/28/2025 8:00:51 AM] App libraries for this user: [CORE_DATA]
+[Debug] [10/28/2025 8:00:51 AM] OVRLibraryService starting in service mode.  Arguments: [core-upgrade-chunked-start-background, C:\Program Files\Oculus\\Downloads\oculus-client\1761011719\oculus-client.zip, C:\Program Files\Oculus\\Downloads\oculus-client\1761011719\oculus-client.sig, C:\Program Files\Oculus\\Downloads\oculus-librarian\1761011665\oculus-librarian.zip, C:\Program Files\Oculus\\Downloads\oculus-librarian\1761011665\oculus-librarian.sig, C:\Program Files\Oculus\\Downloads\oculus-diagnostics\1761011624\oculus-diagnostics.zip, C:\Program Files\Oculus\\Downloads\oculus-diagnostics\1761011624\oculus-diagnostics.sig, C:\Program Files\Oculus\\Downloads\oculus-dash\1761011766\oculus-dash.zip, C:\Program Files\Oculus\\Downloads\oculus-dash\1761011766\oculus-dash.sig, C:\Program Files\Oculus\\Downloads\oculus-drivers\1761011733\oculus-drivers.zip, C:\Program Files\Oculus\\Downloads\oculus-drivers\1761011733\oculus-drivers.sig, C:\Program Files\Oculus\\Downloads\oculus-platform-runtime\1761011683\oculus-platform-runtime.zip, C:\Program Files\Oculus\\Downloads\oculus-platform-runtime\1761011683\oculus-platform-runtime.sig, C:\Program Files\Oculus\\Downloads\oculus-redistributable-installer\1761011606\oculus-redistributable-installer.zip, C:\Program Files\Oculus\\Downloads\oculus-redistributable-installer\1761011606\oculus-redistributable-installer.sig, C:\Program Files\Oculus\\Downloads\oculus-remote-desktop\1761315707\oculus-remote-desktop.zip, C:\Program Files\Oculus\\Downloads\oculus-remote-desktop\1761315707\oculus-remote-desktop.sig, C:\Program Files\Oculus\\Downloads\oculus-runtime\1761012115\oculus-runtime.zip, C:\Program Files\Oculus\\Downloads\oculus-runtime\1761012115\oculus-runtime.sig]
+[Debug] [10/28/2025 8:00:51 AM] IPC thread running; waiting for Oaf to connect.
+[Debug] [10/28/2025 8:00:51 AM] IPC connection established!
+[Debug] [10/28/2025 8:00:51 AM] Creating NTFS transaction.
+[Debug] [10/28/2025 8:00:51 AM] Enabling background mode
+[Debug] [10/28/2025 8:00:51 AM] Creating NTFS transaction.
+[Debug] [10/28/2025 8:00:52 AM] Validating 'C:\Program Files\Oculus\tmp\fb549fc7-0831-47fa-ad78-831491b24085\package.zip' against signature 'C:\Program Files\Oculus\tmp\fb549fc7-0831-47fa-ad78-831491b24085\package.sig.
+[Debug] [10/28/2025 8:00:52 AM] File hash for C:\Program Files\Oculus\tmp\fb549fc7-0831-47fa-ad78-831491b24085\package.zip: 1297412a43dfb2d22b460c5dcfee4d358818fc3417bfbaf3aed2d049af989a62
+[Debug] [10/28/2025 8:00:52 AM] Decrypting ciphertext signature 'OSBGyfa6PiG3ghT23VEOkWn0o2atKt5NtZX83v4lR+caNVIsx2gPWrpJ+waVY4tgtLMKQGb5C4uSBHi6J5LSJXMbWJjSKz7Qn8qpYDFrRQFpsFeywFWL+UKcNF0sWp1K6BywBtFspyGjMY5wEU0LKLCD3vPvoIHv2kjVcPKhWBh/mdz0dksPTlhqmcqG15yNtg3vHZYKvUPzytNvVPBudPbW91cpFHAp5YvDcAANXxAOJw9k6Bm11Tn/EAnHjEJLfMCh4tNu/K8AFAAjdB/Mziaecl3otmysCk1AmTwW9o/RSD7xiyhQ4vM6tZI0YF0evDGxg2N015dpx+O3+wuBp+lS2uPWDEmkaRLTfLxNiJ9XVFmaDtcgsp6WcuZ1AcJIx8YrcgATorvtHLEFQd2nyAsoAus0DekUkYdsKIUDmQ29Y+AjpwRj+EsVsymXOVnI3S38GsU2h5WbZYwuHbidGtgLCjiX7MPrPqoEwA7KE1spU4tnLZNXkBfo7qh9laptZfdu9tvkcHsfRIjYoYK+TEkPGJHgaaJzHA1u8tRLTzaFKXHFwEj0aJzDmK+F6DiqnY4xSm18/hqT6vJdE1AOcUhKn+Ub1AsGTahkd7dnjZwVRPtc3lfzrJdNmA/LusoxmW8Nq+Y6xP24Jk1/rDL/HFyaDnsdbXxjt3iZqB7ZTXs=' with primary key.
+[Debug] [10/28/2025 8:00:53 AM] Decrypted plaintext signature '1297412a43dfb2d22b460c5dcfee4d358818fc3417bfbaf3aed2d049af989a62'.
+[Debug] [10/28/2025 8:00:53 AM] Ding!
+[Debug] [10/28/2025 8:00:56 AM] Loaded manifest for 'oculus-client' version code 1761011719
+[Debug] [10/28/2025 8:00:56 AM] Validating 'C:\Program Files\Oculus\tmp\341d1930-889b-44de-9c00-6cd4b9104372\package.zip' against signature 'C:\Program Files\Oculus\tmp\341d1930-889b-44de-9c00-6cd4b9104372\package.sig.
+[Debug] [10/28/2025 8:00:56 AM] File hash for C:\Program Files\Oculus\tmp\341d1930-889b-44de-9c00-6cd4b9104372\package.zip: cb8bf7ee2f6291641821681fe9f7a0d05353175c109ecec8c74ae791964d170d
+[Debug] [10/28/2025 8:00:56 AM] Decrypting ciphertext signature 'nJbr1axFy+k+na7bBubwIP4R0CBzvzSh2CIXhaf0Y62KZ90dCmEtsBp/JWjgyjZFg8Q37yIb0kpyxWlnao0kO5BnhWH4SEHY9Tn2EdL+XLvSN3hNsBM1834invk/AR32g6LCdtMOzhrojQaJRFEWX8GqnN4GbFc7OykVicK4Fo0EHLkAhPmxG/VpJgwmvpGdHyTVUvKHQWQiTN75pkpFSjIa+An9X2lPdo8oaoqChmRh+06KJjDEsRySbVDR86h6QwSuWl49fNh045rcrPJ3ftLnCY9Ex64PL6cZnCp/Vc1iVhewNFYCWSRlbjYxLkKUD7pccFfnsZ0KxllcZZPbZVfizqhZse5RXbtIA7Rynoe9cQzesOMJqn4WpxqkFHqyVk/mgAnaYedafldRcosXsPoRJf3soHp+bM0Uu1uhDn6xL6jksuhCQ60tWPwA51eeIZ+/CZCkwOmoNEMUu+nFfTHKp9qgvLgPV5itcPE0Yov4f8H8D3+ttE6SwzTmUlVFn2IMnzXmfGZOEmZKWbMDz2i/V20Oi4e0o3WV9JbSqbY7nARlBeedwgGPvAgGJNoeARzy7TFCKHSr9GbyiH0uaMZZyETy/h8E/Q4OB8O8YmqnpulxUiPkvtD8xNudE/kvfcuxp7yws2LELeodSePoNdEMVqafCojvayzUSbaO4Ls=' with primary key.
+[Debug] [10/28/2025 8:00:56 AM] Decrypted plaintext signature 'cb8bf7ee2f6291641821681fe9f7a0d05353175c109ecec8c74ae791964d170d'.
+[Debug] [10/28/2025 8:00:56 AM] Ding!
+[Debug] [10/28/2025 8:00:56 AM] Loaded manifest for 'oculus-librarian' version code 1761011665
+[Debug] [10/28/2025 8:00:56 AM] Validating 'C:\Program Files\Oculus\tmp\e72fa784-6018-45ab-8f07-3dcbf8f2d256\package.zip' against signature 'C:\Program Files\Oculus\tmp\e72fa784-6018-45ab-8f07-3dcbf8f2d256\package.sig.
+[Debug] [10/28/2025 8:00:56 AM] File hash for C:\Program Files\Oculus\tmp\e72fa784-6018-45ab-8f07-3dcbf8f2d256\package.zip: 2adfa2781454d46095d316afdf1f75ea5d5144fcefc7fefe1e367f66338dc06f
+[Debug] [10/28/2025 8:00:56 AM] Decrypting ciphertext signature 'jhHzC9uGT+RJYBeIDPh8LReGH3rCMQLu5wnjucr+OWc+hVJaGYkbP42eJ+jS64pfcZjc0VaBHZd/yAhgEIoxMUDfki0bmvKlpKCb+GF9oLDYHP5xXMKSFGcMtqguIi71ZM/PnEijUfB1ZP9s3wmDWkNcc4t1KxllVoRd91HyE2O/nUZkLmKiknOHJuZDJZbowpMhX0VIKKgHM8143viVYMlqXcYNcB4OiBU7eFZPdxuaVRITfFLgie2AaTdrIdvc5/CVjrI4yuINJ3dMgCE2uTMoXJddbdqt0E9QTtvOjkUgcybYgR6CE8g4Sw71jqgh1vpiq9sdEglKC49iB9TRr4ygPiM4BZIk+FmRWgKiCxxu4gso3wrbsd74iyESekbSeurnzbR5AJWcrKEbTKfYrS2IrlUbgM5rprkRx8voj681wggE9xFtU3EgFFflnNRi1fxDmCMAu8y6qmwXFzuCVjfavQ/wrTl9xL4zZYBW++mB4MH+RAqkZhgv2DPZEUhQuz7HBT0L12wb1aEttyFNNwKTBDihq4Lx4mVCmUumlqRgVjhHEINirMZTPZoaUW3cdljeVrihVkriSbmA9oP1fbhBkdL+vdQWrGCQn2lOBQne+QwYTmqR1YDdwxvG0902qtu3KXPWDk8yfHlRtiw/ZxAi4XyvSAcEHPGkAntvjj4=' with primary key.
+[Debug] [10/28/2025 8:00:56 AM] Decrypted plaintext signature '2adfa2781454d46095d316afdf1f75ea5d5144fcefc7fefe1e367f66338dc06f'.
+[Debug] [10/28/2025 8:00:56 AM] Ding!
+[Debug] [10/28/2025 8:00:56 AM] Loaded manifest for 'oculus-diagnostics' version code 1761011624
+[Debug] [10/28/2025 8:00:56 AM] Validating 'C:\Program Files\Oculus\tmp\12ae28da-4a54-4cfa-8aba-129c1e7e923b\package.zip' against signature 'C:\Program Files\Oculus\tmp\12ae28da-4a54-4cfa-8aba-129c1e7e923b\package.sig.
+[Debug] [10/28/2025 8:00:57 AM] File hash for C:\Program Files\Oculus\tmp\12ae28da-4a54-4cfa-8aba-129c1e7e923b\package.zip: 423bb2166696966aa0084f68b9dc09a5aae9739f0e5b7687656ecfc0d2582971
+[Debug] [10/28/2025 8:00:57 AM] Decrypting ciphertext signature 'dyZ1tn8alWQmFsgXoKAC52RGcAHAqQN49JhP8p5XRQ08eaKmF1xDbHgpfQZHJ+6egL6UQyojbY/9y7nmDMz4OnLtATHP68Ok6O7uA1CjAH267Dr30OhvWe5OvlbEiOblh6/d+SiOWsPyUljL6ncSV/IdZwSzKqjZM7satwcki4qQ6LcXvCVlX3dURFN98rlTQF1yck0fQCV30MAP04j1ydVEItWWYYHluu+L51JAuYOF/Iy4pauJH0bkK3/GCzlRb3Q6atdvsUkwIoIjuF2i/YwRuDhWWuIRFh+MYXOkm3BYdCFqHlBOP65Nr3m4gj9Pxqm/3T8dTD2SWqkKej2dPmKFRrheLX3Z0/V8q508fT+mnYLfj10DAazWVmdB0gChyLCusQP6tm62q12TvqmJqjsCZ+U+Py7Ugj8UpF9oO2sQCgKUA4F/Byp869qyEeRXKD6CkeJWBM62frcvg5HsB5c/87vbmCiYjwG1ybOj+MRl5azGT4V2XBB7z9FlKuxPTAwHjvqatVQra7oViBY489W4lN/3qRYolwBXEczp/IOkWTw7IN7oB7v888r9r3ZnVcnI3ylci1uNzzUzDraAaqEXJXpdZqaf3el4AKRnClCzYZ0zXPK4//ZaggOCrspSYX23BrCQfV4kw94bRjDJgiLPN+78NYu84TnYDGla2qg=' with primary key.
+[Debug] [10/28/2025 8:00:57 AM] Decrypted plaintext signature '423bb2166696966aa0084f68b9dc09a5aae9739f0e5b7687656ecfc0d2582971'.
+[Debug] [10/28/2025 8:00:57 AM] Ding!
+[Debug] [10/28/2025 8:00:57 AM] Loaded manifest for 'oculus-dash' version code 1761011766
+[Debug] [10/28/2025 8:00:57 AM] Validating 'C:\Program Files\Oculus\tmp\30b97e92-62f8-4135-a4b2-141acc4cadac\package.zip' against signature 'C:\Program Files\Oculus\tmp\30b97e92-62f8-4135-a4b2-141acc4cadac\package.sig.
+[Debug] [10/28/2025 8:00:57 AM] File hash for C:\Program Files\Oculus\tmp\30b97e92-62f8-4135-a4b2-141acc4cadac\package.zip: 192019ba9c9e7e67aea189f7cb302c8cebc8b6b24b7a694404c407b795f22ced
+[Debug] [10/28/2025 8:00:57 AM] Decrypting ciphertext signature 'RSX+2TATOugb2ryuktsfK2ysdJAwpxh2+hJGZvqZm7Fv5EhNFnwy+47wmysd5fTgh3lSeN5wnmweoT156wCWM2zGqugImmxiTk6U5BkC686PYlwTNIAIpQwxeTRLOrNh3WRj32pyeRazGHaZicWpDVrIgqTl/wRL574g3MfHmTu2S+0XJcNqKhlMCfJIFxE0/07E04wTYPRRiH5CyYjVBJGrlK+OBDWQ11OOCgxu4mDQmEf5d0sM2cT84d2blcHpcJ0Ct0CFcpJkat2qlBw5nbkUuRI7jSrLm2uWKJ6yL3at+5UIWD5NEbljYlYdzo1i2kYbgQPZWtHXKypNcwGKu61fczH2cRd/xEiyH4e1BolFuHGsFPdNau0lEvD0aPiLW1/4aq67dB5AxKuFzqelzW3cA0aFmBf17/RN5+SBDQXp4g2BTf8fJ8U1dCN31kpIhEQYT4OvfndHw0orpRMrxMfeZFN+LKlKqzMfUXcsGgj89xxKwHfLRhdCpz5G9KcnrjrqFfQ5tQZ6VPaz05V+CqvmYNJ/YJNlZMokdEw6B6tZ5Hi26ktblU3v9qGNhYKd4HIiJ2wnMae6qaS5XgqbztA+yODEUDQKkyeedXyW4otXUvGCQX2zOEs73OoE/vFZ0Gn5eomrRTisjP574XrdASjWgu9rWuJiV6lUwzz4Ipw=' with primary key.
+[Debug] [10/28/2025 8:00:57 AM] Decrypted plaintext signature '192019ba9c9e7e67aea189f7cb302c8cebc8b6b24b7a694404c407b795f22ced'.
+[Debug] [10/28/2025 8:00:57 AM] Ding!
+[Debug] [10/28/2025 8:00:57 AM] Loaded manifest for 'oculus-drivers' version code 1761011733
+[Debug] [10/28/2025 8:00:57 AM] Validating 'C:\Program Files\Oculus\tmp\4278113a-c7cd-44cb-a461-96dc50f2c762\package.zip' against signature 'C:\Program Files\Oculus\tmp\4278113a-c7cd-44cb-a461-96dc50f2c762\package.sig.
+[Debug] [10/28/2025 8:00:57 AM] File hash for C:\Program Files\Oculus\tmp\4278113a-c7cd-44cb-a461-96dc50f2c762\package.zip: b271cffcb3db9ce3cca8a278789fd1af6ab2e2c042ef17f3e81e8b6e6d7dcb92
+[Debug] [10/28/2025 8:00:57 AM] Decrypting ciphertext signature 'orJj2WyXr/X2k9qxAR6G+TD1wd3YW8dxpFg1H2+k5dQ1UZR0X+lD5D85dB8l+BE61ZIvoDowd/qlTJ+uI2dYFvValxepf0qUi8SBTpXDlOLqGS4nKWcjXyiaIHSq0DpCT4tC/izDMv7YyVjg6bScvAPWafYTimBqGXlNkMaA6mOKqA+c3faqWFFSkI0mwv9nYNgWKTKuLcpgCKfHV+ki2OhHA8Bq5n5Rp6anAw8CSUCazYeGJgZ5CXp7v49FF4+uNiW3g0ghl1R/DWvk1/vGzKSEe1zSg+vQUiXhTf/29SmFDqFnSBGJm1itGV8aeqdX7mYxk6i8K8b0wniCO8NxyqBdjNuCORuSsYcOuwExiwdw/x0lq3pJqd92IZjla0xtzdAmbtMLrMWWvd7faFZEIoLHTZTOemA6M3DNcY5Td1iQCGJ9QfNHH8zP+1P0askbxSePIiBA01HvdE3OLzlMtCrWw0nXQDpC/9k6NBjO/mTAR7ujXZflz2MNCNqPsXNSXIPZAgq9u0hw/JEerZIGWeY2rapZQbGtV+vDdBj7b2J9afvl0OUIzdL6rCiaFMKXE9ePaqsmQluVoMYemd06jqnWWtv+oPgjwPYVy+v/NyEbtayokwQjqGMhOwv2RMau2jw/VXn239Gn1NmoyWfhsOheLO/ZRvxc5AXGHRTs7qY=' with primary key.
+[Debug] [10/28/2025 8:00:57 AM] Decrypted plaintext signature 'b271cffcb3db9ce3cca8a278789fd1af6ab2e2c042ef17f3e81e8b6e6d7dcb92'.
+[Debug] [10/28/2025 8:00:57 AM] Ding!
+[Debug] [10/28/2025 8:00:57 AM] Loaded manifest for 'oculus-platform-runtime' version code 1761011683
+[Debug] [10/28/2025 8:00:57 AM] Validating 'C:\Program Files\Oculus\tmp\c7c8ed25-bab4-48da-af81-57c4eee14d1b\package.zip' against signature 'C:\Program Files\Oculus\tmp\c7c8ed25-bab4-48da-af81-57c4eee14d1b\package.sig.
+[Debug] [10/28/2025 8:00:57 AM] File hash for C:\Program Files\Oculus\tmp\c7c8ed25-bab4-48da-af81-57c4eee14d1b\package.zip: aa29970715062f5c1dbfe19c890ae87735253ba64898edb0dd36a8c6e8e1eeb0
+[Debug] [10/28/2025 8:00:57 AM] Decrypting ciphertext signature 'ISqQjOmYNDRDbK3t6xTf89LHbndwZ411PKZF+muZHJv/8inUHr26uuvovO/HUj1Q7aaqA4TtyVvPgDyG6WZR3dlrLrCdflYd7jt0M0boPCpETulBcCnmws6BV3fp/muysvo9DdR82jyRUeZfmg+g5oLa56zTKhiWeTRcRrxSl3ycUBxmk/dYUdxGmIho1QBSlmicyyYx9KlzUvzh2GJOWTsMGvcbFNu1ZT4wHohDCkApAwJn2ickfKVB5YZYy8JXi+yUblpFthiZAK+UNGY2+m0UC4QHrvYSZwTM9DnCtvABBesxAmc2JgXJ73PZR2P2U/hqA2KTaiMBS4Hy8edk05ZFvZjZuKaSNV2LKkKFKNI4RmeoRB2p57Qd5dTU2m0qAr+SVi/MuMfj+mlU3nIaYFr4Lg3A9BVH8k923U6Gw1WpYBRfn5LOEeikJL9P9zjRNnH2MDo4Chw1LZ24ANxsMpfeKw1ngm/RL8dNh/6D5R1llITzwfRamKylt8Rk0yxdtEXlFeKGmni3GgksJohcD/2tvyO7TOmEIxBBCRU9dlv/uHdOyO9XFoX47uhNi6+bjtf2aI+rkJJYmVab4lgrnyuw40BK3iiEIUtsRyNczQPU/5JnBl3ZHZ+D1ztupdooZXqLt6GyRssM0chClZtFiLaNgbxIHEJaNOTMJRuxcfo=' with primary key.
+[Debug] [10/28/2025 8:00:57 AM] Decrypted plaintext signature 'aa29970715062f5c1dbfe19c890ae87735253ba64898edb0dd36a8c6e8e1eeb0'.
+[Debug] [10/28/2025 8:00:57 AM] Ding!
+[Debug] [10/28/2025 8:00:57 AM] Loaded manifest for 'oculus-redistributable-installer' version code 1761011606
+[Debug] [10/28/2025 8:00:57 AM] Validating 'C:\Program Files\Oculus\tmp\f455ad6c-5e36-4844-8ee6-0dc4e5f4d812\package.zip' against signature 'C:\Program Files\Oculus\tmp\f455ad6c-5e36-4844-8ee6-0dc4e5f4d812\package.sig.
+[Debug] [10/28/2025 8:00:57 AM] File hash for C:\Program Files\Oculus\tmp\f455ad6c-5e36-4844-8ee6-0dc4e5f4d812\package.zip: 0f10574ba459a05485e301f8a63be36511743f93e6d95449583e49efbf237eac
+[Debug] [10/28/2025 8:00:57 AM] Decrypting ciphertext signature 'v9A1Gv0tmRjejNKnSuUaBFADV3MaiS7x33L4+1Mg/SpvWmqEpwmXTGn7tnUKkGV/4pKShPke/4CW3/vChX0CdcsWQv67HD1yQyMGIrmas9FHgtan9F35Nnm2XTSdfa+TFC3y04BrVgoIrh4+vCLC4BJW6HknjCHMyJbgbM5PQvs1KyWkDkWK6VvnlyBQA1jTdtwd5HWNl0S53YBY3DMBtWCl6QP+0JXyX1B+6dxp1RXV/KpaUyJcvSt9aYeCtzSgsLN6p7lMC2OURb7/VvWkKclfwoy7j19EhBbFJVDFQS7uQ5BzFbnqLnoA0oQfPdZUhRY4ZmIJgyZEVvon+2fu8Bwq2FYjE+cvrle5lJ+vqNjrbBoD5mM9cOfdlNTSColqgM6+z+4v3xVfIYxGrFSNHbwGS9JZHQUkOWUNvhZIN5KzxeVfAtgjaaosKWXgaRrPcK1QbX78Uc9Z15bmWyAjpHMTO+p2M7lVG8ZdNERV6HU4siqOOETXqu2LBL35ft60RvBuV37X8C+T3CvcTn2MDXqB2jLUxj9eK0bUMAwDQeYO9yc59RcHyXyUWnVbrE14O0leT6a0fIiPInQ5a6Tc03EQb0S902mrHYjeydyEtE5V1EftrHaZqRpWX1s7tsd9mdEtPX3JxrFfkJoofK0AR1WWqZbErVQGc2mq+BzEbQc=' with primary key.
+[Debug] [10/28/2025 8:00:57 AM] Decrypted plaintext signature '0f10574ba459a05485e301f8a63be36511743f93e6d95449583e49efbf237eac'.
+[Debug] [10/28/2025 8:00:57 AM] Ding!
+[Debug] [10/28/2025 8:00:57 AM] Loaded manifest for 'oculus-remote-desktop' version code 1761315707
+[Debug] [10/28/2025 8:00:57 AM] Validating 'C:\Program Files\Oculus\tmp\8b4382e2-3209-4725-977b-d1f76520fb2e\package.zip' against signature 'C:\Program Files\Oculus\tmp\8b4382e2-3209-4725-977b-d1f76520fb2e\package.sig.
+[Debug] [10/28/2025 8:00:57 AM] File hash for C:\Program Files\Oculus\tmp\8b4382e2-3209-4725-977b-d1f76520fb2e\package.zip: 4cc1cd12f1a708fee5f9da2dea7ebf2b03995d8d9f0937b225eb4ae531ea44b2
+[Debug] [10/28/2025 8:00:57 AM] Decrypting ciphertext signature 'uV0ZijnqXTOMbTSe/wV0b+PNvw+Wh++beHao2p/dsXL7v0V69BFCZ5PRUAHvfeQYknny5GoVxUnB1zTkijBDqom7SAcU75eVzhcHL1ct7+CbNdLZNOWewvkri8m7Nc5oeMo3Hj10QeoLYj7X7JmqCd2jJ4sOqCiqHJ/UVRV2PfQBSpC3nxIE8ifbYuuP1oVt5lZK3vl3cY52RHyR/MnSaTKXs9jjTHnGT393vlg3B6FZwwnbpUmlLGn2d96o4P+kaaOJHNjK+xKCKyo0zagx7HGNHRhOjvb+NijW5vLHOWI/lBBc8Nv58e2e24ysOXTKeNbQ1flDBfHaFQ/pjUuC6YKpIpC4uNg0Hpi3B9W61ICpHJKfz3ou9ck7DX8+Yykv/NrxNt5dNydmN6KU6TaFDdVtfbSkn85/uaTr0f5QhOELjVMWN3/+Cc3dbPiMkmGZMYJAgkyihBw3baY1ekP9ZrDXF4OeB1L0dBuPH/gBHOvvG5itfTr/r1LjXtLRO8CVGS1/3fMdQwHmZZV7u0kHANNd5Q1V+BAZPN9G+jS4taZksRKmJDLCvLVoNrVTYl1//+ph61yfbDaQtVqM+euOV/qwlL8JtufQOSlXhle4ZkwmXkiQXDtu22xVLSkCpNZv1+Jgpj/tV+gVszacn/bcYPOXEQhvg9VNTY7eLGk/gPE=' with primary key.
+[Debug] [10/28/2025 8:00:57 AM] Decrypted plaintext signature '4cc1cd12f1a708fee5f9da2dea7ebf2b03995d8d9f0937b225eb4ae531ea44b2'.
+[Debug] [10/28/2025 8:00:57 AM] Ding!
+[Debug] [10/28/2025 8:00:57 AM] Loaded manifest for 'oculus-runtime' version code 1761012115
+[Debug] [10/28/2025 8:00:57 AM] Committing changes.
+[Debug] [10/28/2025 8:00:58 AM] Found existing manifest for 'oculus-client' version code 1754948834
+[Debug] [10/28/2025 8:00:58 AM] Creating NTFS transaction.
+[Debug] [10/28/2025 8:00:58 AM] Computing hash map
+[Debug] [10/28/2025 8:01:26 AM] Committing changes.
+[Debug] [10/28/2025 8:01:26 AM] Number of chunks that need to be downloaded: 38.
+[Debug] [10/28/2025 8:01:33 AM] Finished waiting for all the segments
+[Debug] [10/28/2025 8:01:33 AM] Creating NTFS transaction.
+[Debug] [10/28/2025 8:01:33 AM] Committing changes.
+[Debug] [10/28/2025 8:01:33 AM] Found existing manifest for 'oculus-librarian' version code 1754948707
+[Debug] [10/28/2025 8:01:33 AM] Creating NTFS transaction.
+[Debug] [10/28/2025 8:01:33 AM] Computing hash map
+[Debug] [10/28/2025 8:01:33 AM] Committing changes.
+[Debug] [10/28/2025 8:01:33 AM] Number of chunks that need to be downloaded: 10.
+[Debug] [10/28/2025 8:01:34 AM] Finished waiting for all the segments
+[Debug] [10/28/2025 8:01:34 AM] Creating NTFS transaction.
+[Debug] [10/28/2025 8:01:34 AM] Committing changes.
+[Debug] [10/28/2025 8:01:34 AM] Found existing manifest for 'oculus-diagnostics' version code 1754948734
+[Debug] [10/28/2025 8:01:34 AM] Creating NTFS transaction.
+[Debug] [10/28/2025 8:01:34 AM] Computing hash map
+[Debug] [10/28/2025 8:01:38 AM] Committing changes.
+[Debug] [10/28/2025 8:01:38 AM] Number of chunks that need to be downloaded: 14.
+[Debug] [10/28/2025 8:01:39 AM] Finished waiting for all the segments
+[Debug] [10/28/2025 8:01:39 AM] Creating NTFS transaction.
+[Debug] [10/28/2025 8:01:39 AM] Committing changes.
+[Debug] [10/28/2025 8:01:39 AM] Found existing manifest for 'oculus-dash' version code 1754948812
+[Debug] [10/28/2025 8:01:39 AM] Creating NTFS transaction.
+[Debug] [10/28/2025 8:01:40 AM] Computing hash map
+[Debug] [10/28/2025 8:02:00 AM] Committing changes.
+[Debug] [10/28/2025 8:02:00 AM] Number of chunks that need to be downloaded: 10.
+[Debug] [10/28/2025 8:02:02 AM] Finished waiting for all the segments
+[Debug] [10/28/2025 8:02:02 AM] Creating NTFS transaction.
+[Debug] [10/28/2025 8:02:02 AM] Committing changes.
+[Debug] [10/28/2025 8:02:02 AM] Found existing manifest for 'oculus-drivers' version code 1754948780
+[Debug] [10/28/2025 8:02:02 AM] Creating NTFS transaction.
+[Debug] [10/28/2025 8:02:02 AM] Computing hash map
+[Debug] [10/28/2025 8:02:04 AM] Committing changes.
+[Debug] [10/28/2025 8:02:04 AM] Number of chunks that need to be downloaded: 4.
+[Debug] [10/28/2025 8:02:05 AM] Finished waiting for all the segments
+[Debug] [10/28/2025 8:02:05 AM] Creating NTFS transaction.
+[Debug] [10/28/2025 8:02:05 AM] Committing changes.
+[Debug] [10/28/2025 8:02:05 AM] Found existing manifest for 'oculus-platform-runtime' version code 1754948745
+[Debug] [10/28/2025 8:02:05 AM] Creating NTFS transaction.
+[Debug] [10/28/2025 8:02:05 AM] Computing hash map
+[Debug] [10/28/2025 8:02:06 AM] Committing changes.
+[Debug] [10/28/2025 8:02:06 AM] Number of chunks that need to be downloaded: 3.
+[Debug] [10/28/2025 8:02:06 AM] Finished waiting for all the segments
+[Debug] [10/28/2025 8:02:06 AM] Creating NTFS transaction.
+[Debug] [10/28/2025 8:02:06 AM] Committing changes.
+[Debug] [10/28/2025 8:02:06 AM] Found existing manifest for 'oculus-redistributable-installer' version code 1754948701
+[Debug] [10/28/2025 8:02:06 AM] Creating NTFS transaction.
+[Debug] [10/28/2025 8:02:06 AM] Computing hash map
+[Debug] [10/28/2025 8:02:07 AM] Committing changes.
+[Debug] [10/28/2025 8:02:07 AM] Number of chunks that need to be downloaded: 7.
+[Debug] [10/28/2025 8:02:08 AM] Finished waiting for all the segments
+[Debug] [10/28/2025 8:02:08 AM] Creating NTFS transaction.
+[Debug] [10/28/2025 8:02:08 AM] Committing changes.
+[Debug] [10/28/2025 8:02:08 AM] Found existing manifest for 'oculus-remote-desktop' version code 1760701063
+[Debug] [10/28/2025 8:02:08 AM] Creating NTFS transaction.
+[Debug] [10/28/2025 8:02:08 AM] Computing hash map
+[Debug] [10/28/2025 8:02:09 AM] Committing changes.
+[Debug] [10/28/2025 8:02:09 AM] Number of chunks that need to be downloaded: 7.
+[Debug] [10/28/2025 8:02:11 AM] Finished waiting for all the segments
+[Debug] [10/28/2025 8:02:11 AM] Creating NTFS transaction.
+[Debug] [10/28/2025 8:02:11 AM] Committing changes.
+[Debug] [10/28/2025 8:02:11 AM] Found existing manifest for 'oculus-runtime' version code 1754949335
+[Debug] [10/28/2025 8:02:11 AM] Creating NTFS transaction.
+[Debug] [10/28/2025 8:02:11 AM] Computing hash map
+[Debug] [10/28/2025 8:02:26 AM] Committing changes.
+[Debug] [10/28/2025 8:02:26 AM] Number of chunks that need to be downloaded: 62.
+[Debug] [10/28/2025 8:02:32 AM] Finished waiting for all the segments
+[Debug] [10/28/2025 8:02:32 AM] Creating NTFS transaction.
+[Debug] [10/28/2025 8:02:32 AM] Committing changes.
+[Debug] [10/28/2025 8:02:32 AM] Committing changes.
+[Warning] [10/28/2025 8:02:32 AM] Oaf IPC connection lost!
+[Debug] [10/28/2025 8:02:33 AM] IPC connection destroyed.
+[Debug] [10/28/2025 8:02:33 AM] Exiting with code 0 (Success).
+
+
+[Debug] [10/28/2025 8:02:34 AM] Starting up OVRLibraryService v1.16.0.0.
+[Debug] [10/28/2025 8:02:34 AM] Starting up.
+[Debug] [10/28/2025 8:02:34 AM] IPC connection opened.
+[Debug] [10/28/2025 8:02:34 AM] App libraries for this user: [CORE_DATA]
+[Debug] [10/28/2025 8:02:34 AM] OVRLibraryService starting in service mode.  Arguments: [core-upgrade-chunked-finish, oculus-client, oculus-librarian, oculus-diagnostics, oculus-dash, oculus-drivers, oculus-platform-runtime, oculus-redistributable-installer, oculus-remote-desktop, oculus-runtime]
+[Debug] [10/28/2025 8:02:34 AM] IPC thread running; waiting for Oaf to connect.
+[Debug] [10/28/2025 8:02:34 AM] IPC connection established!
+[Debug] [10/28/2025 8:02:34 AM] core-upgrade precommand:  stopping Runtime service.
+[Debug] [10/28/2025 8:02:34 AM] Waiting for service 'OVRService' to stop.
+[Debug] [10/28/2025 8:02:37 AM] Service 'OVRService' is now Stopped.
+[Debug] [10/28/2025 8:02:37 AM] Creating NTFS transaction.
+[Debug] [10/28/2025 8:02:37 AM] Enabling background mode
+[Debug] [10/28/2025 8:02:37 AM] Found existing manifest for 'oculus-client' version code 1754948834
+[Debug] [10/28/2025 8:02:37 AM] Reusing existing staging directory
+[Debug] [10/28/2025 8:02:37 AM] Checking stale files
+[Debug] [10/28/2025 8:02:38 AM] Done checking stale files
+[Debug] [10/28/2025 8:02:38 AM] Computing hash map
+[Debug] [10/28/2025 8:02:47 AM] Number of chunks that need to be downloaded: 0.
+[Debug] [10/28/2025 8:02:47 AM] Hot-swapping 'oculus-client'. 
+[Debug] [10/28/2025 8:02:47 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-client'.
+[Debug] [10/28/2025 8:02:47 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-client\resources'.
+[Debug] [10/28/2025 8:02:47 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-client\resources\app.asar.unpacked'.
+[Debug] [10/28/2025 8:02:47 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-client\resources\app.asar.unpacked\output'.
+[Debug] [10/28/2025 8:02:47 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-client\resources\bin'.
+[Debug] [10/28/2025 8:02:47 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-client\resources\bin\Casting'.
+[Debug] [10/28/2025 8:02:47 AM] Deleting directory 'C:\Program Files\Oculus\tmp'.
+[Debug] [10/28/2025 8:02:47 AM] Deleting directory 'C:\Program Files\Oculus\tmp\12ae28da-4a54-4cfa-8aba-129c1e7e923b'.
+[Debug] [10/28/2025 8:02:47 AM] Deleting directory 'C:\Program Files\Oculus\tmp\30b97e92-62f8-4135-a4b2-141acc4cadac'.
+[Debug] [10/28/2025 8:02:47 AM] Deleting directory 'C:\Program Files\Oculus\tmp\341d1930-889b-44de-9c00-6cd4b9104372'.
+[Debug] [10/28/2025 8:02:47 AM] Deleting directory 'C:\Program Files\Oculus\tmp\4278113a-c7cd-44cb-a461-96dc50f2c762'.
+[Debug] [10/28/2025 8:02:47 AM] Deleting directory 'C:\Program Files\Oculus\tmp\8b4382e2-3209-4725-977b-d1f76520fb2e'.
+[Debug] [10/28/2025 8:02:47 AM] Deleting directory 'C:\Program Files\Oculus\tmp\c7c8ed25-bab4-48da-af81-57c4eee14d1b'.
+[Debug] [10/28/2025 8:02:47 AM] Deleting directory 'C:\Program Files\Oculus\tmp\e72fa784-6018-45ab-8f07-3dcbf8f2d256'.
+[Debug] [10/28/2025 8:02:47 AM] Deleting directory 'C:\Program Files\Oculus\tmp\f455ad6c-5e36-4844-8ee6-0dc4e5f4d812'.
+[Debug] [10/28/2025 8:02:47 AM] Deleting directory 'C:\Program Files\Oculus\tmp\fb549fc7-0831-47fa-ad78-831491b24085'.
+[Debug] [10/28/2025 8:02:47 AM] Found existing manifest for 'oculus-librarian' version code 1754948707
+[Debug] [10/28/2025 8:02:47 AM] Reusing existing staging directory
+[Debug] [10/28/2025 8:02:47 AM] Checking stale files
+[Debug] [10/28/2025 8:02:49 AM] Done checking stale files
+[Debug] [10/28/2025 8:02:49 AM] Computing hash map
+[Debug] [10/28/2025 8:02:49 AM] Number of chunks that need to be downloaded: 0.
+[Debug] [10/28/2025 8:02:49 AM] Hot-swapping 'oculus-librarian'. 
+[Debug] [10/28/2025 8:02:49 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-librarian'.
+[Debug] [10/28/2025 8:02:49 AM] Directory 'C:\Program Files\Oculus\tmp' does not exist.
+[Debug] [10/28/2025 8:02:49 AM] Found existing manifest for 'oculus-diagnostics' version code 1754948734
+[Debug] [10/28/2025 8:02:49 AM] Reusing existing staging directory
+[Debug] [10/28/2025 8:02:49 AM] Checking stale files
+[Debug] [10/28/2025 8:02:52 AM] Done checking stale files
+[Debug] [10/28/2025 8:02:52 AM] Computing hash map
+[Debug] [10/28/2025 8:02:53 AM] Number of chunks that need to be downloaded: 0.
+[Debug] [10/28/2025 8:02:53 AM] Hot-swapping 'oculus-diagnostics'. 
+[Debug] [10/28/2025 8:02:53 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-diagnostics'.
+[Debug] [10/28/2025 8:02:53 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-diagnostics\CameraCalibrationTool'.
+[Debug] [10/28/2025 8:02:53 AM] Directory 'C:\Program Files\Oculus\tmp' does not exist.
+[Debug] [10/28/2025 8:02:53 AM] Found existing manifest for 'oculus-dash' version code 1754948812
+[Debug] [10/28/2025 8:02:54 AM] Reusing existing staging directory
+[Debug] [10/28/2025 8:02:54 AM] Checking stale files
+[Debug] [10/28/2025 8:02:58 AM] Done checking stale files
+[Debug] [10/28/2025 8:02:58 AM] Computing hash map
+[Debug] [10/28/2025 8:03:10 AM] Number of chunks that need to be downloaded: 0.
+[Debug] [10/28/2025 8:03:10 AM] Hot-swapping 'oculus-dash'. 
+[Debug] [10/28/2025 8:03:10 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-dash'.
+[Debug] [10/28/2025 8:03:10 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-dash\dash'.
+[Debug] [10/28/2025 8:03:10 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-dash\dash\bin'.
+[Debug] [10/28/2025 8:03:10 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-dash\dash\data'.
+[Debug] [10/28/2025 8:03:10 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-dash\dash\data\js'.
+[Debug] [10/28/2025 8:03:10 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-dash\dash\data\js\assets'.
+[Debug] [10/28/2025 8:03:10 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-dash\dash\data\js\assets\src'.
+[Debug] [10/28/2025 8:03:10 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-dash\dash\data\js\assets\src\apps'.
+[Debug] [10/28/2025 8:03:10 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-dash\dash\data\js\assets\src\apps\dash-social'.
+[Debug] [10/28/2025 8:03:10 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-dash\dash\data\js\assets\src\apps\dash-store'.
+[Debug] [10/28/2025 8:03:10 AM] Directory 'C:\Program Files\Oculus\tmp' does not exist.
+[Debug] [10/28/2025 8:03:10 AM] Found existing manifest for 'oculus-drivers' version code 1754948780
+[Debug] [10/28/2025 8:03:10 AM] Reusing existing staging directory
+[Debug] [10/28/2025 8:03:10 AM] Checking stale files
+[Debug] [10/28/2025 8:03:11 AM] Done checking stale files
+[Debug] [10/28/2025 8:03:11 AM] Computing hash map
+[Debug] [10/28/2025 8:03:12 AM] Number of chunks that need to be downloaded: 0.
+[Debug] [10/28/2025 8:03:12 AM] Hot-swapping 'oculus-drivers'. 
+[Debug] [10/28/2025 8:03:12 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-drivers'.
+[Debug] [10/28/2025 8:03:12 AM] Directory 'C:\Program Files\Oculus\tmp' does not exist.
+[Debug] [10/28/2025 8:03:12 AM] Found existing manifest for 'oculus-platform-runtime' version code 1754948745
+[Debug] [10/28/2025 8:03:12 AM] Reusing existing staging directory
+[Debug] [10/28/2025 8:03:12 AM] Checking stale files
+[Debug] [10/28/2025 8:03:12 AM] Done checking stale files
+[Debug] [10/28/2025 8:03:12 AM] Computing hash map
+[Debug] [10/28/2025 8:03:12 AM] Number of chunks that need to be downloaded: 0.
+[Debug] [10/28/2025 8:03:12 AM] Hot-swapping 'oculus-platform-runtime'. 
+[Debug] [10/28/2025 8:03:12 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-platform-runtime'.
+[Debug] [10/28/2025 8:03:12 AM] Directory 'C:\Program Files\Oculus\tmp' does not exist.
+[Debug] [10/28/2025 8:03:12 AM] Found existing manifest for 'oculus-redistributable-installer' version code 1754948701
+[Debug] [10/28/2025 8:03:12 AM] Reusing existing staging directory
+[Debug] [10/28/2025 8:03:12 AM] Checking stale files
+[Debug] [10/28/2025 8:03:14 AM] Done checking stale files
+[Debug] [10/28/2025 8:03:14 AM] Computing hash map
+[Debug] [10/28/2025 8:03:14 AM] Number of chunks that need to be downloaded: 0.
+[Debug] [10/28/2025 8:03:14 AM] Hot-swapping 'oculus-redistributable-installer'. 
+[Debug] [10/28/2025 8:03:14 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-redistributable-installer'.
+[Debug] [10/28/2025 8:03:14 AM] Directory 'C:\Program Files\Oculus\tmp' does not exist.
+[Debug] [10/28/2025 8:03:14 AM] Found existing manifest for 'oculus-remote-desktop' version code 1760701063
+[Debug] [10/28/2025 8:03:14 AM] Reusing existing staging directory
+[Debug] [10/28/2025 8:03:14 AM] Checking stale files
+[Debug] [10/28/2025 8:03:14 AM] Done checking stale files
+[Debug] [10/28/2025 8:03:14 AM] Computing hash map
+[Debug] [10/28/2025 8:03:14 AM] Number of chunks that need to be downloaded: 0.
+[Debug] [10/28/2025 8:03:14 AM] Hot-swapping 'oculus-remote-desktop'. 
+[Debug] [10/28/2025 8:03:15 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-remote-desktop'.
+[Debug] [10/28/2025 8:03:15 AM] Directory 'C:\Program Files\Oculus\tmp' does not exist.
+[Debug] [10/28/2025 8:03:15 AM] Found existing manifest for 'oculus-runtime' version code 1754949335
+[Debug] [10/28/2025 8:03:15 AM] Reusing existing staging directory
+[Debug] [10/28/2025 8:03:15 AM] Checking stale files
+[Debug] [10/28/2025 8:03:25 AM] Done checking stale files
+[Debug] [10/28/2025 8:03:25 AM] Computing hash map
+[Debug] [10/28/2025 8:03:29 AM] Number of chunks that need to be downloaded: 0.
+[Debug] [10/28/2025 8:03:29 AM] Hot-swapping 'oculus-runtime'. 
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-runtime'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-runtime\client-plugins'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-runtime\client-plugins\x64'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-runtime\client-plugins\x86'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-runtime\server-plugins'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-runtime\server-plugins\RiftS'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-runtime\translations'.
+[Debug] [10/28/2025 8:03:30 AM] Directory 'C:\Program Files\Oculus\tmp' does not exist.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-client-fca53296-a594-4c42-8a9a-83c32db6d0ec'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-client-fca53296-a594-4c42-8a9a-83c32db6d0ec\resources'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-client-fca53296-a594-4c42-8a9a-83c32db6d0ec\resources\app.asar.unpacked'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-client-fca53296-a594-4c42-8a9a-83c32db6d0ec\resources\app.asar.unpacked\output'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-client-fca53296-a594-4c42-8a9a-83c32db6d0ec\resources\bin'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-client-fca53296-a594-4c42-8a9a-83c32db6d0ec\resources\bin\Casting'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-dash-54ce478d-c7a4-48d9-a63a-1de8db4b0ff2'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-dash-54ce478d-c7a4-48d9-a63a-1de8db4b0ff2\dash'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-dash-54ce478d-c7a4-48d9-a63a-1de8db4b0ff2\dash\bin'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-dash-54ce478d-c7a4-48d9-a63a-1de8db4b0ff2\dash\data'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-dash-54ce478d-c7a4-48d9-a63a-1de8db4b0ff2\dash\data\js'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-dash-54ce478d-c7a4-48d9-a63a-1de8db4b0ff2\dash\data\js\assets'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-dash-54ce478d-c7a4-48d9-a63a-1de8db4b0ff2\dash\data\js\assets\src'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-dash-54ce478d-c7a4-48d9-a63a-1de8db4b0ff2\dash\data\js\assets\src\apps'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-dash-54ce478d-c7a4-48d9-a63a-1de8db4b0ff2\dash\data\js\assets\src\apps\dash-social'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-dash-54ce478d-c7a4-48d9-a63a-1de8db4b0ff2\dash\data\js\assets\src\apps\dash-store'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-diagnostics-6dabcad8-b5c1-4e63-9920-23f11bab34cc'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-diagnostics-6dabcad8-b5c1-4e63-9920-23f11bab34cc\CameraCalibrationTool'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-drivers-0e26f5a5-e5ec-49be-b337-4a7d41cbba35'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-librarian-00348c73-13c9-4212-a97c-f7bd9ed8cfe7'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-librarian-7d8e0708-8862-4903-a25f-355225b3bf45'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-platform-runtime-c4077802-0657-4e0f-975c-d09f660b31e5'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-redistributable-installer-39936569-4eeb-4fce-97d5-8c9f4d921873'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-remote-desktop-cf67c22d-0466-4a7c-aa52-bbd0bcce1def'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-runtime-db9971aa-ec8d-41a2-9857-d52a77ff7d65'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-runtime-db9971aa-ec8d-41a2-9857-d52a77ff7d65\client-plugins'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-runtime-db9971aa-ec8d-41a2-9857-d52a77ff7d65\client-plugins\x64'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-runtime-db9971aa-ec8d-41a2-9857-d52a77ff7d65\client-plugins\x86'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-runtime-db9971aa-ec8d-41a2-9857-d52a77ff7d65\server-plugins'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-runtime-db9971aa-ec8d-41a2-9857-d52a77ff7d65\server-plugins\RiftS'.
+[Debug] [10/28/2025 8:03:30 AM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-runtime-db9971aa-ec8d-41a2-9857-d52a77ff7d65\translations'.
+[Debug] [10/28/2025 8:03:30 AM] Committing changes.
+[Debug] [10/28/2025 8:03:30 AM] core-upgrade postcommand:  resuming Runtime service.
+[Debug] [10/28/2025 8:03:30 AM] Attempting to start service 'OVRService'.
+[Debug] [10/28/2025 8:03:31 AM] Service 'OVRService' is now Running.
+[Debug] [10/28/2025 8:03:31 AM] IPC connection destroyed.
+[Debug] [10/28/2025 8:03:31 AM] Exiting with code 0 (Success).
+
+
+[Debug] [10/29/2025 9:45:44 PM] Starting up OVRLibraryService v1.16.0.0.
+[Debug] [10/29/2025 9:45:44 PM] Starting up.
+[Debug] [10/29/2025 9:45:44 PM] IPC connection opened.
+[Debug] [10/29/2025 9:45:44 PM] IPC thread running; waiting for Oaf to connect.
+[Debug] [10/29/2025 9:45:44 PM] IPC connection established!
+[Debug] [10/29/2025 9:45:44 PM] App libraries for this user: [CORE_DATA]
+[Debug] [10/29/2025 9:45:44 PM] OVRLibraryService starting in service mode.  Arguments: [core-upgrade-chunked-start-background, C:\Program Files\Oculus\\Downloads\oculus-remote-desktop\1761742179\oculus-remote-desktop.zip, C:\Program Files\Oculus\\Downloads\oculus-remote-desktop\1761742179\oculus-remote-desktop.sig]
+[Debug] [10/29/2025 9:45:44 PM] Creating NTFS transaction.
+[Debug] [10/29/2025 9:45:44 PM] Enabling background mode
+[Debug] [10/29/2025 9:45:45 PM] Creating NTFS transaction.
+[Debug] [10/29/2025 9:45:45 PM] Validating 'C:\Program Files\Oculus\tmp\3cf3ccaa-7c61-4321-8641-ded73eae2c35\package.zip' against signature 'C:\Program Files\Oculus\tmp\3cf3ccaa-7c61-4321-8641-ded73eae2c35\package.sig.
+[Debug] [10/29/2025 9:45:45 PM] File hash for C:\Program Files\Oculus\tmp\3cf3ccaa-7c61-4321-8641-ded73eae2c35\package.zip: 6bb29e0c22aa9c7d690db567e89e21911a258ea8b508cd04d2344b51ef17cc9c
+[Debug] [10/29/2025 9:45:45 PM] Decrypting ciphertext signature 'tUZeabOIrjt0HxH6enJ/vgQnXEcDVqorhIlVU1kawxNVn0SFTy/PlvKzmxKS6OgQLLde6DFODh4QoLSPx0kRReeO3cTl6TT2Hsryi/LwWti5lsTq0G+Gjn99SVT/EynfOpBPJeW761JNechkj900qqV5jMlwfNGlxU5oWShPz1gqln6z6Dbp6OmNSdnzOv4rDkNfys0NZKLa8TntbTF5bXayTHCukn1C0MEg1HMn5qGRAlq2BbKlkfx53g+OxCvpRmyJROIugFIw+w20VM54pVa+T0Zn+S9v7JKoKdUW90YIFYx1wR35aLWdfudWpwoSmzkJNQnvrHgGmjY5fPPF2muHDghosKCG1rgPN/YmfDBRsGZzwS+KE3VAZbHML4ATxlIO7j5mPbL+dMbAaqN8URHG5HGfBJcq3z9fIUlOkQyBUEiZQr+zbM/LjpjHBZEwb9WUaX/s8jLc3R9HDin7h3DW+8b87VnnngRXTKmiX+KwNIVhfRUvtDqPcfUgh4soaPfCrM27ZzhDDQ2HYOw2oA3Bo2sq2+RPBus3sez0j2xhuI7sAhnlyCha3CIaUaJuRiVKEu4MgpnWJzBvYF9jr0yM4n3CIpQooUOULL7LnjOxEpPj+JnZ8+5m6HYzGRNIw6MWl7b538NmJeR86yOvUm8KkPbWHxZHXXkhBvsFd3w=' with primary key.
+[Debug] [10/29/2025 9:45:46 PM] Decrypted plaintext signature '6bb29e0c22aa9c7d690db567e89e21911a258ea8b508cd04d2344b51ef17cc9c'.
+[Debug] [10/29/2025 9:45:46 PM] Ding!
+[Debug] [10/29/2025 9:45:50 PM] Loaded manifest for 'oculus-remote-desktop' version code 1761742179
+[Debug] [10/29/2025 9:45:50 PM] Committing changes.
+[Debug] [10/29/2025 9:45:51 PM] Found existing manifest for 'oculus-remote-desktop' version code 1761315707
+[Debug] [10/29/2025 9:45:51 PM] Creating NTFS transaction.
+[Debug] [10/29/2025 9:45:51 PM] Computing hash map
+[Debug] [10/29/2025 9:46:03 PM] Committing changes.
+[Debug] [10/29/2025 9:46:04 PM] Number of chunks that need to be downloaded: 5.
+[Debug] [10/29/2025 9:46:12 PM] Finished waiting for all the segments
+[Debug] [10/29/2025 9:46:12 PM] Creating NTFS transaction.
+[Debug] [10/29/2025 9:46:13 PM] Committing changes.
+[Debug] [10/29/2025 9:46:13 PM] Committing changes.
+[Warning] [10/29/2025 9:46:13 PM] Oaf IPC connection lost!
+[Debug] [10/29/2025 9:46:13 PM] IPC connection destroyed.
+[Debug] [10/29/2025 9:46:13 PM] Exiting with code 0 (Success).
+
+
+[Debug] [10/29/2025 9:46:15 PM] Starting up OVRLibraryService v1.16.0.0.
+[Debug] [10/29/2025 9:46:15 PM] Starting up.
+[Debug] [10/29/2025 9:46:15 PM] IPC connection opened.
+[Debug] [10/29/2025 9:46:15 PM] App libraries for this user: [CORE_DATA]
+[Debug] [10/29/2025 9:46:15 PM] OVRLibraryService starting in service mode.  Arguments: [core-upgrade-chunked-finish, oculus-remote-desktop]
+[Debug] [10/29/2025 9:46:15 PM] IPC thread running; waiting for Oaf to connect.
+[Debug] [10/29/2025 9:46:15 PM] core-upgrade precommand:  stopping Runtime service.
+[Debug] [10/29/2025 9:46:15 PM] IPC connection established!
+[Debug] [10/29/2025 9:46:15 PM] Waiting for service 'OVRService' to stop.
+[Debug] [10/29/2025 9:46:23 PM] Service 'OVRService' is now Stopped.
+[Debug] [10/29/2025 9:46:23 PM] Creating NTFS transaction.
+[Debug] [10/29/2025 9:46:23 PM] Enabling background mode
+[Debug] [10/29/2025 9:46:26 PM] Found existing manifest for 'oculus-remote-desktop' version code 1761315707
+[Debug] [10/29/2025 9:46:26 PM] Reusing existing staging directory
+[Debug] [10/29/2025 9:46:26 PM] Checking stale files
+[Debug] [10/29/2025 9:46:26 PM] Done checking stale files
+[Debug] [10/29/2025 9:46:26 PM] Computing hash map
+[Debug] [10/29/2025 9:46:27 PM] Number of chunks that need to be downloaded: 0.
+[Debug] [10/29/2025 9:46:27 PM] Hot-swapping 'oculus-remote-desktop'. 
+[Debug] [10/29/2025 9:46:27 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-remote-desktop'.
+[Debug] [10/29/2025 9:46:28 PM] Deleting directory 'C:\Program Files\Oculus\tmp'.
+[Debug] [10/29/2025 9:46:28 PM] Deleting directory 'C:\Program Files\Oculus\tmp\3cf3ccaa-7c61-4321-8641-ded73eae2c35'.
+[Debug] [10/29/2025 9:46:28 PM] Deleting directory 'C:\Program Files\Oculus\swap'.
+[Debug] [10/29/2025 9:46:28 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-librarian-7d8e0708-8862-4903-a25f-355225b3bf45'.
+[Debug] [10/29/2025 9:46:28 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-remote-desktop-c57dc5a6-20c4-4305-ac8d-da6a57ad1a65'.
+[Debug] [10/29/2025 9:46:28 PM] Committing changes.
+[Debug] [10/29/2025 9:46:28 PM] core-upgrade postcommand:  resuming Runtime service.
+[Debug] [10/29/2025 9:46:28 PM] Attempting to start service 'OVRService'.
+[Debug] [10/29/2025 9:46:28 PM] Service 'OVRService' is now Running.
+[Debug] [10/29/2025 9:46:28 PM] IPC connection destroyed.
+[Debug] [10/29/2025 9:46:28 PM] Exiting with code 0 (Success).
+
+
+[Debug] [11/8/2025 10:23:04 PM] Starting up OVRLibraryService v1.16.0.0.
+[Debug] [11/8/2025 10:23:04 PM] Starting up.
+[Debug] [11/8/2025 10:23:04 PM] IPC connection opened.
+[Debug] [11/8/2025 10:23:04 PM] IPC thread running; waiting for Oaf to connect.
+[Debug] [11/8/2025 10:23:04 PM] IPC connection established!
+[Debug] [11/8/2025 10:23:04 PM] App libraries for this user: [CORE_DATA]
+[Debug] [11/8/2025 10:23:04 PM] OVRLibraryService starting in service mode.  Arguments: [core-upgrade-chunked-start-background, C:\Program Files\Oculus\\Downloads\oculus-remote-desktop\1761586020\oculus-remote-desktop.zip, C:\Program Files\Oculus\\Downloads\oculus-remote-desktop\1761586020\oculus-remote-desktop.sig]
+[Debug] [11/8/2025 10:23:04 PM] Creating NTFS transaction.
+[Debug] [11/8/2025 10:23:04 PM] Enabling background mode
+[Debug] [11/8/2025 10:23:04 PM] Creating NTFS transaction.
+[Debug] [11/8/2025 10:23:04 PM] Validating 'C:\Program Files\Oculus\tmp\f70040ba-1c57-4e59-87d8-7fad639a9328\package.zip' against signature 'C:\Program Files\Oculus\tmp\f70040ba-1c57-4e59-87d8-7fad639a9328\package.sig.
+[Debug] [11/8/2025 10:23:04 PM] File hash for C:\Program Files\Oculus\tmp\f70040ba-1c57-4e59-87d8-7fad639a9328\package.zip: b7ee3dbf70715e238a5911743433feadcb868c75cc61cf5d1c785bd9f5b1b034
+[Debug] [11/8/2025 10:23:04 PM] Decrypting ciphertext signature 'qiSBTTOH3puSTrMpCe+kHHnpMD2cTjF5YG25BPsaw1Pk5XFnG56D+986cGgQtxPjIcWKgwP0wAKMwyCZy9u+AmCVcJoaMxg4ZbJKsbaHzUiIJLxREm8qvFk2+l+XdUGfIaVsfPwyu5N63LEy9Ul4826Wx7Mo09RJsYkWChDT+7yoamdCYSvdmJUt+UOborIeRjHSF51lt60iMWzkDyZU48FNVcB/w33jEXTvOJ4dH2ICuNWds4IBb/omq/y9GQ1ok1RUNRF5pgm7pdvhadaTD/a3WgNsclyKu/aOTG7pxX/wS6s891DR+ywDF4Oa3ZQL5PJu4QWEPd8tb8JBlF/dX+YCtBoHURFATwf1cFkxHE6V2ycbztZFfl+qR6eaMLMaTWds8DvoGiCPu5l/ZJxA5pO4O9znN48q5kL1pmNP6nuYrEfFWKR7cH1u1tGHaaKwHkxpXN0k0ZSInRmW3FP0YCewwxQmMEh+DSSergoIKTVmVTZUiXOz4IuLP+OW0Nr3Oq0e1SrhPNopNE1485Y1/FiVjyoXwAAryFxms98hVGXYFEy03obCqL1P/0wVZLW0G8iudctnaxtFwfTsIqzHyDVlnOoBb642BStKc5pR731wKACT5FqzmxtNmyCF+3+D9DOJgH5Cckr0Tae81uBYGRe/0OYBBDoPOURqh3VXsk8=' with primary key.
+[Debug] [11/8/2025 10:23:04 PM] Decrypted plaintext signature 'b7ee3dbf70715e238a5911743433feadcb868c75cc61cf5d1c785bd9f5b1b034'.
+[Debug] [11/8/2025 10:23:04 PM] Ding!
+[Debug] [11/8/2025 10:23:05 PM] Loaded manifest for 'oculus-remote-desktop' version code 1761586020
+[Debug] [11/8/2025 10:23:05 PM] Committing changes.
+[Debug] [11/8/2025 10:23:05 PM] Found existing manifest for 'oculus-remote-desktop' version code 1761742179
+[Debug] [11/8/2025 10:23:05 PM] Creating NTFS transaction.
+[Debug] [11/8/2025 10:23:05 PM] Computing hash map
+[Debug] [11/8/2025 10:23:06 PM] Committing changes.
+[Debug] [11/8/2025 10:23:06 PM] Number of chunks that need to be downloaded: 8.
+[Debug] [11/8/2025 10:23:14 PM] Finished waiting for all the segments
+[Debug] [11/8/2025 10:23:14 PM] Creating NTFS transaction.
+[Debug] [11/8/2025 10:23:14 PM] Committing changes.
+[Debug] [11/8/2025 10:23:14 PM] Committing changes.
+[Warning] [11/8/2025 10:23:14 PM] Oaf IPC connection lost!
+[Debug] [11/8/2025 10:23:14 PM] IPC connection destroyed.
+[Debug] [11/8/2025 10:23:14 PM] Exiting with code 0 (Success).
+
+
+[Debug] [11/8/2025 10:23:15 PM] Starting up OVRLibraryService v1.16.0.0.
+[Debug] [11/8/2025 10:23:15 PM] Starting up.
+[Debug] [11/8/2025 10:23:15 PM] IPC connection opened.
+[Debug] [11/8/2025 10:23:15 PM] App libraries for this user: [CORE_DATA]
+[Debug] [11/8/2025 10:23:15 PM] OVRLibraryService starting in service mode.  Arguments: [core-upgrade-chunked-finish, oculus-remote-desktop]
+[Debug] [11/8/2025 10:23:15 PM] IPC thread running; waiting for Oaf to connect.
+[Debug] [11/8/2025 10:23:15 PM] IPC connection established!
+[Debug] [11/8/2025 10:23:15 PM] core-upgrade precommand:  stopping Runtime service.
+[Debug] [11/8/2025 10:23:15 PM] Waiting for service 'OVRService' to stop.
+[Debug] [11/8/2025 10:23:18 PM] Service 'OVRService' is now Stopped.
+[Debug] [11/8/2025 10:23:18 PM] Creating NTFS transaction.
+[Debug] [11/8/2025 10:23:18 PM] Enabling background mode
+[Debug] [11/8/2025 10:23:19 PM] Found existing manifest for 'oculus-remote-desktop' version code 1761742179
+[Debug] [11/8/2025 10:23:19 PM] Reusing existing staging directory
+[Debug] [11/8/2025 10:23:19 PM] Checking stale files
+[Debug] [11/8/2025 10:23:19 PM] Done checking stale files
+[Debug] [11/8/2025 10:23:19 PM] Computing hash map
+[Debug] [11/8/2025 10:23:19 PM] Number of chunks that need to be downloaded: 0.
+[Debug] [11/8/2025 10:23:19 PM] Hot-swapping 'oculus-remote-desktop'. 
+[Debug] [11/8/2025 10:23:19 PM] Deleting directory 'C:\Program Files\Oculus\Staging\oculus-remote-desktop'.
+[Debug] [11/8/2025 10:23:20 PM] Deleting directory 'C:\Program Files\Oculus\tmp'.
+[Debug] [11/8/2025 10:23:20 PM] Deleting directory 'C:\Program Files\Oculus\tmp\f70040ba-1c57-4e59-87d8-7fad639a9328'.
+[Debug] [11/8/2025 10:23:20 PM] Deleting directory 'C:\Program Files\Oculus\swap'.
+[Debug] [11/8/2025 10:23:20 PM] Deleting directory 'C:\Program Files\Oculus\swap\oculus-remote-desktop-d681ac41-4c6a-4edf-a1ce-b4095929fd27'.
+[Debug] [11/8/2025 10:23:20 PM] Committing changes.
+[Debug] [11/8/2025 10:23:20 PM] core-upgrade postcommand:  resuming Runtime service.
+[Debug] [11/8/2025 10:23:20 PM] Attempting to start service 'OVRService'.
+[Debug] [11/8/2025 10:23:20 PM] Service 'OVRService' is now Running.
+[Debug] [11/8/2025 10:23:20 PM] IPC connection destroyed.
+[Debug] [11/8/2025 10:23:20 PM] Exiting with code 0 (Success).
