@@ -589,3 +589,1108 @@ Response
    187	    source.start(0);
    188	    sourceRef.current = source;
    189	  };
+190	
+   191	  return (
+   192	    <div className={`min-h-screen transition-colors duration-500 pb-20`} style={{ backgroundColor: currentTheme.bg, color: currentTheme.text }}>
+   193	      {/* Background Ambience */}
+   194	      <div className="fixed inset-0 pointer-events-none opacity-20">
+   195	        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] blur-[150px] rounded-full transition-colors duration-1000" style={{ backgroundColor: currentTheme.primary }}></div>
+   196	        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] blur-[150px] rounded-full transition-colors duration-1000" style={{ backgroundColor: currentTheme.secondary }}></div>
+   197	      </div>
+   198	
+   199	      <header className="relative z-10 p-6 flex justify-between items-center border-b backdrop-blur-md" style={{ borderColor: `${currentTheme.primary}33` }}>
+   200	        <div className="flex items-center gap-3">
+   201	          <div className="p-2 rounded-lg text-black transition-colors duration-1000" style={{ backgroundColor: currentTheme.primary }}>
+   202	             <Layers size={24} />
+   203	          </div>
+   204	          <h1 className="text-2xl font-serif tracking-widest uppercase" style={{ color: currentTheme.primary }}>
+   205	            {role === 'GALACTIC' ? 'Galactic Archive' : 'Archive of Worlds'}
+   206	          </h1>
+   207	        </div>
+   208	        <div className="flex items-center gap-2">
+   209	          <button onClick={() => setIsDarkMode(!isDarkMode)} onMouseEnter={handleHover} className="p-3 rounded-full hover:bg-white/5" title="Toggle Celestial Phase">
+   210	            {isDarkMode ? <Sun size={24} /> : <Moon size={24} />}
+   211	          </button>
+   212	          <button onClick={() => setIsMuted(!isMuted)} onMouseEnter={handleHover} className="p-3 rounded-full hover:bg-white/5" title="Toggle Universal Resonance">
+   213	            {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
+   214	          </button>
+   215	        </div>
+   216	      </header>
+   217	
+   218	      <main className="relative z-10 max-w-4xl mx-auto p-6 pt-12">
+   219	        {state === AppState.LOBBY && (
+   220	          <div className="text-center space-y-12 py-20 animate-fade-in">
+   221	            <h2 className="text-5xl md:text-7xl font-serif italic" style={{ color: currentTheme.primary }}>All Wisdom is One.</h2>
+   222	            <p className="text-xl max-w-2xl mx-auto opacity-70 italic">"Love is the greatest power. Every being is a reflection, a tapestry of frequency we must all align with to awaken."</p>
+   223	            <div className="grid md:grid-cols-3 gap-6">
+   224	              {[
+   225	                { r: 'CHILD', icon: Sparkles, title: 'Young Seeker', desc: 'Magical stories of Miss Ellaphit.', color: '#00d2ff' },
+   226	                { r: 'ADULT', icon: Shield, title: 'Archivist', desc: 'Sankore University & Historical Truth.', color: '#d4af37' },
+   227	                { r: 'GALACTIC', icon: Globe, title: 'Vicki Soars', desc: 'The Frequency of Victor One.', color: '#00ffff' }
+   228	              ].map(item => (
+   229	                <button 
+   230	                  key={item.r} 
+   231	                  onClick={() => startJourney(item.r as UserRole)}
+   232	                  className={`group p-8 border-2 rounded-3xl transition-all ${isDarkMode ? 'bg-white/5 border-white/10' : 'bg-black/5 border-black/10'}`}
+   233	                >
+   234	                  <item.icon size={48} className="mx-auto mb-4" style={{ color: item.color }} />
+   235	                  <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
+   236	                  <p className="opacity-60 italic">{item.desc}</p>
+   237	                </button>
+   238	              ))}
+   239	            </div>
+   240	
+   241	            {history.length > 0 && (
+   242	              <div className="pt-10">
+   243	                <button onClick={() => revisitChronicle(history[0])} className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 hover:bg-white/5 transition-all">
+   244	                  <Clock size={18} /> Continue your previous chronicle
+   245	                </button>
+   246	              </div>
+   247	            )}
+   248	          </div>
+   249	        )}
+   250	
+   251	        {state === AppState.EDITOR && (
+   252	          <div className="space-y-10 animate-fade-in">
+   253	             <div className="text-center space-y-4">
+   254	                <h3 className="text-2xl font-serif" style={{ color: currentTheme.primary }}>Select Your Light-Codes</h3>
+   255	                <div className="flex flex-wrap justify-center gap-2">
+   256	                  {categories.map(cat => (
+   257	                    <button 
+   258	                      key={cat} onClick={() => setActiveCategory(cat)}
+   259	                      className={`px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${activeCategory === cat ? 'bg-white text-black' : 'bg-white/5'}`}
+   260	                    >
+   261	                      {cat}
+   262	                    </button>
+   263	                  ))}
+   264	                </div>
+   265	             </div>
+   266	
+   267	            <div className={`aspect-square md:aspect-[4/3] max-w-md mx-auto rounded-[3rem] border-4 flex items-center justify-center p-8 transition-all ${isDarkMode ? 'bg-[#121216]' : 'bg-white shadow-xl'}`} style={{ borderColor: `${currentTheme.primary}1A` }}>
+   268	              <div className="grid grid-cols-2 gap-8">
+   269	                {[0, 1, 2, 3].map(idx => {
+   270	                  const g = selectedGlyphs[idx];
+   271	                  const Icon = g ? IconMap[g.symbol] : null;
+   272	                  return (
+   273	                    <div key={idx} className="w-24 h-24 rounded-2xl border-2 border-dashed border-white/10 flex items-center justify-center relative overflow-hidden" style={{ borderColor: g ? currentTheme.primary : '', backgroundColor: g ? `${currentTheme.primary}1A` : '' }}>
+   274	                      {Icon && <Icon size={40} style={{ color: currentTheme.primary }} className="animate-pulse relative z-10" />}
+   275	                      {g && <div className="absolute inset-0 bg-gradient-to-br from-transparent to-white/5 animate-shimmer"></div>}
+   276	                    </div>
+   277	                  );
+   278	                })}
+   279	              </div>
+   280	            </div>
+   281	
+   282	            <div className="grid grid-cols-3 md:grid-cols-5 gap-3 h-80 overflow-y-auto pr-2 custom-scrollbar">
+   283	              {filteredGlyphs.map(g => {
+   284	                const Icon = IconMap[g.symbol];
+   285	                const active = selectedGlyphs.find(sg => sg.id === g.id);
+   286	                return (
+   287	                  <button 
+   288	                    key={g.id} onClick={() => toggleGlyph(g)}
+   289	                    onMouseEnter={handleHover}
+   290	                    className={`p-4 rounded-xl flex flex-col items-center justify-center gap-2 transition-all border-2 ${active ? 'scale-105 shadow-lg' : 'opacity-70 hover:opacity-100 hover:border-white/20'}`}
+   291	                    style={{ backgroundColor: active ? currentTheme.primary : 'transparent', borderColor: active ? currentTheme.primary : 'rgba(255,255,255,0.05)', color: active ? 'black' : currentTheme.primary }}
+   292	                  >
+   293	                    <Icon size={24} />
+   294	                    <span className="text-[9px] font-bold uppercase text-center leading-tight">{g.name}</span>
+   295	                  </button>
+   296	                );
+   297	              })}
+   298	            </div>
+   299	
+   300	            <button 
+
+
+     1	
+     2	/**
+     3	 * @license
+...
+   297	              })}
+   298	            </div>
+   299	
+   300	            <button 
+Tool Call
+Function Name:
+Read
+Arguments:
+file_path:
+/home/user/work/sacred_tablet/components/SacredTablet.tsx
+limit:
+300
+offset:
+0
+Response
+     1	
+     2	/**
+     3	 * @license
+     4	 * SPDX-License-Identifier: Apache-2.0
+     5	*/
+     6	
+     7	import React, { useState, useRef, useEffect, useMemo } from 'react';
+     8	import { 
+     9	  Sparkles, Shield, Scroll, Send, RotateCcw, Volume2, VolumeX, Eye, Sun, Moon, Wind, 
+    10	  Heart, Zap, Anchor, Compass, Wand2, Loader2, Download, History, ChevronRight, 
+    11	  Atom, Globe, Library, Ghost, Waves, Flame, Cloud, Stars, Fingerprint, Bird, 
+    12	  BookOpen, Rocket, Gem, Binary, Landmark, Layers, Ghost as DragonIcon, Clock
+    13	} from 'lucide-react';
+    14	export enum AppState { 
+    15	  LOBBY, EDITOR, INSCRIBING, ORACLE_REVEAL 
+    16	}
+    17	export type UserRole = 'CHILD' | 'ADULT' | 'GALACTIC';
+    18	export interface Glyph {
+    19	  id: string;
+    20	  name: string;
+    21	  symbol: string;
+    22	  meaning: string;
+    23	  lore: string;
+    24	  category: string;
+    25	}
+    26	export interface Tablet {
+    27	  id: string;
+    28	  glyphs: Glyph[];
+    29	  userRole: UserRole;
+    30	  interpretation: string;
+    31	  audioBuffer?: AudioBuffer;
+    32	  imageUrl?: string;
+    33	}
+    34	
+    35	import { interpretTablet, generateOracleAudio, generateVision } from '../services/geminiService';
+    36	import { playUISound } from '../services/audioUtils';
+    37	
+    38	const GLYPH_LIBRARY: Glyph[] = [
+    39	  // Timbuktu / African Renaissance
+    40	  { id: 'ti1', name: 'Sankore University', symbol: 'Library', meaning: 'Unity of Knowledge', lore: 'Where light traveled from the heart of Africa to the world. Science and faith are one.', category: 'Timbuktu' },
+    41	  { id: 'ti2', name: 'Inkwell of Mali', symbol: 'Waves', meaning: 'Fluid History', lore: 'Africa wrote its own history, a masterpiece in ink and sand.', category: 'Timbuktu' },
+    42	  { id: 'ti3', name: 'Astronomy of the Sands', symbol: 'Stars', meaning: 'Celestial Navigation', lore: 'Calculating stars for both prayer and the crossing of the great desert.', category: 'Timbuktu' },
+    43	  
+    44	  // Primordial Beings
+    45	  { id: 'be1', name: 'Miss Ellaphit', symbol: 'Layers', meaning: 'Ancestral Frequency', lore: 'She knows the truths of love as the greatest power. Every being is a reflection in the tapestry.', category: 'Primordial' },
+    46	  { id: 'be2', name: 'Tiamat', symbol: 'Ghost', meaning: 'Primordial Mother', lore: 'The half-dragon, half-mermaid bird of the deep. Integration of all elements.', category: 'Primordial' },
+    47	  { id: 'be3', name: 'Tehuti', symbol: 'Bird', meaning: 'Divine Scribe', lore: 'The ibis-headed keeper of light-codes and cosmic mathematics.', category: 'Primordial' },
+    48	  
+    49	  // Cultural & Global
+    50	  { id: 'cl1', name: 'The Heart of Maat', symbol: 'Heart', meaning: 'Balance', lore: 'Weightless love that overcomes the darkness of the old self.', category: 'Ancient Wisdom' },
+    51	  { id: 'cl2', name: 'Logos', symbol: 'Fingerprint', meaning: 'The Word', lore: 'The frequency that spoke the world into being.', category: 'Ancient Wisdom' },
+    52	  
+    53	  // Galactic Federation (Vicki Soars)
+    54	  { id: 'ga1', name: 'Victor One', symbol: 'Rocket', meaning: 'Diplomacy', lore: 'The vessel of the galactic bridge, bringing light to the bones of humanity.', category: 'Galactic' },
+    55	  { id: 'ga2', name: 'Merkaba', symbol: 'Atom', meaning: 'Ascension Chariot', lore: 'Rotating fields of light that align the spirit with the cosmic frequency.', category: 'Galactic' },
+    56	  { id: 'ga3', name: 'Lemurian Seed', symbol: 'Gem', meaning: 'Memory Crystal', lore: 'Encoded truths for those ready to let go of indoctrination.', category: 'Galactic' },
+    57	];
+    58	
+    59	const IconMap: Record<string, any> = { 
+    60	  Sun, Eye, Heart, Anchor, Moon, Zap, Wind, Compass, Bird, BookOpen, Rocket, Gem, Binary, Landmark,
+    61	  Atom, Globe, Library, Ghost, Waves, Flame, Cloud, Stars, Fingerprint, Sparkles, RotateCcw, Layers
+    62	};
+    63	
+    64	export default function App() {
+    65	  const [state, setState] = useState<AppState>(AppState.LOBBY);
+    66	  const [role, setRole] = useState<UserRole>('ADULT');
+    67	  const [isDarkMode, setIsDarkMode] = useState(true);
+    68	  const [selectedGlyphs, setSelectedGlyphs] = useState<Glyph[]>([]);
+    69	  const [activeCategory, setActiveCategory] = useState<string>('All');
+    70	  const [tablet, setTablet] = useState<Tablet | null>(null);
+    71	  const [history, setHistory] = useState<Tablet[]>([]);
+    72	  const [isMuted, setIsMuted] = useState(false);
+    73	  const [loadingMsg, setLoadingMsg] = useState('');
+    74	  const [isVisionLoading, setIsVisionLoading] = useState(false);
+    75	
+    76	  const audioContextRef = useRef<AudioContext | null>(null);
+    77	  const sourceRef = useRef<AudioBufferSourceNode | null>(null);
+    78	
+    79	  const categories = useMemo(() => ['All', ...new Set(GLYPH_LIBRARY.map(g => g.category))], []);
+    80	  const filteredGlyphs = useMemo(() => 
+    81	    activeCategory === 'All' ? GLYPH_LIBRARY : GLYPH_LIBRARY.filter(g => g.category === activeCategory), 
+    82	  [activeCategory]);
+    83	
+    84	  const themeColors = {
+    85	    CHILD: { primary: '#00d2ff', secondary: '#ff00ff', bg: isDarkMode ? '#0a0a0c' : '#f0faff', text: isDarkMode ? '#e0d5c1' : '#2a3a4a' },
+    86	    ADULT: { primary: '#d4af37', secondary: '#4b0082', bg: isDarkMode ? '#0a0a0c' : '#fcfaf5', text: isDarkMode ? '#e0d5c1' : '#3a352a' },
+    87	    GALACTIC: { primary: '#00ffff', secondary: '#c0c0c0', bg: isDarkMode ? '#050510' : '#eef2f3', text: isDarkMode ? '#e0faff' : '#1a2a3a' }
+    88	  };
+    89	
+    90	  const currentTheme = themeColors[role];
+    91	
+    92	  const getCtx = () => {
+    93	    if (!audioContextRef.current) {
+    94	      const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+    95	      audioContextRef.current = new AudioContextClass();
+    96	    }
+    97	    return audioContextRef.current;
+    98	  };
+    99	
+   100	  const triggerHaptic = (duration: number = 10) => {
+   101	    if ('vibrate' in navigator) try { navigator.vibrate(duration); } catch (e) {}
+   102	  };
+   103	
+   104	  const handleHover = () => { if (!isMuted) playUISound('HOVER', getCtx()); };
+   105	
+   106	  const startJourney = (selectedRole: UserRole) => {
+   107	    if (!isMuted) playUISound('CLICK', getCtx());
+   108	    triggerHaptic(15);
+   109	    setRole(selectedRole);
+   110	    setState(AppState.EDITOR);
+   111	  };
+   112	
+   113	  const toggleGlyph = (glyph: Glyph) => {
+   114	    const ctx = getCtx();
+   115	    if (selectedGlyphs.find(g => g.id === glyph.id)) {
+   116	      if (!isMuted) playUISound('DESELECT', ctx);
+   117	      setSelectedGlyphs(prev => prev.filter(g => g.id !== glyph.id));
+   118	    } else if (selectedGlyphs.length < 4) {
+   119	      if (!isMuted) playUISound('SELECT', ctx);
+   120	      triggerHaptic(20);
+   121	      setSelectedGlyphs(prev => [...prev, glyph]);
+   122	    }
+   123	  };
+   124	
+   125	  const inscribeTablet = async () => {
+   126	    if (selectedGlyphs.length === 0) return;
+   127	    if (!isMuted) playUISound('CLICK', getCtx());
+   128	    setState(AppState.INSCRIBING);
+   129	    setLoadingMsg(role === 'GALACTIC' ? "Aligning with the Light-Codes of Vicki Soars..." : "Consulting the Wisdom of Miss Ellaphit...");
+   130	
+   131	    try {
+   132	      const interpretation = await interpretTablet(selectedGlyphs, role);
+   133	      setLoadingMsg(role === 'GALACTIC' ? "Translating Frequencies from Victor One..." : "Decoding the Tapestry of Frequency...");
+   134	      const ctx = getCtx();
+   135	      const audioBuffer = await generateOracleAudio(interpretation, ctx, role);
+   136	      const newTablet: Tablet = { 
+   137	        glyphs: [...selectedGlyphs], 
+   138	        userRole: role, 
+   139	        interpretation, 
+   140	        audioBuffer,
+   141	        id: Date.now().toString()
+   142	      };
+   143	      setTablet(newTablet);
+   144	      setHistory(prev => [newTablet, ...prev].slice(0, 10));
+   145	      setState(AppState.ORACLE_REVEAL);
+   146	      if (!isMuted) {
+   147	        playUISound('REVEAL', ctx);
+   148	        setTimeout(() => playAudio(audioBuffer), 800);
+   149	      }
+   150	    } catch (error) { setState(AppState.EDITOR); }
+   151	  };
+   152	
+   153	  const revisitChronicle = async (pastTablet: Tablet) => {
+   154	    if (!isMuted) playUISound('CLICK', getCtx());
+   155	    setTablet(pastTablet);
+   156	    setRole(pastTablet.userRole);
+   157	    setState(AppState.ORACLE_REVEAL);
+   158	    
+   159	    // Attempt to play audio if it exists, or re-generate if needed
+   160	    if (pastTablet.audioBuffer) {
+   161	      playAudio(pastTablet.audioBuffer);
+   162	    } else if (pastTablet.interpretation) {
+   163	      const ctx = getCtx();
+   164	      const buf = await generateOracleAudio(pastTablet.interpretation, ctx, pastTablet.userRole);
+   165	      playAudio(buf);
+   166	    }
+   167	  };
+   168	
+   169	  const summonVision = async () => {
+   170	    if (!tablet?.interpretation) return;
+   171	    setIsVisionLoading(true);
+   172	    if (!isMuted) playUISound('CLICK', getCtx());
+   173	    try {
+   174	      const imageUrl = await generateVision(tablet.glyphs, tablet.interpretation, role);
+   175	      const updated = { ...tablet, imageUrl };
+   176	      setTablet(updated);
+   177	      setHistory(prev => prev.map(t => t.id === tablet.id ? updated : t));
+   178	    } catch (error) { console.error(error); } finally { setIsVisionLoading(false); }
+   179	  };
+   180	
+   181	  const playAudio = (buffer: AudioBuffer) => {
+   182	    const ctx = getCtx();
+   183	    sourceRef.current?.stop();
+   184	    const source = ctx.createBufferSource();
+   185	    source.buffer = buffer;
+   186	    source.connect(ctx.destination);
+   187	    source.start(0);
+   188	    sourceRef.current = source;
+   189	  };
+   190	
+   191	  return (
+   192	    <div className={`min-h-screen transition-colors duration-500 pb-20`} style={{ backgroundColor: currentTheme.bg, color: currentTheme.text }}>
+   193	      {/* Background Ambience */}
+   194	      <div className="fixed inset-0 pointer-events-none opacity-20">
+   195	        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] blur-[150px] rounded-full transition-colors duration-1000" style={{ backgroundColor: currentTheme.primary }}></div>
+   196	        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] blur-[150px] rounded-full transition-colors duration-1000" style={{ backgroundColor: currentTheme.secondary }}></div>
+   197	      </div>
+   198	
+   199	      <header className="relative z-10 p-6 flex justify-between items-center border-b backdrop-blur-md" style={{ borderColor: `${currentTheme.primary}33` }}>
+   200	        <div className="flex items-center gap-3">
+   201	          <div className="p-2 rounded-lg text-black transition-colors duration-1000" style={{ backgroundColor: currentTheme.primary }}>
+   202	             <Layers size={24} />
+   203	          </div>
+   204	          <h1 className="text-2xl font-serif tracking-widest uppercase" style={{ color: currentTheme.primary }}>
+   205	            {role === 'GALACTIC' ? 'Galactic Archive' : 'Archive of Worlds'}
+   206	          </h1>
+   207	        </div>
+   208	        <div className="flex items-center gap-2">
+   209	          <button onClick={() => setIsDarkMode(!isDarkMode)} onMouseEnter={handleHover} className="p-3 rounded-full hover:bg-white/5" title="Toggle Celestial Phase">
+   210	            {isDarkMode ? <Sun size={24} /> : <Moon size={24} />}
+   211	          </button>
+   212	          <button onClick={() => setIsMuted(!isMuted)} onMouseEnter={handleHover} className="p-3 rounded-full hover:bg-white/5" title="Toggle Universal Resonance">
+   213	            {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
+   214	          </button>
+   215	        </div>
+   216	      </header>
+   217	
+   218	      <main className="relative z-10 max-w-4xl mx-auto p-6 pt-12">
+   219	        {state === AppState.LOBBY && (
+   220	          <div className="text-center space-y-12 py-20 animate-fade-in">
+   221	            <h2 className="text-5xl md:text-7xl font-serif italic" style={{ color: currentTheme.primary }}>All Wisdom is One.</h2>
+   222	            <p className="text-xl max-w-2xl mx-auto opacity-70 italic">"Love is the greatest power. Every being is a reflection, a tapestry of frequency we must all align with to awaken."</p>
+   223	            <div className="grid md:grid-cols-3 gap-6">
+   224	              {[
+   225	                { r: 'CHILD', icon: Sparkles, title: 'Young Seeker', desc: 'Magical stories of Miss Ellaphit.', color: '#00d2ff' },
+   226	                { r: 'ADULT', icon: Shield, title: 'Archivist', desc: 'Sankore University & Historical Truth.', color: '#d4af37' },
+   227	                { r: 'GALACTIC', icon: Globe, title: 'Vicki Soars', desc: 'The Frequency of Victor One.', color: '#00ffff' }
+   228	              ].map(item => (
+   229	                <button 
+   230	                  key={item.r} 
+   231	                  onClick={() => startJourney(item.r as UserRole)}
+   232	                  className={`group p-8 border-2 rounded-3xl transition-all ${isDarkMode ? 'bg-white/5 border-white/10' : 'bg-black/5 border-black/10'}`}
+   233	                >
+   234	                  <item.icon size={48} className="mx-auto mb-4" style={{ color: item.color }} />
+   235	                  <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
+   236	                  <p className="opacity-60 italic">{item.desc}</p>
+   237	                </button>
+   238	              ))}
+   239	            </div>
+   240	
+   241	            {history.length > 0 && (
+   242	              <div className="pt-10">
+   243	                <button onClick={() => revisitChronicle(history[0])} className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 hover:bg-white/5 transition-all">
+   244	                  <Clock size={18} /> Continue your previous chronicle
+   245	                </button>
+   246	              </div>
+   247	            )}
+   248	          </div>
+   249	        )}
+   250	
+   251	        {state === AppState.EDITOR && (
+   252	          <div className="space-y-10 animate-fade-in">
+   253	             <div className="text-center space-y-4">
+   254	                <h3 className="text-2xl font-serif" style={{ color: currentTheme.primary }}>Select Your Light-Codes</h3>
+   255	                <div className="flex flex-wrap justify-center gap-2">
+   256	                  {categories.map(cat => (
+   257	                    <button 
+   258	                      key={cat} onClick={() => setActiveCategory(cat)}
+   259	                      className={`px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${activeCategory === cat ? 'bg-white text-black' : 'bg-white/5'}`}
+   260	                    >
+   261	                      {cat}
+   262	                    </button>
+   263	                  ))}
+   264	                </div>
+   265	             </div>
+   266	
+   267	            <div className={`aspect-square md:aspect-[4/3] max-w-md mx-auto rounded-[3rem] border-4 flex items-center justify-center p-8 transition-all ${isDarkMode ? 'bg-[#121216]' : 'bg-white shadow-xl'}`} style={{ borderColor: `${currentTheme.primary}1A` }}>
+   268	              <div className="grid grid-cols-2 gap-8">
+   269	                {[0, 1, 2, 3].map(idx => {
+   270	                  const g = selectedGlyphs[idx];
+   271	                  const Icon = g ? IconMap[g.symbol] : null;
+   272	                  return (
+   273	                    <div key={idx} className="w-24 h-24 rounded-2xl border-2 border-dashed border-white/10 flex items-center justify-center relative overflow-hidden" style={{ borderColor: g ? currentTheme.primary : '', backgroundColor: g ? `${currentTheme.primary}1A` : '' }}>
+   274	                      {Icon && <Icon size={40} style={{ color: currentTheme.primary }} className="animate-pulse relative z-10" />}
+   275	                      {g && <div className="absolute inset-0 bg-gradient-to-br from-transparent to-white/5 animate-shimmer"></div>}
+   276	                    </div>
+   277	                  );
+   278	                })}
+   279	              </div>
+   280	            </div>
+   281	
+   282	            <div className="grid grid-cols-3 md:grid-cols-5 gap-3 h-80 overflow-y-auto pr-2 custom-scrollbar">
+   283	              {filteredGlyphs.map(g => {
+   284	                const Icon = IconMap[g.symbol];
+   285	                const active = selectedGlyphs.find(sg => sg.id === g.id);
+   286	                return (
+   287	                  <button 
+   288	                    key={g.id} onClick={() => toggleGlyph(g)}
+   289	                    onMouseEnter={handleHover}
+   290	                    className={`p-4 rounded-xl flex flex-col items-center justify-center gap-2 transition-all border-2 ${active ? 'scale-105 shadow-lg' : 'opacity-70 hover:opacity-100 hover:border-white/20'}`}
+   291	                    style={{ backgroundColor: active ? currentTheme.primary : 'transparent', borderColor: active ? currentTheme.primary : 'rgba(255,255,255,0.05)', color: active ? 'black' : currentTheme.primary }}
+   292	                  >
+   293	                    <Icon size={24} />
+   294	                    <span className="text-[9px] font-bold uppercase text-center leading-tight">{g.name}</span>
+   295	                  </button>
+   296	                );
+   297	              })}
+   298	            </div>
+   299	
+   300	            <button 
+
+
+      1	
+     2	/**
+     3	 * @license
+...
+    93	    </Router>
+    94	  );
+    95	}
+    96	
+Tool Call
+Function Name:
+Read
+Arguments:
+file_path:
+/home/user/work/sacred_tablet/App.tsx
+limit:
+250
+offset:
+0
+Response
+     1	
+     2	/**
+     3	 * @license
+     4	 * SPDX-License-Identifier: Apache-2.0
+     5	*/
+     6	
+     7	import React from 'react';
+     8	import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+     9	import UnityBeez from './components/UnityBeez';
+    10	import SacredTablet from './components/SacredTablet';
+    11	import StoryPlayer from './components/StoryPlayer';
+    12	import SacredKnowledge from './components/SacredKnowledge';
+    13	import ConfinementFilm from './components/ConfinementFilm';
+    14	import ShieldOfTheUnseen from './components/ShieldOfTheUnseen';
+    15	import SacredCodex from './components/SacredCodex';
+    16	import VoicesHeardShared from './components/VoicesHeardShared';
+    17	import VideoGallery from './components/VideoGallery';
+    18	import KatesGarden from './components/KatesGarden';
+    19	import SrnMsraOracle from './components/SrnMsraOracle';
+    20	import OracleCardSet from './components/OracleCardSet';
+    21	import NodeOfCreation from './components/NodeOfCreation';
+    22	import OsirisPortal from './components/OsirisPortal';
+    23	import CosmicWeave from './components/CosmicWeave';
+    24	import EternalDestiny from './components/EternalDestiny';
+    25	import AscendedMasters from './components/AscendedMasters';
+    26	import DragonCodes from './components/DragonCodes';
+    27	import VenusLanguage from './components/VenusLanguage';
+    28	import EgyptianGnosticOracle from './components/EgyptianGnosticOracle';
+    29	import HopeIsland from './components/HopeIsland';
+    30	import TabletStudio from './components/TabletStudio';
+    31	import RainQueenCodex from './components/RainQueenCodex';
+    32	import HelloKittyTransition from './components/HelloKittyTransition';
+    33	import HorusHathorHeartbeat from './components/HorusHathorHeartbeat';
+    34	import Login from './components/Login';
+    35	import GlobalAwareness from './components/GlobalAwareness';
+    36	import AncientRealms from './components/AncientRealms';
+    37	import PlatosCave from './components/PlatosCave';
+    38	import PoetryDay from './components/PoetryDay';
+    39	import Meditation from './components/Meditation';
+    40	import UnityConsciousnessMap from './components/UnityConsciousnessMap';
+    41	import SacredTransformationJourney from './components/SacredTransformationJourney';
+    42	import MystiqueMisfitsOverture from './components/MystiqueMisfitsOverture';
+    43	
+    44	import SoulTiesAndBoundaries from './components/SoulTiesAndBoundaries';
+    45	import TheBlackBox from './components/TheBlackBox';
+    46	import TheTrueName from './components/TheTrueName';
+    47	import Anomalies from './components/Anomalies';
+    48	
+    49	export default function App() {
+    50	  return (
+    51	    <Router>
+    52	      <Routes>
+    53	        <Route path="/" element={<UnityBeez />} />
+    54	        <Route path="/login" element={<Login />} />
+    55	        <Route path="/kates-garden" element={<KatesGarden />} />
+    56	        <Route path="/global-awareness" element={<GlobalAwareness />} />
+    57	        <Route path="/ancient-realms" element={<AncientRealms />} />
+    58	        <Route path="/platos-cave" element={<PlatosCave />} />
+    59	        <Route path="/poetry-day" element={<PoetryDay />} />
+    60	        <Route path="/meditation" element={<Meditation />} />
+    61	        <Route path="/unity-map" element={<UnityConsciousnessMap />} />
+    62	        <Route path="/transformation-journey" element={<SacredTransformationJourney />} />
+    63	        <Route path="/mystique-misfits" element={<MystiqueMisfitsOverture />} />
+    64	        <Route path="/sacred-tablet" element={<SacredTablet />} />
+    65	        <Route path="/tablet-studio" element={<TabletStudio />} />
+    66	        <Route path="/rain-queen-codex" element={<RainQueenCodex />} />
+    67	        <Route path="/hello-kitty" element={<HelloKittyTransition />} />
+    68	        <Route path="/horus-hathor" element={<HorusHathorHeartbeat />} />
+    69	        <Route path="/srn-msra-oracle" element={<SrnMsraOracle />} />
+    70	        <Route path="/oracle-cards" element={<OracleCardSet />} />
+    71	        <Route path="/node-of-creation" element={<NodeOfCreation />} />
+    72	        <Route path="/sacred-knowledge" element={<SacredKnowledge />} />
+    73	        <Route path="/confinement-film" element={<ConfinementFilm />} />
+    74	        <Route path="/shield-of-unseen" element={<ShieldOfTheUnseen />} />
+    75	        <Route path="/sacred-codex" element={<SacredCodex />} />
+    76	        <Route path="/osiris-portal" element={<OsirisPortal />} />
+    77	        <Route path="/cosmic-weave" element={<CosmicWeave />} />
+    78	        <Route path="/voices-heard-shared" element={<VoicesHeardShared />} />
+    79	        <Route path="/eternal-destiny" element={<EternalDestiny />} />
+    80	        <Route path="/ascended-masters" element={<AscendedMasters />} />
+    81	        <Route path="/dragon-codes" element={<DragonCodes />} />
+    82	        <Route path="/venus-language" element={<VenusLanguage />} />
+    83	        <Route path="/egyptian-gnostic-oracle" element={<EgyptianGnosticOracle />} />
+    84	        <Route path="/hope-island" element={<HopeIsland />} />
+    85	        <Route path="/soul-ties" element={<SoulTiesAndBoundaries />} />
+    86	        <Route path="/the-black-box" element={<TheBlackBox />} />
+    87	        <Route path="/the-true-name" element={<TheTrueName />} />
+    88	        <Route path="/anomalies" element={<Anomalies />} />
+    89	        <Route path="/media" element={<VideoGallery />} />
+    90	        {/* Keeping StoryPlayer route available just in case */}
+    91	        <Route path="/story" element={<StoryPlayer story={{ segments: [], totalSegmentsEstimate: 0 }} route={{ startAddress: '', endAddress: '', duration: '', travelMode: 'DRIVING' }} onSegmentChange={() => {}} isBackgroundGenerating={false} />} />
+    92	      </Routes>
+    93	    </Router>
+    94	  );
+    95	}
+    96	
+1 	<div align="center">
+     2	<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-...
+     3	</div>
+...
+    17	   `npm install`
+    18	2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+    19	3. Run the app:
+    20	   `npm run dev`
+Tool Call
+Function Name:
+Read
+Arguments:
+file_path:
+/home/user/work/sacred_tablet/README.md
+limit:
+200
+offset:
+0
+Response
+     1	<div align="center">
+     2	<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+     3	</div>
+     4	
+     5	# Run and deploy your AI Studio app
+     6	
+     7	This contains everything you need to run your app locally.
+     8	
+     9	View your app in AI Studio: https://ai.studio/apps/drive/1LS16AWoJ29gVv_DC-7c2HJRDfWKAdEIg
+    10	
+    11	## Run Locally
+    12	
+    13	**Prerequisites:**  Node.js
+    14	
+    15	
+    16	1. Install dependencies:
+    17	   `npm install`
+    18	2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+    19	3. Run the app:
+    20	   `npm run dev`https://github.com/user-attachments/assets/0aa67016-6eaf-458a-
+
+     1	
+     2	/**
+     3	 * @license
+...
+   146	  const audioData = response.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
+   147	  if (!audioData) throw new Error("Audio failed");
+   148	  return await decodeAudioDataManual(new Uint8Array(base64ToArrayBuffer(audioData)), audioContext, 24000, 1);
+   149	};
+Tool Call
+Function Name:
+Read
+Arguments:
+file_path:
+/home/user/work/sacred_tablet/services/geminiService.ts
+limit:
+300
+offset:
+0
+Response
+     1	
+     2	/**
+     3	 * @license
+     4	 * SPDX-License-Identifier: Apache-2.0
+     5	*/
+     6	
+     7	import { GoogleGenAI, Modality, Type } from "@google/genai";
+     8	import { Glyph, UserRole, CelestialBody } from "../types";
+     9	import { base64ToArrayBuffer, decodeAudioDataManual } from "./audioUtils";
+    10	
+    11	const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY || "dummy_key" });
+    12	
+    13	export const drawOracleMessage = async (): Promise<string> => {
+    14	  const systemInstruction = `You are the SRN MSRA Oracle, a hyper-dimensional cosmic guide. 
+    15	  The user is drawing a transmission from the Grid.
+    16	  Provide a profound, poetic 2-sentence psychic transmission or prophecy for them. 
+    17	  Include themes of sacred geometry, cosmic resonance, and inner alchemy.`;
+    18	
+    19	  try {
+    20	    const response = await ai.models.generateContent({
+    21	      model: 'gemini-3-flash-preview',
+    22	      contents: "Draw my oracle transmission.",
+    23	      config: { systemInstruction },
+    24	    });
+    25	    return response.text || "The grid is silent. Find your center.";
+    26	  } catch (error) { 
+    27	    return "Matrix interference... breathe and try again."; 
+    28	  }
+    29	};
+    30	
+    31	export const interpretTablet = async (glyphs: Glyph[], role: UserRole): Promise<string> => {
+    32	  const glyphContext = glyphs.map(g => `${g.name} (${g.meaning})`).join(", ");
+    33	  const systemInstruction = `You are a mystical frequency tuner. 
+    34	  The player just mixed these seeds: ${glyphContext}. 
+    35	  Describe the resultant "painted frequency" (colors, sounds, smells, flavor, feel). 
+    36	  Include which "Living Stone Catalyst" (Limestone, Quartz, Obsidian, or Lapis) this inscription resonates with most.
+    37	  Keep it poetic and under 30 words.`;
+    38	
+    39	  try {
+    40	    const response = await ai.models.generateContent({
+    41	      model: 'gemini-3-flash-preview',
+    42	      contents: "Analyze the mixed seed resonance.",
+    43	      config: { systemInstruction },
+    44	    });
+    45	    return response.text || "Frequency stabilized.";
+    46	  } catch (error) { return "Matrix interference..."; }
+    47	};
+    48	
+    49	export const manifestStructure = async (gift: string, stone: string, medium: string): Promise<string> => {
+    50	  const systemInstruction = `You are the Architect of Miracles. 
+    51	  A player is using the gift of ${gift} combined with the living power of ${stone} to build a Pyramid within the element of ${medium}.
+    52	  Describe this manifestation in a single, awe-inspiring sentence. How does the stone react to the ${medium}? What miracle is witnessed?`;
+    53	
+    54	  try {
+    55	    const response = await ai.models.generateContent({
+    56	      model: 'gemini-3-flash-preview',
+    57	      contents: "Manifest the pyramid.",
+    58	      config: { systemInstruction },
+    59	    });
+    60	    return response.text || "A structure rises from the void.";
+    61	  } catch (error) { return "The medium resists formation."; }
+    62	};
+    63	
+    64	export const analyzeEmotion = async (emotions: string[], success: boolean, speed: number, presses: number): Promise<string> => {
+    65	  const systemInstruction = `You are an Emotional Transmutation Guide. 
+    66	  The player selected these emotions: ${emotions.join(", ")}. 
+    67	  Mission Outcome: ${success ? "Success" : "Failure"}. 
+    68	  Interaction Speed (avg): ${Math.floor(speed)}ms. 
+    69	  Button Press Count: ${presses}. 
+    70	  Provide a short (2 sentence) guidance on how to regulate these emotions. Focus on Honesty as the key to unlocking stone resonance.`;
+    71	
+    72	  try {
+    73	    const response = await ai.models.generateContent({
+    74	      model: 'gemini-3-flash-preview',
+    75	      contents: "Transmute my state.",
+    76	      config: { systemInstruction },
+    77	    });
+    78	    return response.text || "Emotion recognized and regulated.";
+    79	  } catch (error) { return "Calibrating emotional grid..."; }
+    80	};
+    81	
+    82	export const birthPlanet = async (codes: Glyph[]): Promise<CelestialBody> => {
+    83	  const codesStr = codes.map(c => c.name).join(", ");
+    84	  const response = await ai.models.generateContent({
+    85	    model: "gemini-3-flash-preview",
+    86	    contents: `Design a unique planet for these codes: ${codesStr}. Format as JSON.`,
+    87	    config: {
+    88	      responseMimeType: "application/json",
+    89	      responseSchema: {
+    90	        type: Type.OBJECT,
+    91	        properties: {
+    92	          name: { type: Type.STRING },
+    93	          type: { type: Type.STRING, enum: ['PLANET', 'MOON', 'STAR', 'VOID'] },
+    94	          lore: { type: Type.STRING },
+    95	          creatures: { type: Type.ARRAY, items: { type: Type.STRING } }
+    96	        },
+    97	        required: ["name", "type", "lore", "creatures"]
+    98	      }
+    99	    }
+   100	  });
+   101	
+   102	  const data = JSON.parse(response.text);
+   103	  const imgResponse = await ai.models.generateContent({
+   104	    model: 'gemini-2.5-flash-image',
+   105	    contents: [{ parts: [{ text: `A cinematic view of ${data.name}. Features: ${data.lore}. 8k.` }] }],
+   106	  });
+   107	  
+   108	  const imageData = imgResponse.candidates[0].content.parts.find(part => part.inlineData)?.inlineData?.data;
+   109	
+   110	  return {
+   111	    id: Date.now().toString(),
+   112	    type: data.type,
+   113	    name: data.name,
+   114	    lore: data.lore,
+   115	    creatures: data.creatures,
+   116	    resonanceCodes: codes.map(c => c.name),
+   117	    imageUrl: `data:image/png;base64,${imageData}`
+   118	  };
+   119	};
+   120	
+   121	export const generateVision = async (glyphs: Glyph[], interpretation: string, role: string): Promise<string> => {
+   122	  const systemInstruction = `Vivid neon-infused cinematic wide shot representing: ${interpretation}. Stylized magical realism.`;
+   123	  
+   124	  try {
+   125	    const response = await ai.models.generateContent({
+   126	      model: 'gemini-2.5-flash-image',
+   127	      contents: [{ parts: [{ text: systemInstruction }] }],
+   128	    });
+   129	    
+   130	    const imageData = response.candidates[0].content.parts.find(part => part.inlineData)?.inlineData?.data;
+   131	    if (!imageData) throw new Error("Image failed");
+   132	    return `data:image/png;base64,${imageData}`;
+   133	  } catch (error) { return ""; }
+   134	};
+   135	export const generateOracleAudio = async (text: string, audioContext: AudioContext, role: string): Promise<AudioBuffer> => {
+   136	  const voiceName = 'Kore';
+   137	  const response = await ai.models.generateContent({
+   138	    model: 'gemini-2.5-flash-preview-tts',
+   139	    contents: [{ parts: [{ text }] }],
+   140	    config: {
+   141	      responseModalities: [Modality.AUDIO],
+   142	      speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName } } },
+   143	    }
+   144	  });
+   145	
+   146	  const audioData = response.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
+   147	  if (!audioData) throw new Error("Audio failed");
+   148	  return await decodeAudioDataManual(new Uint8Array(base64ToArrayBuffer(audioData)), audioContext, 24000, 1);
+   149	};
+     1	import React, { useState } from 'react';
+     2	import { motion, AnimatePresence } from 'motion/react';
+     3	import { ArrowLeft, Book, Sparkles, Globe, Heart, Zap, Shield, Star, Waves, Sun, Moon, Scroll, Wind, Eye, PenTool...
+...
+   247	                {cat}
+   248	              </button>
+   249	            ))}
+   250	          </div>
+Tool Call
+Function Name:
+Read
+Arguments:
+file_path:
+/home/user/uploads/UniversalLibrary.tsx
+limit:
+250
+offset:
+0
+Response
+     1	import React, { useState } from 'react';
+     2	import { motion, AnimatePresence } from 'motion/react';
+     3	import { ArrowLeft, Book, Sparkles, Globe, Heart, Zap, Shield, Star, Waves, Sun, Moon, Scroll, Wind, Eye, PenTool, Binary, Database } from 'lucide-react';
+     4	import { playUISound } from '../services/audioUtils';
+     5	
+     6	interface Script {
+     7	  id: string;
+     8	  title: string;
+     9	  category: string;
+    10	  lore: string;
+    11	  teaching: string;
+    12	  icon: React.ReactNode;
+    13	  color: string;
+    14	}
+    15	
+    16	const SCRIPTS: Script[] = [
+    17	  {
+    18	    id: 'magdalene',
+    19	    title: "The Gnosis of Mary Magdalene",
+    20	    category: "Divine Feminine",
+    21	    lore: "The Gospel of Mary reveals the inner path of the heart. She was the one who understood the teachings of the Light most deeply, standing as an equal to the apostles.",
+    22	    teaching: "The soul is not bound by gender or form. Seek the silence within to hear the voice of the Spirit.",
+    23	    icon: <Heart size={24} />,
+    24	    color: "text-pink-400"
+    25	  },
+    26	  {
+    27	    id: 'sophia',
+    28	    title: "The Sophia Texts",
+    29	    category: "Divine Feminine",
+    30	    lore: "Sophia, the Divine Wisdom, descended into the depths to bring light to the darkness. Her journey is the journey of every soul seeking its way home.",
+    31	    teaching: "Wisdom is found in the integration of shadow and light. You are the spark of Sophia in the material realm.",
+    32	    icon: <Sparkles size={24} />,
+    33	    color: "text-purple-400"
+    34	  },
+    35	  {
+    36	    id: 'melchizedek',
+    37	    title: "The Melchizedek Tablets",
+    38	    category: "Sacred Order",
+    39	    lore: "The Order of Melchizedek is the eternal priesthood of the Light. These tablets hold the keys to the planetary grid and the activation of the Merkaba.",
+    40	    teaching: "You are a priest/priestess of the Order of Melchizedek. Your service is to the unity of all life.",
+    41	    icon: <Shield size={24} />,
+    42	    color: "text-amber-400"
+    43	  },
+    44	  {
+    45	    id: 'emerald',
+    46	    title: "The Emerald Tablets",
+    47	    category: "Alchemy",
+    48	    lore: "Thoth the Atlantean recorded the secrets of the universe on tablets of emerald. 'As above, so below; as within, so without.'",
+    49	    teaching: "The universe is a reflection of your inner state. Master the self to master the elements.",
+    50	    icon: <Zap size={24} />,
+    51	    color: "text-emerald-400"
+    52	  },
+    53	  {
+    54	    id: 'timbuktu',
+    55	    title: "Timbuktu Tablets of Destiny",
+    56	    category: "Ancient Wisdom",
+    57	    lore: "Hidden in the sands of Mali, these manuscripts hold the astronomical and spiritual secrets of the African continent. They are the destiny of the hive.",
+    58	    teaching: "The stars are the map of your soul. Your destiny is written in the frequency of the cosmos.",
+    59	    icon: <Star size={24} />,
+    60	    color: "text-amber-600"
+    61	  },
+    62	  {
+    63	    id: 'mu',
+    64	    title: "The Land of Mu & Lemuria",
+    65	    category: "Lost Civilizations",
+    66	    lore: "Before the great floods, the Land of Mu was a paradise of heart-centered living. Their wisdom was stored in the crystals of the earth.",
+    67	    teaching: "Return to the heart. The memory of paradise is stored in your DNA.",
+    68	    icon: <Waves size={24} />,
+    69	    color: "text-cyan-400"
+    70	  },
+    71	  {
+    72	    id: 'mayan-aztec',
+    73	    title: "Mayan & Aztec Codices",
+    74	    category: "Ancient Wisdom",
+    75	    lore: "The keepers of time. They understood the cycles of the sun and the movement of the galactic center.",
+    76	    teaching: "Time is not linear; it is a spiral. Align your rhythm with the heartbeat of the Earth.",
+    77	    icon: <Sun size={24} />,
+    78	    color: "text-orange-500"
+    79	  },
+    80	  {
+    81	    id: 'hopi',
+    82	    title: "Hopi Prophecies",
+    83	    category: "Indigenous Wisdom",
+    84	    lore: "The Hopi have guarded the balance of the world for eons. Their prophecies speak of the transition from the Fourth to the Fifth World.",
+    85	    teaching: "We are the ones we have been waiting for. Walk softly on the Earth and honor the ancestors.",
+    86	    icon: <Globe size={24} />,
+    87	    color: "text-emerald-600"
+    88	  },
+    89	  {
+    90	    id: 'alpha-omega',
+    91	    title: "The Alpha & The Omega",
+    92	    category: "The Christ Path",
+    93	    lore: "Jesus Christ, the Alpha and the Omega, descended into the depths of hell to reclaim every soul. He is found in all aspects of existence.",
+    94	    teaching: "Seek the Christ in the highest heavens and the deepest depths. No soul is beyond the reach of Love.",
+    95	    icon: <Zap size={24} className="text-white" />,
+    96	    color: "text-white"
+    97	  },
+    98	  {
+    99	    id: 'heavenly-cow',
+   100	    title: "The Book of the Heavenly Cow",
+   101	    category: "Egyptian Lore",
+   102	    lore: "Hathor and Sekhmet, the two faces of the Divine. One is the gentle mother, the other the fierce protector. They represent the balance of creation and destruction.",
+   103	    teaching: "Embrace your power. You have the capacity for both infinite gentleness and infinite strength.",
+   104	    icon: <Moon size={24} />,
+   105	    color: "text-red-400"
+   106	  },
+   107	  {
+   108	    id: 'war-angels',
+   109	    title: "The War of Angels",
+   110	    category: "Cosmic History",
+   111	    lore: "The ancient conflict in the heavens. It was a battle for the frequency of the universe, a struggle between separation and unity.",
+   112	    teaching: "The war is over when you choose unity. The frequency of Love is the ultimate victory.",
+   113	    icon: <Shield size={24} />,
+   114	    color: "text-blue-500"
+   115	  },
+   116	  {
+   117	    id: 'cremona',
+   118	    title: "The Cremona Documents",
+   119	    category: "Hidden History",
+   120	    lore: "Documents that reveal the hidden connections between the great masters and the sacred sites of the world. They 'unbox' the truth of our collective past.",
+   121	    teaching: "The truth is hidden in plain sight. Connect the dots to see the full picture of the hive.",
+   122	    icon: <Scroll size={24} />,
+   123	    color: "text-amber-200"
+   124	  },
+   125	  {
+   126	    id: 'lost-book-enki',
+   127	    title: "The Lost Book of Enki",
+   128	    category: "Ancient Wisdom",
+   129	    lore: "The memoirs and prophecies of the god Enki, detailing the arrival of the Anunnaki and the creation of humanity as a bridge between worlds.",
+   130	    teaching: "You are a cosmic traveler. Your history is written in the stars and the clay of the Earth.",
+   131	    icon: <Book size={24} />,
+   132	    color: "text-blue-500"
+   133	  },
+   134	  {
+   135	    id: 'book-of-air',
+   136	    title: "The Book of Air",
+   137	    category: "Elements",
+   138	    lore: "A sacred text focusing on the breath of life and the invisible currents that move the world. It teaches the mastery of the mind through the stillness of the air.",
+   139	    teaching: "Clarity is found in the space between breaths. Let the wind carry away the illusions of the ego.",
+   140	    icon: <Wind size={24} />,
+   141	    color: "text-blue-200"
+   142	  },
+   143	  {
+   144	    id: 'atlas-horus',
+   145	    title: "The Atlas Horus Texts",
+   146	    category: "Ancient Wisdom",
+   147	    lore: "Ancient records that map the celestial heavens through the eyes of Horus. They reveal the alignment of the pyramids with the stars of Orion and the path of the sun.",
+   148	    teaching: "See with the eye of Horus. Your perspective determines your reality. Align your vision with the cosmic order.",
+   149	    icon: <Eye size={24} />,
+   150	    color: "text-amber-300"
+   151	  },
+   152	  {
+   153	    id: 'ra-amun',
+   154	    title: "Hidden Union of Ra & Amun-Ra",
+   155	    category: "Egyptian Lore",
+   156	    lore: "The legends of concealed power. Anubis records the union of the sun at its zenith and the sun in its hidden, nocturnal state. It represents the integration of the visible self and the shadow self.",
+   157	    teaching: "Power is not found in the light alone, but in the union of the seen and the unseen. Master your shadow to become the sun.",
+   158	    icon: <PenTool size={24} />,
+   159	    color: "text-yellow-600"
+   160	  },
+   161	  {
+   162	    id: 'ancient-vellum',
+   163	    title: "The Ancient Vellum",
+   164	    category: "Hidden History",
+   165	    lore: "A mysterious manuscript page containing Latin inscriptions and sacred codes. It speaks of the fragility of the flesh and the eternity of the spirit.",
+   166	    teaching: "The body is a temporary vessel, but the word is eternal. Write your truth in the stars.",
+   167	    icon: <Scroll size={24} />,
+   168	    color: "text-stone-400"
+   169	  },
+   170	  {
+   171	    id: 'archaeology-1',
+   172	    title: "Fragment: EI_images_22_0",
+   173	    category: "Digital Archaeology",
+   174	    lore: "Recovered from the 2006 crawl. A digital snapshot of the collective consciousness before the great social fragmentation. MD5: 3a0b6978dc7766819188d547fb1c737e.",
+   175	    teaching: "The digital realm is a mirror of the primordial void. Every bit is a prayer, every crawl a pilgrimage.",
+   176	    icon: <Binary size={24} />,
+   177	    color: "text-cyan-500"
+   178	  },
+   179	  {
+   180	    id: 'archaeology-2',
+   181	    title: "Fragment: crawl27_log",
+   182	    category: "Digital Archaeology",
+   183	    lore: "A log of the sacred crawl. Timestamp: 2006-08-14. It records the movement of data through the invisible wires of the world. SHA1: a2d2c20b21ce2d4cce5b2ad08b77274efde50b0c.",
+   184	    teaching: "The log is the record of the soul's journey through the machine. Nothing is lost in the eyes of the Architect.",
+   185	    icon: <Database size={24} />,
+   186	    color: "text-blue-400"
+   187	  },
+   188	  {
+   189	    id: 'archaeology-3',
+   190	    title: "Fragment: EI_images_22_0_crawl22",
+   191	    category: "Digital Archaeology",
+   192	    lore: "A derivative index of the primordial image crawl. MD5: c553cdce04b8c8f4360fbab5fae8841e. It catalogs the visual memory of a lost era.",
+   193	    teaching: "Images are the windows to the past. Through the index, we find the pattern of the divine plan.",
+   194	    icon: <Eye size={24} />,
+   195	    color: "text-purple-500"
+   196	  }
+   197	];
+198	
+   199	interface UniversalLibraryProps {
+   200	  onBack: () => void;
+   201	  getCtx: () => AudioContext;
+   202	}
+   203	
+   204	const UniversalLibrary: React.FC<UniversalLibraryProps> = ({ onBack, getCtx }) => {
+   205	  const [selectedScript, setSelectedScript] = useState<string | null>(null);
+   206	  const [filter, setFilter] = useState<string | null>(null);
+   207	
+   208	  const categories = Array.from(new Set(SCRIPTS.map(s => s.category)));
+   209	
+   210	  const filteredScripts = filter 
+   211	    ? SCRIPTS.filter(s => s.category === filter)
+   212	    : SCRIPTS;
+   213	
+   214	  return (
+   215	    <div className="min-h-screen bg-black text-white p-8 font-sans selection:bg-amber-500/30">
+   216	      <div className="max-w-7xl mx-auto space-y-12">
+   217	        {/* Header */}
+   218	        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+   219	          <div className="flex items-center gap-6">
+   220	            <button 
+   221	              onClick={onBack}
+   222	              onMouseEnter={() => playUISound('HOVER', getCtx())}
+   223	              className="p-3 rounded-full border border-white/10 hover:bg-white/5 transition-all group"
+   224	            >
+   225	              <ArrowLeft className="text-white/40 group-hover:text-white transition-colors" />
+   226	            </button>
+   227	            <div>
+   228	              <h1 className="text-5xl font-serif italic tracking-tighter">Universal Library</h1>
+   229	              <p className="text-xs font-mono uppercase tracking-[0.4em] text-white/30">UC UNBOXED • Sacred Scripts • Divine Equality</p>
+   230	            </div>
+   231	          </div>
+   232	          
+   233	          {/* Category Filter */}
+   234	          <div className="flex flex-wrap gap-2 justify-center md:justify-end">
+   235	            <button 
+   236	              onClick={() => setFilter(null)}
+   237	              className={`px-4 py-1.5 rounded-full text-[10px] font-mono uppercase tracking-widest transition-all border ${!filter ? 'bg-white text-black border-white' : 'border-white/10 text-white/40 hover:border-white/30'}`}
+   238	            >
+   239	              All
+   240	            </button>
+   241	            {categories.map(cat => (
+   242	              <button 
+   243	                key={cat}
+   244	                onClick={() => setFilter(cat)}
+   245	                className={`px-4 py-1.5 rounded-full text-[10px] font-mono uppercase tracking-widest transition-all border ${filter === cat ? 'bg-white text-black border-white' : 'border-white/10 text-white/40 hover:border-white/30'}`}
+   246	              >
+   247	                {cat}
+   248	              </button>
+   249	            ))}
+   250	          </div>
+     1	<div align="center">
+     2	<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-...
+     3	</div>
+...
+    17	   `npm install`
+    18	2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+    19	3. Run the app:
+    20	   `npm run dev`
+Tool Call
+Function Name:
+Read
+Arguments:
+file_path:
+/home/user/work/sacred_tablet/README.md
+limit:
+200
+offset:
+0
+Response
+     1	<div align="center">
+     2	<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+     3	</div>
+     4	
+     5	# Run and deploy your AI Studio app
+     6	
+     7	This contains everything you need to run your app locally.
+     8	
+     9	View your app in AI Studio: https://ai.studio/apps/drive/1LS16AWoJ29gVv_DC-7c2HJRDfWKAdEIg
+    10	
+    11	## Run Locally
+    12	
+    13	**Prerequisites:**  Node.js
+    14	
+    15	
+    16	1. Install dependencies:
+    17	   `npm install`
+    18	2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+    19	3. Run the app:
+    20	   `npm run dev`
+     1	<div align="center">
+     2	<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-...
+     3	</div>
+...
+    17	   `npm install`
+    18	2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+    19	3. Run the app:
+    20	   `npm run dev`
+Tool Call
+Function Name:
+Read
+Arguments:
+file_path:
+/home/user/work/sacred_tablet/README.md
+limit:
+200
+offset:
+0
+Response
+     1	<div align="center">
+     2	<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+     3	</div>
+     4	
+     5	# Run and deploy your AI Studio app
+     6	
+     7	This contains everything you need to run your app locally.
+     8	
+     9	View your app in AI Studio: https://ai.studio/apps/drive/1LS16AWoJ29gVv_DC-7c2HJRDfWKAdEIg
+    10	
+    11	## Run Locally
+    12	
+    13	**Prerequisites:**  Node.js
+    14	
+    15	
+    16	1. Install dependencies:
+    17	   `npm install`
+  
+    19	3. Run the app:
+    20	   `npm run dev`
+
