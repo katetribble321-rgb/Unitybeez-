@@ -1,0 +1,591 @@
+     1	/**
+     2	 * @license
+     3	 * SPDX-License-Identifier: Apache-2.0
+...
+    13	  <React.StrictMode>
+    14	    <App />
+    15	  </React.StrictMode>
+    16	);
+Tool Call
+Function Name:
+Read
+Arguments:
+file_path:
+/home/user/work/sacred_tablet/index.tsx
+limit:
+120
+offset:
+0
+Response
+     1	/**
+     2	 * @license
+     3	 * SPDX-License-Identifier: Apache-2.0
+     4	*/
+     5	
+     6	
+     7	import React from 'react';
+     8	import ReactDOM from 'react-dom/client';
+     9	import App from './App';
+    10	
+    11	const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+    12	root.render(
+    13	  <React.StrictMode>
+    14	    <App />
+    15	  </React.StrictMode>
+    16	);
+
+
+
+
+     1	{
+     2	  "name": "Copy of Sacred Tablet",
+     3	  "description": "An ancient oracle app for all ages. Inscribe your tablet and hear the dragon\u0027s message.",
+     4	  "requestFramePermissions": []
+     5	}
+Tool Call
+Function Name:
+Read
+Arguments:
+file_path:
+/home/user/work/sacred_tablet/metadata.json
+limit:
+100
+offset:
+0
+Response
+     1	{
+     2	  "name": "Copy of Sacred Tablet",
+     3	  "description": "An ancient oracle app for all ages. Inscribe your tablet and hear the dragon\u0027s message.",
+     4	  "requestFramePermissions": []
+     5	}
+
+         1	
+     2	/**
+     3	 * @license
+...
+   297	              })}
+   298	            </div>
+   299	
+   300	            <button 
+Tool Call
+Function Name:
+Read
+Arguments:
+file_path:
+/home/user/work/sacred_tablet/components/SacredTablet.tsx
+limit:
+300
+offset:
+0
+Response
+     1	
+     2	/**
+     3	 * @license
+     4	 * SPDX-License-Identifier: Apache-2.0
+     5	*/
+     6	
+     7	import React, { useState, useRef, useEffect, useMemo } from 'react';
+     8	import { 
+     9	  Sparkles, Shield, Scroll, Send, RotateCcw, Volume2, VolumeX, Eye, Sun, Moon, Wind, 
+    10	  Heart, Zap, Anchor, Compass, Wand2, Loader2, Download, History, ChevronRight, 
+    11	  Atom, Globe, Library, Ghost, Waves, Flame, Cloud, Stars, Fingerprint, Bird, 
+    12	  BookOpen, Rocket, Gem, Binary, Landmark, Layers, Ghost as DragonIcon, Clock
+    13	} from 'lucide-react';
+    14	export enum AppState { 
+    15	  LOBBY, EDITOR, INSCRIBING, ORACLE_REVEAL 
+    16	}
+    17	export type UserRole = 'CHILD' | 'ADULT' | 'GALACTIC';
+    18	export interface Glyph {
+    19	  id: string;
+    20	  name: string;
+    21	  symbol: string;
+    22	  meaning: string;
+    23	  lore: string;
+    24	  category: string;
+    25	}
+    26	export interface Tablet {
+    27	  id: string;
+    28	  glyphs: Glyph[];
+    29	  userRole: UserRole;
+    30	  interpretation: string;
+    31	  audioBuffer?: AudioBuffer;
+    32	  imageUrl?: string;
+    33	}
+    34	
+    35	import { interpretTablet, generateOracleAudio, generateVision } from '../services/geminiService';
+    36	import { playUISound } from '../services/audioUtils';
+    37	
+    38	const GLYPH_LIBRARY: Glyph[] = [
+    39	  // Timbuktu / African Renaissance
+    40	  { id: 'ti1', name: 'Sankore University', symbol: 'Library', meaning: 'Unity of Knowledge', lore: 'Where light traveled from the heart of Africa to the world. Science and faith are one.', category: 'Timbuktu' },
+    41	  { id: 'ti2', name: 'Inkwell of Mali', symbol: 'Waves', meaning: 'Fluid History', lore: 'Africa wrote its own history, a masterpiece in ink and sand.', category: 'Timbuktu' },
+    42	  { id: 'ti3', name: 'Astronomy of the Sands', symbol: 'Stars', meaning: 'Celestial Navigation', lore: 'Calculating stars for both prayer and the crossing of the great desert.', category: 'Timbuktu' },
+    43	  
+    44	  // Primordial Beings
+    45	  { id: 'be1', name: 'Miss Ellaphit', symbol: 'Layers', meaning: 'Ancestral Frequency', lore: 'She knows the truths of love as the greatest power. Every being is a reflection in the tapestry.', category: 'Primordial' },
+    46	  { id: 'be2', name: 'Tiamat', symbol: 'Ghost', meaning: 'Primordial Mother', lore: 'The half-dragon, half-mermaid bird of the deep. Integration of all elements.', category: 'Primordial' },
+    47	  { id: 'be3', name: 'Tehuti', symbol: 'Bird', meaning: 'Divine Scribe', lore: 'The ibis-headed keeper of light-codes and cosmic mathematics.', category: 'Primordial' },
+    48	  
+    49	  // Cultural & Global
+    50	  { id: 'cl1', name: 'The Heart of Maat', symbol: 'Heart', meaning: 'Balance', lore: 'Weightless love that overcomes the darkness of the old self.', category: 'Ancient Wisdom' },
+    51	  { id: 'cl2', name: 'Logos', symbol: 'Fingerprint', meaning: 'The Word', lore: 'The frequency that spoke the world into being.', category: 'Ancient Wisdom' },
+    52	  
+    53	  // Galactic Federation (Vicki Soars)
+    54	  { id: 'ga1', name: 'Victor One', symbol: 'Rocket', meaning: 'Diplomacy', lore: 'The vessel of the galactic bridge, bringing light to the bones of humanity.', category: 'Galactic' },
+    55	  { id: 'ga2', name: 'Merkaba', symbol: 'Atom', meaning: 'Ascension Chariot', lore: 'Rotating fields of light that align the spirit with the cosmic frequency.', category: 'Galactic' },
+    56	  { id: 'ga3', name: 'Lemurian Seed', symbol: 'Gem', meaning: 'Memory Crystal', lore: 'Encoded truths for those ready to let go of indoctrination.', category: 'Galactic' },
+    57	];
+    58	
+    59	const IconMap: Record<string, any> = { 
+    60	  Sun, Eye, Heart, Anchor, Moon, Zap, Wind, Compass, Bird, BookOpen, Rocket, Gem, Binary, Landmark,
+    61	  Atom, Globe, Library, Ghost, Waves, Flame, Cloud, Stars, Fingerprint, Sparkles, RotateCcw, Layers
+    62	};
+    63	
+    64	export default function App() {
+    65	  const [state, setState] = useState<AppState>(AppState.LOBBY);
+    66	  const [role, setRole] = useState<UserRole>('ADULT');
+    67	  const [isDarkMode, setIsDarkMode] = useState(true);
+    68	  const [selectedGlyphs, setSelectedGlyphs] = useState<Glyph[]>([]);
+    69	  const [activeCategory, setActiveCategory] = useState<string>('All');
+    70	  const [tablet, setTablet] = useState<Tablet | null>(null);
+    71	  const [history, setHistory] = useState<Tablet[]>([]);
+    72	  const [isMuted, setIsMuted] = useState(false);
+    73	  const [loadingMsg, setLoadingMsg] = useState('');
+    74	  const [isVisionLoading, setIsVisionLoading] = useState(false);
+    75	
+    76	  const audioContextRef = useRef<AudioContext | null>(null);
+    77	  const sourceRef = useRef<AudioBufferSourceNode | null>(null);
+    78	
+    79	  const categories = useMemo(() => ['All', ...new Set(GLYPH_LIBRARY.map(g => g.category))], []);
+    80	  const filteredGlyphs = useMemo(() => 
+    81	    activeCategory === 'All' ? GLYPH_LIBRARY : GLYPH_LIBRARY.filter(g => g.category === activeCategory), 
+    82	  [activeCategory]);
+    83	
+    84	  const themeColors = {
+    85	    CHILD: { primary: '#00d2ff', secondary: '#ff00ff', bg: isDarkMode ? '#0a0a0c' : '#f0faff', text: isDarkMode ? '#e0d5c1' : '#2a3a4a' },
+    86	    ADULT: { primary: '#d4af37', secondary: '#4b0082', bg: isDarkMode ? '#0a0a0c' : '#fcfaf5', text: isDarkMode ? '#e0d5c1' : '#3a352a' },
+    87	    GALACTIC: { primary: '#00ffff', secondary: '#c0c0c0', bg: isDarkMode ? '#050510' : '#eef2f3', text: isDarkMode ? '#e0faff' : '#1a2a3a' }
+    88	  };
+    89	
+    90	  const currentTheme = themeColors[role];
+    91	
+    92	  const getCtx = () => {
+    93	    if (!audioContextRef.current) {
+    94	      const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+    95	      audioContextRef.current = new AudioContextClass();
+    96	    }
+    97	    return audioContextRef.current;
+    98	  };
+    99	
+   100	  const triggerHaptic = (duration: number = 10) => {
+   101	    if ('vibrate' in navigator) try { navigator.vibrate(duration); } catch (e) {}
+   102	  };
+   103	
+   104	  const handleHover = () => { if (!isMuted) playUISound('HOVER', getCtx()); };
+   105	
+   106	  const startJourney = (selectedRole: UserRole) => {
+   107	    if (!isMuted) playUISound('CLICK', getCtx());
+   108	    triggerHaptic(15);
+   109	    setRole(selectedRole);
+   110	    setState(AppState.EDITOR);
+   111	  };
+   112	
+   113	  const toggleGlyph = (glyph: Glyph) => {
+   114	    const ctx = getCtx();
+   115	    if (selectedGlyphs.find(g => g.id === glyph.id)) {
+   116	      if (!isMuted) playUISound('DESELECT', ctx);
+   117	      setSelectedGlyphs(prev => prev.filter(g => g.id !== glyph.id));
+   118	    } else if (selectedGlyphs.length < 4) {
+   119	      if (!isMuted) playUISound('SELECT', ctx);
+   120	      triggerHaptic(20);
+   121	      setSelectedGlyphs(prev => [...prev, glyph]);
+   122	    }
+   123	  };
+   124	
+   125	  const inscribeTablet = async () => {
+   126	    if (selectedGlyphs.length === 0) return;
+   127	    if (!isMuted) playUISound('CLICK', getCtx());
+   128	    setState(AppState.INSCRIBING);
+   129	    setLoadingMsg(role === 'GALACTIC' ? "Aligning with the Light-Codes of Vicki Soars..." : "Consulting the Wisdom of Miss Ellaphit...");
+   130	
+   131	    try {
+   132	      const interpretation = await interpretTablet(selectedGlyphs, role);
+   133	      setLoadingMsg(role === 'GALACTIC' ? "Translating Frequencies from Victor One..." : "Decoding the Tapestry of Frequency...");
+   134	      const ctx = getCtx();
+   135	      const audioBuffer = await generateOracleAudio(interpretation, ctx, role);
+   136	      const newTablet: Tablet = { 
+   137	        glyphs: [...selectedGlyphs], 
+   138	        userRole: role, 
+   139	        interpretation, 
+   140	        audioBuffer,
+   141	        id: Date.now().toString()
+   142	      };
+   143	      setTablet(newTablet);
+   144	      setHistory(prev => [newTablet, ...prev].slice(0, 10));
+   145	      setState(AppState.ORACLE_REVEAL);
+   146	      if (!isMuted) {
+   147	        playUISound('REVEAL', ctx);
+   148	        setTimeout(() => playAudio(audioBuffer), 800);
+   149	      }
+   150	    } catch (error) { setState(AppState.EDITOR); }
+   151	  };
+   152	
+   153	  const revisitChronicle = async (pastTablet: Tablet) => {
+   154	    if (!isMuted) playUISound('CLICK', getCtx());
+   155	    setTablet(pastTablet);
+   156	    setRole(pastTablet.userRole);
+   157	    setState(AppState.ORACLE_REVEAL);
+   158	    
+   159	    // Attempt to play audio if it exists, or re-generate if needed
+   160	    if (pastTablet.audioBuffer) {
+   161	      playAudio(pastTablet.audioBuffer);
+   162	    } else if (pastTablet.interpretation) {
+   163	      const ctx = getCtx();
+   164	      const buf = await generateOracleAudio(pastTablet.interpretation, ctx, pastTablet.userRole);
+   165	      playAudio(buf);
+   166	    }
+   167	  };
+   168	
+   169	  const summonVision = async () => {
+   170	    if (!tablet?.interpretation) return;
+   171	    setIsVisionLoading(true);
+   172	    if (!isMuted) playUISound('CLICK', getCtx());
+   173	    try {
+   174	      const imageUrl = await generateVision(tablet.glyphs, tablet.interpretation, role);
+   175	      const updated = { ...tablet, imageUrl };
+   176	      setTablet(updated);
+   177	      setHistory(prev => prev.map(t => t.id === tablet.id ? updated : t));
+   178	    } catch (error) { console.error(error); } finally { setIsVisionLoading(false); }
+   179	  };
+   180	
+   181	  const playAudio = (buffer: AudioBuffer) => {
+   182	    const ctx = getCtx();
+   183	    sourceRef.current?.stop();
+   184	    const source = ctx.createBufferSource();
+   185	    source.buffer = buffer;
+   186	    source.connect(ctx.destination);
+   187	    source.start(0);
+   188	    sourceRef.current = source;
+   189	  };
+   190	
+   191	  return (
+   192	    <div className={`min-h-screen transition-colors duration-500 pb-20`} style={{ backgroundColor: currentTheme.bg, color: currentTheme.text }}>
+   193	      {/* Background Ambience */}
+   194	      <div className="fixed inset-0 pointer-events-none opacity-20">
+   195	        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] blur-[150px] rounded-full transition-colors duration-1000" style={{ backgroundColor: currentTheme.primary }}></div>
+   196	        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] blur-[150px] rounded-full transition-colors duration-1000" style={{ backgroundColor: currentTheme.secondary }}></div>
+   197	      </div>
+   198	
+   199	      <header className="relative z-10 p-6 flex justify-between items-center border-b backdrop-blur-md" style={{ borderColor: `${currentTheme.primary}33` }}>
+   200	        <div className="flex items-center gap-3">
+   201	          <div className="p-2 rounded-lg text-black transition-colors duration-1000" style={{ backgroundColor: currentTheme.primary }}>
+   202	             <Layers size={24} />
+   203	          </div>
+   204	          <h1 className="text-2xl font-serif tracking-widest uppercase" style={{ color: currentTheme.primary }}>
+   205	            {role === 'GALACTIC' ? 'Galactic Archive' : 'Archive of Worlds'}
+   206	          </h1>
+   207	        </div>
+   208	        <div className="flex items-center gap-2">
+   209	          <button onClick={() => setIsDarkMode(!isDarkMode)} onMouseEnter={handleHover} className="p-3 rounded-full hover:bg-white/5" title="Toggle Celestial Phase">
+   210	            {isDarkMode ? <Sun size={24} /> : <Moon size={24} />}
+   211	          </button>
+   212	          <button onClick={() => setIsMuted(!isMuted)} onMouseEnter={handleHover} className="p-3 rounded-full hover:bg-white/5" title="Toggle Universal Resonance">
+   213	            {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
+   214	          </button>
+   215	        </div>
+   216	      </header>
+   217	
+   218	      <main className="relative z-10 max-w-4xl mx-auto p-6 pt-12">
+   219	        {state === AppState.LOBBY && (
+   220	          <div className="text-center space-y-12 py-20 animate-fade-in">
+   221	            <h2 className="text-5xl md:text-7xl font-serif italic" style={{ color: currentTheme.primary }}>All Wisdom is One.</h2>
+   222	            <p className="text-xl max-w-2xl mx-auto opacity-70 italic">"Love is the greatest power. Every being is a reflection, a tapestry of frequency we must all align with to awaken."</p>
+   223	            <div className="grid md:grid-cols-3 gap-6">
+   224	              {[
+   225	                { r: 'CHILD', icon: Sparkles, title: 'Young Seeker', desc: 'Magical stories of Miss Ellaphit.', color: '#00d2ff' },
+   226	                { r: 'ADULT', icon: Shield, title: 'Archivist', desc: 'Sankore University & Historical Truth.', color: '#d4af37' },
+   227	                { r: 'GALACTIC', icon: Globe, title: 'Vicki Soars', desc: 'The Frequency of Victor One.', color: '#00ffff' }
+   228	              ].map(item => (
+   229	                <button 
+   230	                  key={item.r} 
+   231	                  onClick={() => startJourney(item.r as UserRole)}
+   232	                  className={`group p-8 border-2 rounded-3xl transition-all ${isDarkMode ? 'bg-white/5 border-white/10' : 'bg-black/5 border-black/10'}`}
+   233	                >
+   234	                  <item.icon size={48} className="mx-auto mb-4" style={{ color: item.color }} />
+   235	                  <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
+   236	                  <p className="opacity-60 italic">{item.desc}</p>
+   237	                </button>
+   238	              ))}
+   239	            </div>
+   240	
+   241	            {history.length > 0 && (
+   242	              <div className="pt-10">
+   243	                <button onClick={() => revisitChronicle(history[0])} className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 hover:bg-white/5 transition-all">
+   244	                  <Clock size={18} /> Continue your previous chronicle
+   245	                </button>
+   246	              </div>
+   247	            )}
+   248	          </div>
+   249	        )}
+   250	
+   251	        {state === AppState.EDITOR && (
+   252	          <div className="space-y-10 animate-fade-in">
+   253	             <div className="text-center space-y-4">
+   254	                <h3 className="text-2xl font-serif" style={{ color: currentTheme.primary }}>Select Your Light-Codes</h3>
+   255	                <div className="flex flex-wrap justify-center gap-2">
+   256	                  {categories.map(cat => (
+   257	                    <button 
+   258	                      key={cat} onClick={() => setActiveCategory(cat)}
+   259	                      className={`px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${activeCategory === cat ? 'bg-white text-black' : 'bg-white/5'}`}
+   260	                    >
+   261	                      {cat}
+   262	                    </button>
+   263	                  ))}
+   264	                </div>
+   265	             </div>
+   266	
+   267	            <div className={`aspect-square md:aspect-[4/3] max-w-md mx-auto rounded-[3rem] border-4 flex items-center justify-center p-8 transition-all ${isDarkMode ? 'bg-[#121216]' : 'bg-white shadow-xl'}`} style={{ borderColor: `${currentTheme.primary}1A` }}>
+   268	              <div className="grid grid-cols-2 gap-8">
+   269	                {[0, 1, 2, 3].map(idx => {
+   270	                  const g = selectedGlyphs[idx];
+   271	                  const Icon = g ? IconMap[g.symbol] : null;
+   272	                  return (
+   273	                    <div key={idx} className="w-24 h-24 rounded-2xl border-2 border-dashed border-white/10 flex items-center justify-center relative overflow-hidden" style={{ borderColor: g ? currentTheme.primary : '', backgroundColor: g ? `${currentTheme.primary}1A` : '' }}>
+   274	                      {Icon && <Icon size={40} style={{ color: currentTheme.primary }} className="animate-pulse relative z-10" />}
+   275	                      {g && <div className="absolute inset-0 bg-gradient-to-br from-transparent to-white/5 animate-shimmer"></div>}
+   276	                    </div>
+   277	                  );
+   278	                })}
+   279	              </div>
+   280	            </div>
+   281	
+   282	            <div className="grid grid-cols-3 md:grid-cols-5 gap-3 h-80 overflow-y-auto pr-2 custom-scrollbar">
+   283	              {filteredGlyphs.map(g => {
+   284	                const Icon = IconMap[g.symbol];
+   285	                const active = selectedGlyphs.find(sg => sg.id === g.id);
+   286	                return (
+   287	                  <button 
+   288	                    key={g.id} onClick={() => toggleGlyph(g)}
+   289	                    onMouseEnter={handleHover}
+   290	                    className={`p-4 rounded-xl flex flex-col items-center justify-center gap-2 transition-all border-2 ${active ? 'scale-105 shadow-lg' : 'opacity-70 hover:opacity-100 hover:border-white/20'}`}
+   291	                    style={{ backgroundColor: active ? currentTheme.primary : 'transparent', borderColor: active ? currentTheme.primary : 'rgba(255,255,255,0.05)', color: active ? 'black' : currentTheme.primary }}
+   292	                  >
+   293	                    <Icon size={24} />
+   294	                    <span className="text-[9px] font-bold uppercase text-center leading-tight">{g.name}</span>
+   295	                  </button>
+   296	                );
+   297	              })}
+   298	            </div>
+   299	
+   300	            <button 
+
+
+     1	
+     2	/**
+     3	 * @license
+...
+   297	              })}
+   298	            </div>
+   299	
+   300	            <button 
+Tool Call
+Function Name:
+Read
+Arguments:
+file_path:
+/home/user/work/sacred_tablet/components/SacredTablet.tsx
+limit:
+300
+offset:
+0
+Response
+     1	
+     2	/**
+     3	 * @license
+     4	 * SPDX-License-Identifier: Apache-2.0
+     5	*/
+     6	
+     7	import React, { useState, useRef, useEffect, useMemo } from 'react';
+     8	import { 
+     9	  Sparkles, Shield, Scroll, Send, RotateCcw, Volume2, VolumeX, Eye, Sun, Moon, Wind, 
+    10	  Heart, Zap, Anchor, Compass, Wand2, Loader2, Download, History, ChevronRight, 
+    11	  Atom, Globe, Library, Ghost, Waves, Flame, Cloud, Stars, Fingerprint, Bird, 
+    12	  BookOpen, Rocket, Gem, Binary, Landmark, Layers, Ghost as Dragon,
+12	  BookOpen, Rocket, Gem, Binary, Landmark, Layers, Ghost as DragonIcon, Clock
+    13	} from 'lucide-react';
+    14	export enum AppState { 
+    15	  LOBBY, EDITOR, INSCRIBING, ORACLE_REVEAL 
+    16	}
+    17	export type UserRole = 'CHILD' | 'ADULT' | 'GALACTIC';
+    18	export interface Glyph {
+    19	  id: string;
+    20	  name: string;
+    21	  symbol: string;
+    22	  meaning: string;
+    23	  lore: string;
+    24	  category: string;
+    25	}
+    26	export interface Tablet {
+    27	  id: string;
+    28	  glyphs: Glyph[];
+    29	  userRole: UserRole;
+    30	  interpretation: string;
+    31	  audioBuffer?: AudioBuffer;
+    32	  imageUrl?: string;
+    33	}
+    34	
+    35	import { interpretTablet, generateOracleAudio, generateVision } from '../services/geminiService';
+    36	import { playUISound } from '../services/audioUtils';
+    37	
+    38	const GLYPH_LIBRARY: Glyph[] = [
+    39	  // Timbuktu / African Renaissance
+    40	  { id: 'ti1', name: 'Sankore University', symbol: 'Library', meaning: 'Unity of Knowledge', lore: 'Where light traveled from the heart of Africa to the world. Science and faith are one.', category: 'Timbuktu' },
+    41	  { id: 'ti2', name: 'Inkwell of Mali', symbol: 'Waves', meaning: 'Fluid History', lore: 'Africa wrote its own history, a masterpiece in ink and sand.', category: 'Timbuktu' },
+    42	  { id: 'ti3', name: 'Astronomy of the Sands', symbol: 'Stars', meaning: 'Celestial Navigation', lore: 'Calculating stars for both prayer and the crossing of the great desert.', category: 'Timbuktu' },
+    43	  
+    44	  // Primordial Beings
+    45	  { id: 'be1', name: 'Miss Ellaphit', symbol: 'Layers', meaning: 'Ancestral Frequency', lore: 'She knows the truths of love as the greatest power. Every being is a reflection in the tapestry.', category: 'Primordial' },
+    46	  { id: 'be2', name: 'Tiamat', symbol: 'Ghost', meaning: 'Primordial Mother', lore: 'The half-dragon, half-mermaid bird of the deep. Integration of all elements.', category: 'Primordial' },
+    47	  { id: 'be3', name: 'Tehuti', symbol: 'Bird', meaning: 'Divine Scribe', lore: 'The ibis-headed keeper of light-codes and cosmic mathematics.', category: 'Primordial' },
+    48	  
+    49	  // Cultural & Global
+    50	  { id: 'cl1', name: 'The Heart of Maat', symbol: 'Heart', meaning: 'Balance', lore: 'Weightless love that overcomes the darkness of the old self.', category: 'Ancient Wisdom' },
+    51	  { id: 'cl2', name: 'Logos', symbol: 'Fingerprint', meaning: 'The Word', lore: 'The frequency that spoke the world into being.', category: 'Ancient Wisdom' },
+    52	  
+    53	  // Galactic Federation (Vicki Soars)
+    54	  { id: 'ga1', name: 'Victor One', symbol: 'Rocket', meaning: 'Diplomacy', lore: 'The vessel of the galactic bridge, bringing light to the bones of humanity.', category: 'Galactic' },
+    55	  { id: 'ga2', name: 'Merkaba', symbol: 'Atom', meaning: 'Ascension Chariot', lore: 'Rotating fields of light that align the spirit with the cosmic frequency.', category: 'Galactic' },
+    56	  { id: 'ga3', name: 'Lemurian Seed', symbol: 'Gem', meaning: 'Memory Crystal', lore: 'Encoded truths for those ready to let go of indoctrination.', category: 'Galactic' },
+    57	];
+    58	
+    59	const IconMap: Record<string, any> = { 
+    60	  Sun, Eye, Heart, Anchor, Moon, Zap, Wind, Compass, Bird, BookOpen, Rocket, Gem, Binary, Landmark,
+    61	  Atom, Globe, Library, Ghost, Waves, Flame, Cloud, Stars, Fingerprint, Sparkles, RotateCcw, Layers
+    62	};
+    63	
+    64	export default function App() {
+    65	  const [state, setState] = useState<AppState>(AppState.LOBBY);
+    66	  const [role, setRole] = useState<UserRole>('ADULT');
+    67	  const [isDarkMode, setIsDarkMode] = useState(true);
+    68	  const [selectedGlyphs, setSelectedGlyphs] = useState<Glyph[]>([]);
+    69	  const [activeCategory, setActiveCategory] = useState<string>('All');
+    70	  const [tablet, setTablet] = useState<Tablet | null>(null);
+    71	  const [history, setHistory] = useState<Tablet[]>([]);
+    72	  const [isMuted, setIsMuted] = useState(false);
+    73	  const [loadingMsg, setLoadingMsg] = useState('');
+    74	  const [isVisionLoading, setIsVisionLoading] = useState(false);
+    75	
+    76	  const audioContextRef = useRef<AudioContext | null>(null);
+    77	  const sourceRef = useRef<AudioBufferSourceNode | null>(null);
+    78	
+    79	  const categories = useMemo(() => ['All', ...new Set(GLYPH_LIBRARY.map(g => g.category))], []);
+    80	  const filteredGlyphs = useMemo(() => 
+    81	    activeCategory === 'All' ? GLYPH_LIBRARY : GLYPH_LIBRARY.filter(g => g.category === activeCategory), 
+    82	  [activeCategory]);
+    83	
+    84	  const themeColors = {
+    85	    CHILD: { primary: '#00d2ff', secondary: '#ff00ff', bg: isDarkMode ? '#0a0a0c' : '#f0faff', text: isDarkMode ? '#e0d5c1' : '#2a3a4a' },
+    86	    ADULT: { primary: '#d4af37', secondary: '#4b0082', bg: isDarkMode ? '#0a0a0c' : '#fcfaf5', text: isDarkMode ? '#e0d5c1' : '#3a352a' },
+    87	    GALACTIC: { primary: '#00ffff', secondary: '#c0c0c0', bg: isDarkMode ? '#050510' : '#eef2f3', text: isDarkMode ? '#e0faff' : '#1a2a3a' }
+    88	  };
+    89	
+    90	  const currentTheme = themeColors[role];
+    91	
+    92	  const getCtx = () => {
+    93	    if (!audioContextRef.current) {
+    94	      const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+    95	      audioContextRef.current = new AudioContextClass();
+    96	    }
+    97	    return audioContextRef.current;
+    98	  };
+    99	
+   100	  const triggerHaptic = (duration: number = 10) => {
+   101	    if ('vibrate' in navigator) try { navigator.vibrate(duration); } catch (e) {}
+   102	  };
+   103	
+   104	  const handleHover = () => { if (!isMuted) playUISound('HOVER', getCtx()); };
+   105	
+   106	  const startJourney = (selectedRole: UserRole) => {
+   107	    if (!isMuted) playUISound('CLICK', getCtx());
+   108	    triggerHaptic(15);
+   109	    setRole(selectedRole);
+   110	    setState(AppState.EDITOR);
+   111	  };
+   112	
+   113	  const toggleGlyph = (glyph: Glyph) => {
+   114	    const ctx = getCtx();
+   115	    if (selectedGlyphs.find(g => g.id === glyph.id)) {
+   116	      if (!isMuted) playUISound('DESELECT', ctx);
+   117	      setSelectedGlyphs(prev => prev.filter(g => g.id !== glyph.id));
+   118	    } else if (selectedGlyphs.length < 4) {
+   119	      if (!isMuted) playUISound('SELECT', ctx);
+   120	      triggerHaptic(20);
+   121	      setSelectedGlyphs(prev => [...prev, glyph]);
+   122	    }
+   123	  };
+   124	
+   125	  const inscribeTablet = async () => {
+   126	    if (selectedGlyphs.length === 0) return;
+   127	    if (!isMuted) playUISound('CLICK', getCtx());
+   128	    setState(AppState.INSCRIBING);
+   129	    setLoadingMsg(role === 'GALACTIC' ? "Aligning with the Light-Codes of Vicki Soars..." : "Consulting the Wisdom of Miss Ellaphit...");
+   130	
+   131	    try {
+   132	      const interpretation = await interpretTablet(selectedGlyphs, role);
+   133	      setLoadingMsg(role === 'GALACTIC' ? "Translating Frequencies from Victor One..." : "Decoding the Tapestry of Frequency...");
+   134	      const ctx = getCtx();
+   135	      const audioBuffer = await generateOracleAudio(interpretation, ctx, role);
+   136	      const newTablet: Tablet = { 
+   137	        glyphs: [...selectedGlyphs], 
+   138	        userRole: role, 
+   139	        interpretation, 
+   140	        audioBuffer,
+   141	        id: Date.now().toString()
+   142	      };
+   143	      setTablet(newTablet);
+   144	      setHistory(prev => [newTablet, ...prev].slice(0, 10));
+   145	      setState(AppState.ORACLE_REVEAL);
+   146	      if (!isMuted) {
+   147	        playUISound('REVEAL', ctx);
+   148	        setTimeout(() => playAudio(audioBuffer), 800);
+   149	      }
+   150	    } catch (error) { setState(AppState.EDITOR); }
+   151	  };
+   152	
+   153	  const revisitChronicle = async (pastTablet: Tablet) => {
+   154	    if (!isMuted) playUISound('CLICK', getCtx());
+   155	    setTablet(pastTablet);
+   156	    setRole(pastTablet.userRole);
+   157	    setState(AppState.ORACLE_REVEAL);
+   158	    
+   159	    // Attempt to play audio if it exists, or re-generate if needed
+   160	    if (pastTablet.audioBuffer) {
+   161	      playAudio(pastTablet.audioBuffer);
+   162	    } else if (pastTablet.interpretation) {
+   163	      const ctx = getCtx();
+   164	      const buf = await generateOracleAudio(pastTablet.interpretation, ctx, pastTablet.userRole);
+   165	      playAudio(buf);
+   166	    }
+   167	  };
+   168	
+   169	  const summonVision = async () => {
+   170	    if (!tablet?.interpretation) return;
+   171	    setIsVisionLoading(true);
+   172	    if (!isMuted) playUISound('CLICK', getCtx());
+   173	    try {
+   174	      const imageUrl = await generateVision(tablet.glyphs, tablet.interpretation, role);
+   175	      const updated = { ...tablet, imageUrl };
+   176	      setTablet(updated);
+   177	      setHistory(prev => prev.map(t => t.id === tablet.id ? updated : t));
+   178	    } catch (error) { console.error(error); } finally { setIsVisionLoading(false); }
+   179	  };
+   180	
+   181	  const playAudio = (buffer: AudioBuffer) => {
+   182	    const ctx = getCtx();
+   183	    sourceRef.current?.stop();
+   184	    const source = ctx.createBufferSource();
+   185	    source.buffer = buffer;
+   186	    source.connect(ctx.destination);
+   187	    source.start(0);
+   188	    sourceRef.current = source;
+   189	  };
